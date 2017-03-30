@@ -1,3 +1,6 @@
+
+welkom!
+
 te volgen stappen:
 
     ga in de map van je project staan, right click 'bash here'
@@ -7,4 +10,5 @@ te volgen stappen:
     git status (kun je altijd status mee checken)
     git commit -a -m "jouw commit message" ( -a is voor alles, kan ook naam bestand zijn)
     git push (hiermee push je het naar de centrale repository online)
+
 
