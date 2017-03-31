@@ -19,3 +19,5 @@ upload een of meerdere versies tegelijk naar de centrale repository online via  
 nieuwe bestanden downloaden gaat via    git pull
 
 uitgebreide git cheat sheet met commands staat bij Downloads
+
+test peter
