@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5C8A8BE9-C28D-9699-52BD-6C25D2580504" name="telefoonnummer">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>7C8F1242-7A37-4529-7491-EFB10439F023</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="primair_nummer" id="6B4FC38E-E4C3-FB6A-D7CA-3EB14953D1C5">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>01FD6C72-2B28-2E5D-2992-55409131B80A</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="secundaire-telefoonnummers" id="4B334356-1EC9-BDD2-3E00-CDF778CFA6FB">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>C590E4A2-6215-D9B2-CAC5-01E70080455D</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email_adress" id="AD72D404-5CAB-A80F-C382-7261598C8FF5">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>77195E0D-F14F-F6EC-24ED-5D2D6C1E5A34</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>5B50D64C-E2A3-EDDA-85D8-624BB0CF6E25</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<referedAttribute>1802DCA1-1132-5D77-8308-7A4BF9AAE64F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="5A38F90C-1E44-501D-4037-A344591E7733" name="telefoonnummer PK">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>E80757F8-F329-3C0A-55F1-CCD93ED8DE67</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>6B4FC38E-E4C3-FB6A-D7CA-3EB14953D1C5</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="960B8B34-CCD5-4CDF-61FB-C6433763FDB0" mainViewID="272B05AD-0FE3-8E1B-6196-556D1C38B6A4">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:05:43 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="database_opzet _versie3" id="B3A4F301-564A-39DD-F549-17B4D4F0527B" version="3.5">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:05:43 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B3A4F301-564A-39DD-F549-17B4D4F0527B</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="775CAE06-F0BE-724B-7AB4-10DEBCB136E8">
+<designStoragePath>C:\xampp\htdocs\webproject\database_opzet _pizzeria_met_relationeel_model</designStoragePath>
+</designDescr>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="F948CF32-6B12-F638-D9FA-63A5BAF1D003">
+<designStoragePath>C:\xampp\htdocs\webproject\database_opzet_pizzeria</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>
