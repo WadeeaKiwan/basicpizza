@@ -1,0 +1,95 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="34C9638B-B3CB-5714-1DDC-47602EC31292" name="order">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>12EB8F1E-D437-3137-40B5-9A6180D34567</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>7D4353EB-4D86-BC79-73CC-345C13D5A66B</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="ID" id="786C9F8B-FDEF-4560-4BED-4FD6A4D6C807">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>657C825E-4B34-0E3F-82E7-C4722F73B82D</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>9D169EB8-F159-F568-F2DB-32E86279E2D2</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type_bezorging" id="3FD1EE3B-E11B-1CFC-6522-187ADEDF6930">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>322F81FD-7945-A49E-010C-9803732BFC00</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>177BAB30-1CBF-D0A8-216A-2BD352938522</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tijdstip_gereed" id="F7E5FD71-6294-2E64-0825-35B064FCF0E3">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>3611A7DF-1E50-CD39-FF13-DE61FF8BB14C</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>A46E6E9E-90AF-715C-B938-6B326432462B</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="klant_email_adress" id="BBE494ED-AAD2-5DFE-2F29-B14D7B5E064B">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>E66FA250-CE91-7770-5B53-64DE2F4DE62B</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>6012FA21-E5FE-50B6-A3E1-E2B6270B4B3D</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2DD00B82-CEF4-8A6C-3414-7FEFA80912F4" referredColumn="542A40D0-07FB-EDB1-9BF7-F4BED3E3794C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="37496822-B841-B6DD-2A6E-4DAA16355AFA" name="order_PK">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>A6984C0E-C84E-F95E-EB52-8F7A26AA6289</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>00359E50-7BFC-AE14-4BF4-244EA374ADBF</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="786C9F8B-FDEF-4560-4BED-4FD6A4D6C807"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C01A2FDD-32CC-EB4D-99BA-3FDB6F979D42" name="order_klant_FK">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>85BD8BEF-C1FF-702F-79E5-A0DB1DF8F5D0</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BBE494ED-AAD2-5DFE-2F29-B14D7B5E064B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

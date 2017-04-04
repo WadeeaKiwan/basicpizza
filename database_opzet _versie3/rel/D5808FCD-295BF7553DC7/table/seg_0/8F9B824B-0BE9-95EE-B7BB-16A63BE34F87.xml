@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8F9B824B-0BE9-95EE-B7BB-16A63BE34F87" name="categorie">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>25FD5522-B27A-5AF1-D446-8E5E7472E875</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>622E378B-EB1D-D7ED-53CF-A36B38EBD338</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="527CEC26-4F42-5F6C-BEE4-FD69499F7AB0">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>307B20B4-E3E4-5069-0A32-2149519C707F</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>D5BEB429-E3A4-347B-534E-12F905EE5F5B</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="categorie" id="3425F3D5-2D27-49D3-4032-34DE15C7EC75">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>FCA333B3-DFA4-FD4B-1626-9A887C318892</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>490FD95B-EE7A-0C2F-8611-A37BF6589785</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="021E4E70-E8ED-6D89-D883-BC96FB7ED043" name="categorie_PK">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>897CAB60-3FA3-964F-FDC4-5CB2791462E1</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>D51AB3DE-BB88-A60F-49A1-BE2ED2304472</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="527CEC26-4F42-5F6C-BEE4-FD69499F7AB0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

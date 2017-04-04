@@ -1,0 +1,94 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="12EB8F1E-D437-3137-40B5-9A6180D34567" name="order">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>56A99332-C5A4-511C-E4D1-A067F0F3846A</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ID" id="657C825E-4B34-0E3F-82E7-C4722F73B82D">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>0DB9D84F-0163-CDB5-C445-63D99E6B983E</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="type_bezorging" id="322F81FD-7945-A49E-010C-9803732BFC00">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>0D840AC0-1BC0-D0BC-FD66-507487AE5B8B</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tijdstip_gereed" id="3611A7DF-1E50-CD39-FF13-DE61FF8BB14C">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>5466D6F0-AB3B-C566-DC0F-8E732BF625D7</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email_adress" id="E66FA250-CE91-7770-5B53-64DE2F4DE62B">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>F4016B64-9242-7217-BCB8-2C7606D7A38D</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>A1C39982-FF47-1889-DF76-AA37B564BA7E</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>1802DCA1-1132-5D77-8308-7A4BF9AAE64F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A6984C0E-C84E-F95E-EB52-8F7A26AA6289" name="bestelling PK">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>5F27A465-5126-AEE2-7AC6-A6CB3E87FA8C</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>657C825E-4B34-0E3F-82E7-C4722F73B82D</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

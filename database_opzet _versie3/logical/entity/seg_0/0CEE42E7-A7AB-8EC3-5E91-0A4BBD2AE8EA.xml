@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="0CEE42E7-A7AB-8EC3-5E91-0A4BBD2AE8EA" name="Gerecht">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>019F8AFB-9FEA-0738-BCCB-AE0281F314D8</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="51B1479F-DE1A-DB4F-E496-53D1C1A3F7EB">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>0587459D-6122-6027-0FC5-198790E31665</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="naam" id="9805B012-6426-4AB7-9EC6-CB339AB9D2FA">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>C1B5CD6C-0ADA-09FE-F7A7-774F6F36EE66</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80</dataTypeSize>
+<ownDataTypeParameters>80,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="omschrijving" id="412A9786-4D40-6A5B-944F-915B1129D118">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>8EAE916E-5159-30C7-ABC4-23F739A1F686</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="grootte" id="A558003F-C0BF-945C-C629-1C34FF6D0C9F">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>4D931200-18BF-4DC2-276E-004F67C50142</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Prijs" id="1CA5F0EF-F34A-5BEA-23C1-880EA6607C3A">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>4A5B511A-AC9B-0AAC-396F-401E6E876517</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="EF0D3010-B92F-D8D6-309D-BD9C01ED6D71">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<generatorID>A682D1E5-D139-B5DB-260F-7129B7E17DDA</generatorID>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>819C615D-7222-76C6-A3AC-4E4EFE19DF23</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<referedAttribute>307B20B4-E3E4-5069-0A32-2149519C707F</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT042</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="6AC622A7-8C85-1C38-BBFC-DB68EA65B279" name="Gerecht PK">
+<createdBy>RTLEENLAPTOP1</createdBy>
+<createdTime>2017-04-02 19:14:41 UTC</createdTime>
+<ownerDesignName>database_opzet _versie3</ownerDesignName>
+<importedID>C34C1064-DD4D-2DC6-8031-532E06108959</importedID>
+<engineerTo>
+<item key="D5808FCD-3BD5-BE6E-E862-295BF7553DC7" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>51B1479F-DE1A-DB4F-E496-53D1C1A3F7EB</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
