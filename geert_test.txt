@@ -1,2 +1,5 @@
 Testdocje van Geert
 1 plaatsen
+2 commit
+3 push
+4 pull
