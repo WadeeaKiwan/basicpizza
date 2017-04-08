@@ -101,17 +101,17 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<form name="edit_user" action="?p=<?PHP echo $p?>&i=edit_user&ii=change&user_id=<?PHP echo $row_user['user_id']?>" method="post">
+			<form name="change_pass" method="post" action="?p=<?PHP echo $p?>&i=edit_user&ii=change&user_id=<?PHP echo $row_user['user_id']?>" onsubmit="return checkform_change_pass('change_pass')">
 				<td><?PHP echo $row_user['user_login']?></td>
-				<td><input type="password" name="pass"></td>
-				<td><input type="password" name="passcheck"></td>
+				<td><input type="password" id="pass" name="pass"></td>
+				<td><input type="password" id="passcheck" name="passcheck"></td>
 				<td>
 					<select name="level" id="level">
 						<option value='1'>(1) Klant</option>
 						<option value='5'>(5) Admin</option>
 					</select>
 				</td>
-				<td><input type="submit" value="Wijzigen"></td>
+				<td><input type="submit"value="Wijzigen"></td>
 			</form>
 		</tr>
 	</table>
@@ -309,12 +309,10 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 				$date_time= split(" ", $row_users['user_lastlogin']);
 
 				$level= ($row_users['user_level']);
-				$rs_select_level= mysql_query("SELECT * FROM `user_levels` WHERE user_level='".$level."'");
-				$row_level= mysql_fetch_array($rs_select_level);
 ?>
 		<tr>
 			<td><?PHP echo $row_users['user_login']?>&nbsp;</td>
-			<td><?PHP echo $row_level['user_level_name']?>&nbsp;(<?PHP echo $level?>)</td>
+			<td><?PHP if($level=='1'){echo "(1) Klant";} else{echo "(5) Admin";}?></td>
 			<td><?PHP echo SwitchDate($date_time[0])."&nbsp;&nbsp;&nbsp;".$date_time[1]?></td>
 			<td><a href="?p=<?PHP echo $p?>&i=profile&user_id=<?PHP echo $row_users['user_id']?>">Profiel</a></td>
 			<td>
