@@ -1,11 +1,13 @@
 <?PHP
 
-	include 'jscripts/checkform/login_checkform.js';
+	include 'jscripts/checkform/users_checkform.js';
 
 	if (isset($_SESSION['loggedin']) AND $_SESSION['loggedin']==1)
 	{
+		$user_id = $_SESSION['user_id'];
+		
 #####################################################################################################################################		
-		if ($i=="profile")
+		if ($i=="change_profile")
 		{
 			if ($ii=="update_profile")
 			{	
@@ -156,7 +158,7 @@
 					if ( ($_POST['pass']!="") && (md5($_POST['pass'])!=md5($_POST['passcheck'])) )
 					{
 						echo "<div align=\"center\"><span class='false_warning' ><strong>De wachtwoorden komen niet overeen.</strong></span></div>";
-						echo '<META http-equiv="refresh" content="2;URL=?p=change_pass">';
+						echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'&i=change_pass">';
 					}
 					else
 					{
@@ -179,13 +181,13 @@
 				else
 				{
 					echo "<div align=\"center\"><span class='false_warning' ><strong>Het oude wachtwoord is niet goed ingevuld.</strong></span></div>";
-					echo '<META http-equiv="refresh" content="2;URL=?p=change_pass">';
+					echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'&i=change_pass">';
 				}
 			}
 			else
 			{
 ?>
-	<form name="change_pass" action="?p=change_pass&i=change_pass" method="post" onsubmit="return checkform_change_pass('change_pass')">
+	<form name="change_pass" action="?p=<?PHP echo $p?>&i=change_pass&ii=update_pass" method="post" onsubmit="return checkform_change_pass('change_pass')">
 		<div align="center">
 			<table width="45%">
 				<tr>
@@ -217,7 +219,9 @@
 		}
 		else
 		{
-			echo "hoi";
+			echo "&nbsp;&nbsp;<a href='?p=".$p."&i=change_profile'>Pofiel wijzigen</a>";
+			echo "<br><br>";
+			echo "&nbsp;&nbsp;<a href='?p=".$p."&i=change_pass'>Wachtwoord wijzigen</a>";
 		}
 	}
 	else

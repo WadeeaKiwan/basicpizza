@@ -23,4 +23,82 @@ function checkform_create_user ( form ){
 	return true ;
 }
 
+function checkform_update_profile ( form ){
+	
+	var update_profile=document.forms[form];
+	if (update_profile.aanhef.value == "") {
+		alert( "Uw aanhef dient ingevuld te worden." );
+		update_profile.aanhef.focus();
+		return false ;
+		exit;
+	}
+	if (update_profile.voornaam.value == "") {
+		alert( "Uw voornaam dient ingevuld te worden." );
+		update_profile.voornaam.focus();
+		return false ;
+		exit;
+	}
+	if (update_profile.achternaam.value == "") {
+		alert( "Uw achternaam dient ingevuld te worden." );
+		update_profile.achternaam.focus();
+		return false ;
+		exit;
+	}
+	if (update_profile.straat.value == "") {
+		alert( "Uw straatnaam dient ingevuld te worden." );
+		update_profile.straat.focus();
+		return false ;
+		exit;
+	}
+	if (update_profile.huisnummer.value == "") {
+		alert( "Uw huisnummer dient ingevuld te worden." );
+		update_profile.huisnummer.focus();
+		return false ;
+		exit;
+	}
+	if (update_profile.postcode.value == "") {
+		alert( "Uw postcode dient ingevuld te worden." );
+		update_profile.postcode.focus();
+		return false ;
+		exit;
+	}	
+	if (update_profile.woonplaats.value == "") {
+		alert( "Uw woonplaats dient ingevuld te worden." );
+		update_profile.woonplaats.focus();
+		return false ;
+		exit;
+	}	
+	if (update_profile.telefoonnummer.value == "") {
+		alert( "Uw telefoonnummer dient ingevuld te worden." );
+		update_profile.telefoonnummer.focus();
+		return false ;
+		exit;
+	}
+	return true ;
+}
+
+function checkform_change_pass ( form ){
+	
+	var change_pass=document.forms[form];
+	if (change_pass.old_pass.value == "") {
+		alert( "Uw oude wachtwoord dient ingevuld te worden." );
+		change_pass.old_pass.focus();
+		return false ;
+		exit;
+	}	
+	if (change_pass.pass.value == "") {
+		alert( "Uw nieuwe wachtwoord dient ingevuld te worden." );
+		change_pass.pass.focus();
+		return false ;
+		exit;
+	}
+	if (change_pass.passcheck.value == "") {
+		alert( "Uw nieuwe wachtwoord controle dient ingevuld te worden." );
+		change_pass.passcheck.focus();
+		return false ;
+		exit;
+	}
+	return true ;
+}
+
 </script>

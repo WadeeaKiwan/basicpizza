@@ -1,6 +1,7 @@
 <script type="text/JavaScript">	
 
 function checkform_create_user ( form ){	
+
 	var create_user=document.forms[form];
 	if (create_user.login.value == "") {
 		alert( "De gebruikersaam dient ingevuld te worden." );
@@ -71,6 +72,24 @@ function checkform_update_profile ( form ){
 	if (update_profile.telefoonnummer.value == "") {
 		alert( "Uw telefoonnummer dient ingevuld te worden." );
 		update_profile.telefoonnummer.focus();
+		return false ;
+		exit;
+	}
+	return true ;
+}
+
+function checkform_change_pass ( form ){
+	
+	var change_pass=document.forms[form];
+	if (change_pass.pass.value == "") {
+		alert( "Uw nieuwe wachtwoord dient ingevuld te worden." );
+		change_pass.pass.focus();
+		return false ;
+		exit;
+	}
+	if (change_pass.passcheck.value == "") {
+		alert( "Uw nieuwe wachtwoord controle dient ingevuld te worden." );
+		change_pass.passcheck.focus();
 		return false ;
 		exit;
 	}
