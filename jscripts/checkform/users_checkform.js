@@ -1,22 +1,71 @@
 <script type="text/JavaScript">	
 
-function checkform_create_user ( form ){	
-	var create_user=document.forms[form];
-	if (create_user.login.value == "") {
-		alert( "De gebruikersaam dient ingevuld te worden." );
-		create_user.login.focus();
+function checkform_register ( form ){
+	
+	var register=document.forms[form];
+	if (register.aanhef.value == "") {
+		alert( "Uw aanhef dient ingevuld te worden." );
+		register.aanhef.focus();
 		return false ;
 		exit;
 	}
-	if (create_user.pass.value == "") {
+	if (register.voornaam.value == "") {
+		alert( "Uw voornaam dient ingevuld te worden." );
+		register.voornaam.focus();
+		return false ;
+		exit;
+	}
+	if (register.achternaam.value == "") {
+		alert( "Uw achternaam dient ingevuld te worden." );
+		register.achternaam.focus();
+		return false ;
+		exit;
+	}
+	if (register.straat.value == "") {
+		alert( "Uw straatnaam dient ingevuld te worden." );
+		register.straat.focus();
+		return false ;
+		exit;
+	}
+	if (register.huisnummer.value == "") {
+		alert( "Uw huisnummer dient ingevuld te worden." );
+		register.huisnummer.focus();
+		return false ;
+		exit;
+	}
+	if (register.postcode.value == "") {
+		alert( "Uw postcode dient ingevuld te worden." );
+		register.postcode.focus();
+		return false ;
+		exit;
+	}	
+	if (register.woonplaats.value == "") {
+		alert( "Uw woonplaats dient ingevuld te worden." );
+		register.woonplaats.focus();
+		return false ;
+		exit;
+	}	
+	if (register.email.value == "") {
+		alert( "Uw E-Mail adres dient ingevuld te worden." );
+		register.email.focus();
+		return false ;
+		exit;
+	}	
+	if (register.telefoonnummer.value == "") {
+		alert( "Uw telefoonnummer dient ingevuld te worden." );
+		register.telefoonnummer.focus();
+		return false ;
+		exit;
+	}
+	if (register.pass.value == "") {
 		alert( "Het wachtwoord dient ingevuld te worden." );
-		create_user.pass.focus();
+		register.pass.focus();
 		return false ;
 		exit;
 	}
-	if (create_user.passcheck.value == "") {
+	if (register.passcheck.value == "") {
 		alert( "Het controlewachtwoord dient ingevuld te worden." );
-		create_user.passcheck.focus();
+		register.passcheck.focus();
 		return false ;
 		exit;
 	}
