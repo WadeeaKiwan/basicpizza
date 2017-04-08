@@ -1,0 +1,35 @@
+/* BASE */
+body { background-color: #ffffff; color: #000000; text-decoration: none; font-family: Verdana; font-size: 11px; }
+a:link { color: #fb0f4e; text-decoration: underline; font-family: Verdana; font-size: 11px; }
+a:visited { color: #fb0f4e; text-decoration: underline; font-family: Verdana; font-size: 11px; }
+
+/* BORDERS */
+.top { border-top:thin solid; border-color:red; border-width: 1px; }
+.bottom { border-bottom:thin solid; border-color:red; border-width: 1px; }
+.right { border-right:thin solid; border-color:red; border-width: 1px; }
+.left { border-left:thin solid; border-color:red; border-width: 1px; }
+.round { 
+	border-top: thin solid; 
+	border-bottom: thin solid; 
+	border-right: thin solid; 
+	border-left: thin solid; 
+	border-color: red; 
+	border-width: 1px; 
+	border-radius: 15px;
+}
+
+
+/* TEXT */
+.makers{ background-color: #ffffff; color: #000000; text-decoration: none; font-family: Verdana; font-size: 8.5px}
+.false_warning { color: red; font-family: Verdana, Arial, Helvetica; text-decoration: none; font-size: 8pt; }
+.true_warning { color: green; font-family: Verdana, Arial, Helvetica; text-decoration: none; font-size: 8pt; }
+
+.custom_bgcollor { background-color: yellow;}
+.custom_bgcollor_green { background-color: green;}
+.custom_bgcollor_red { background-color: red;}
+
+
+/* bgcolor="#ffeb9c" table */ 
+/* bgcolor="#ffc7ce" red */
+/* bgcolor="#c6efce" green */
+/* class="custom_bgcollor" */
