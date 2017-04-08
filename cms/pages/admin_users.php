@@ -296,11 +296,11 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 	</div>
 	<table width="75%" border="1" cellspacing="0">
 		<tr>
-			<td bgcolor="#ffeb9c"><strong>Gebruikersnaam</strong></td>
-			<td bgcolor="#ffeb9c"><strong>Level</strong></td>
-			<td bgcolor="#ffeb9c"><strong>Laatste login</strong></td>
-			<td bgcolor="#ffeb9c"><strong>Profiel</strong></td>
-			<td bgcolor="#ffeb9c"><strong>&nbsp;</strong></td>
+			<td class="custom_bgcollor"><strong>Gebruikersnaam</strong></td>
+			<td class="custom_bgcollor"><strong>Level</strong></td>
+			<td class="custom_bgcollor"><strong>Laatste login</strong></td>
+			<td class="custom_bgcollor"><strong>Profiel</strong></td>
+			<td class="custom_bgcollor"><strong>&nbsp;</strong></td>
 		</tr>
 <?PHP
 			$rs_select_users= mysql_query("SELECT * FROM `users` WHERE user_level<=".$_SESSION['level']." ORDER BY user_level DESC");
