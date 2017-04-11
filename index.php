@@ -46,55 +46,58 @@
 	<META NAME="description" CONTENT="Pizzeria">
 	<META NAME="robot" CONTENT="index,follow">
 
-	<title>Pizzeria</title>
+	<title>Pizzeria Basic Pizza</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css" madia="screen" />
 </head>
-<body>
+<body background="img\bg.png">
 <div align="center">
 	<table width="900" border="0" cellspacing="0">
 		<tr>
-			<td colspan="4" height="70" valign="middle" align="center">
-				<img src="img/logo-pizzeria.png" width="250"  alt="Pizzeria">
+			<td colspan="5" height="70" valign="middle" align="center">
+				<img src="img/basicpizzalogo.png" width="800" height="80" alt="Pizzeria Basic Pizza">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4" >
+			<td colspan="5" >
 				<hr width="100%">
 			</td>
 		</tr>
 		<tr>
-			<td width="250" >
-				&nbsp;
+			<td width="160" align="center"  >
+						<a href='?p=pizzas'><img src="img/b_pizza.png" width="160" height="40" alt="Kies uw pizza's"></a>
 			</td>
-					<td align="left" width="200" >
-						<a href='?p=pizzas'>Pizzas</a>
-						<a href='?p=winkelmand'>Winkelmand</a>
-					</td>
-					<td align="right" width="200" >	
+			
+			<td width="160" align="center"  >
+					<a href='?p=winkelmand'><img src="img/b_winkelmand.png" width="160" height="40" alt="Kies uw pizza's"></a>
+			</td>
+			
+			<td width="160" align="center"  >	
 <?PHP
 						if (isset($_SESSION['loggedin']))
 						{
-							echo "&nbsp;&nbsp;<a href='?p=profile'>Pofiel</a>";
-							echo "&nbsp;&nbsp;<a href='?p=logout'>Uitloggen</a>";
+							echo "<a href='?p=profile'><img src='img/b_profiel.png' width='160' height='40' alt='Profiel'></a>";
+							echo '</td><td width="160" align="center"  >';
+							echo "<a href='?p=logout'><img src='img/b_uitloggen.png' width='160' height='40' alt='Uitloggen'></a>";
 						}
 						else
 						{
-							echo "&nbsp;&nbsp;<a href='?p=register'>Registreren</a>";
-							echo "&nbsp;&nbsp;<a href='?p=login'>Inloggen</a>";
+							echo "<a href='?p=register'><img src='img/b_registreren.png' width='160' height='40' alt='Registreren'></a>";
+							echo '</td><td width="160" align="center"  >';
+							echo "<a href='?p=login'><img src='img/b_inloggen.png' width='160' height='40' alt='Inloggen'></a>";
 						}
 ?>
-					</td>
-			<td width="250" >
-				&nbsp;
+			</td>
+			<td width="160" align="center"  >
+				<a href='?p=contact'><img src="img/b_contact.png" width="160" height="40" alt="Contact"></a>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">
+			<td colspan="5">
 				<hr width="100%">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4" height="300" valign="top">
+			<td colspan="5" height="300" valign="top">
 				<div align="center">
 					<br>
 					<?PHP
@@ -122,6 +125,10 @@
 					{
 						include 'pages/winkelmand.php';
 					}
+					elseif($p == "contact")
+					{
+						include 'pages/contact.php';
+					}
 					?>
 				</div>
 			</td>
@@ -131,8 +138,8 @@
 		</tr>
 		<tr>
 			<td colspan="4" valign="middle">
-				<div align="center">
-					<br><br><span class="makers">Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan </span>
+				<div class="footer" >
+					<span class="makers"><b><center>Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan</center></b></span>
 				</div>
 			</td>
 		</tr>

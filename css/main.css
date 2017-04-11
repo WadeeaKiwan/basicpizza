@@ -28,6 +28,13 @@ a:visited { color: #fb0f4e; text-decoration: underline; font-family: Verdana; fo
 .custom_bgcollor_green { background-color: green;}
 .custom_bgcollor_red { background-color: red;}
 
+div.footer {
+    position: fixed;
+    bottom: 0;
+    right: 25%;
+    width: 50%;
+    border: 1px solid #000044;
+}
 
 /* bgcolor="#ffeb9c" table */ 
 /* bgcolor="#ffc7ce" red */
