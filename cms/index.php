@@ -83,7 +83,7 @@
 			<br>
 			<hr width="125">
 			<br>
-			<li><a href='?p=admin_cats'>Cetegorie</a></li>
+			<li><a href='?p=admin_cats'>Categorie</a></li>
 			<li><a href='?p=admin_pizzas'>Pizzas</a></li>
 			<br>
 			<hr width="125">
