@@ -19,26 +19,58 @@
 	if ($i=="add_to_cart")
 	{
 		
-		if($_SESSION['product_id'] == NULL OR $_SESSION['prod_grootte'] == NULL OR $_SESSION['prod_aantal'] == NULL)
+		if(!isset($_SESSION['product_id']) OR !isset($_SESSION['prod_grootte']) OR !isset($_SESSION['prod_aantal']))
 		{
 			$_SESSION['product_id']=array();
 			$_SESSION['prod_grootte']=array();	
 			$_SESSION['prod_aantal']=array();
 		}
+		else
+		{
+			$al_in_winkelmand = '0';
+			$array_row = '0';
+			foreach ($_SESSION['product_id'] as $value)
+			{	
+				if($value == $product_id AND $_SESSION['prod_grootte'][$array_row] == $_POST['prod_grootte'] )
+				{
+					$al_in_winkelmand ++;
+				}
+				
+				$array_row ++;
+			}
+			
+			if($al_in_winkelmand > '0')
+			{
+				$array_row = '0';
+				foreach ($_SESSION['product_id'] as $value)
+				{	
+					if($value == $product_id AND $_SESSION['prod_grootte'][$array_row] )
+					{
+						$waarde = $_SESSION['prod_aantal'][$array_row] + $_POST['prod_aantal'];
+						$_SESSION['prod_aantal'][$array_row] = $waarde;
+					}
+					$array_row ++;
+				}
+				
+				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand2.</strong></span>";
+			}
+			else
+			{
+				array_push($_SESSION['product_id'], $product_id);
+				array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
+				array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
+				
+				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+			}
+		}
 		
-		array_push($_SESSION['product_id'], $product_id);
-		array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
-		array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
-		
-		echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
-
 		echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 
 	}
 #####################################################################################################################################
 	elseif ($i=="bestel_prod")
 	{
-		$sql_select_prod= mysql_query("SELECT * FROM `producten` ORDER BY naam ASC");
+		$sql_select_prod= mysql_query("SELECT * FROM `producten` WHERE product_id = ".$product_id." ");
 		$row_prod= mysql_fetch_array($sql_select_prod);
 ?>
 
