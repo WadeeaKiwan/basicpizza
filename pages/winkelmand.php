@@ -20,7 +20,7 @@
 		{
   			unset($_SESSION['product_id'][$array_row]);
   			unset($_SESSION['prod_aantal'][$array_row]);
-  			unset($_SESSION['prod_grootte'][$array_row]);
+  			unset($_SESSION['prod_grootte'][$array_row]);  
 		}
 		else
 		{
@@ -37,8 +37,7 @@
 	}
 	else
 	{
-		#if($_SESSION['product_id'] != NULL OR $_SESSION['prod_grootte'] != NULL OR $_SESSION['prod_aantal'] != NULL)
-		if(isset($_SESSION['product_id']) AND isset($_SESSION['prod_grootte']) AND isset($_SESSION['prod_aantal']))
+		if($_SESSION['product_id'] != NULL OR $_SESSION['prod_grootte'] != NULL OR $_SESSION['prod_aantal'] != NULL)
 		{ 			
 ?>
 	<div align="center">

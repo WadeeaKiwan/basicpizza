@@ -28,28 +28,23 @@
 		else
 		{
 			$al_in_winkelmand = '0';
-			$array_row = '0';
-			foreach ($_SESSION['product_id'] as $value)
+			foreach ($_SESSION['product_id'] as $key => $value)
 			{	
-				if($value == $product_id AND $_SESSION['prod_grootte'][$array_row] == $_POST['prod_grootte'] )
+				if($value == $product_id AND $_SESSION['prod_grootte'][$key] == $_POST['prod_grootte'] )
 				{
 					$al_in_winkelmand ++;
 				}
-				
-				$array_row ++;
 			}
 			
 			if($al_in_winkelmand > '0')
 			{
-				$array_row = '0';
-				foreach ($_SESSION['product_id'] as $value)
+				foreach ($_SESSION['product_id'] as $key => $value)
 				{	
-					if($value == $product_id AND $_SESSION['prod_grootte'][$array_row] )
+					if($value == $product_id AND $_SESSION['prod_grootte'][$key] )
 					{
-						$waarde = $_SESSION['prod_aantal'][$array_row] + $_POST['prod_aantal'];
-						$_SESSION['prod_aantal'][$array_row] = $waarde;
+						$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
+						$_SESSION['prod_aantal'][$key] = $waarde;
 					}
-					$array_row ++;
 				}
 				
 				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
