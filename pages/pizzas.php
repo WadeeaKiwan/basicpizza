@@ -52,7 +52,7 @@
 					$array_row ++;
 				}
 				
-				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand2.</strong></span>";
+				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
 			}
 			else
 			{
@@ -74,7 +74,7 @@
 		$row_prod= mysql_fetch_array($sql_select_prod);
 ?>
 
-<form name="bestel_prod" id="bestel_prod" method="post" action="?p=<?PHP echo $p?>&i=add_to_cart&product_id=<?PHP echo $row_prod['product_id']?>" onsubmit="return checkform_create_prod('create_prod')">
+<form name="bestel_prod" id="bestel_prod" method="post" action="?p=<?PHP echo $p?>&i=add_to_cart&product_id=<?PHP echo $row_prod['product_id']?>">
 	<div align="center">
     	<table border="1" cellspacing="0" width="450">
         	<tr>
@@ -108,7 +108,7 @@
 						<select name="prod_grootte" id="prod_grootte">
 							<option value='s'>Small</option>
 							<option value='m'>Medium</option>
-							<option value='L'>Large</option>
+							<option value='l'>Large</option>
 						</select>
 					</td>
             	<td align="center">
