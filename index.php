@@ -69,7 +69,7 @@
 <?PHP
 					if (isset($_SESSION['loggedin']))
 					{
-						echo "<a href='?p=bestellingen'><img src='img/b_bestellingen.png' alt='Bestellingen'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=bestellingen'><img src='img/b_bestellingen.jpg' alt='Bestellingen'></a>&nbsp;&nbsp;";
 						echo "<a href='?p=profile'><img src='img/b_profiel.png' alt='Profiel'></a>&nbsp;&nbsp;";
 						echo "<a href='?p=logout'><img src='img/b_uitloggen.png' alt='Uitloggen'></a>&nbsp;&nbsp;";
 					}
