@@ -25,36 +25,38 @@
 			$_SESSION['prod_grootte']=array();	
 			$_SESSION['prod_aantal']=array();
 		}
-		
-		$al_in_winkelmand = '0';
-		foreach ($_SESSION['product_id'] as $key => $value)
-		{	
-			if($value == $product_id AND $_SESSION['prod_grootte'][$key] == $_POST['prod_grootte'] )
-			{
-				$al_in_winkelmand ++;
-			}
-		}
-			
-		if($al_in_winkelmand > '0')
-		{
-			foreach ($_SESSION['product_id'] as $key => $value)
-			{	
-				if($value == $product_id AND $_SESSION['prod_grootte'][$key] )
-				{
-					$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
-					$_SESSION['prod_aantal'][$key] = $waarde;
-				}
-			}
-				
-			echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
-		}
 		else
 		{
-			array_push($_SESSION['product_id'], $product_id);
-			array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
-			array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
+			$al_in_winkelmand = '0';
+			foreach ($_SESSION['product_id'] as $key => $value)
+			{	
+				if($value == $product_id AND $_SESSION['prod_grootte'][$key] == $_POST['prod_grootte'] )
+				{
+					$al_in_winkelmand ++;
+				}
+			}
 			
-			echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+			if($al_in_winkelmand > '0')
+			{
+				foreach ($_SESSION['product_id'] as $key => $value)
+				{	
+					if($value == $product_id AND $_SESSION['prod_grootte'][$key] )
+					{
+						$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
+						$_SESSION['prod_aantal'][$key] = $waarde;
+					}
+				}
+				
+				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+			}
+			else
+			{
+				array_push($_SESSION['product_id'], $product_id);
+				array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
+				array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
+				
+				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+			}
 		}
 		
 		echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
@@ -118,15 +120,18 @@
 	{
 ?>
 <div align="center">
-    <table border="1" cellspacing="0" width="450">
+    <table border="1" cellspacing="0" width="700">
         <tr>
-            <td class="custom_bgcollor" width="60%">
+            <td class="custom_bgcollor" width="150px">
+                <strong>Afbeelding</strong>
+            </td>
+			<td class="custom_bgcollor" width="300px">
                 <strong>Naam</strong>
             </td>
-            <td class="custom_bgcollor" width="20%">
+            <td class="custom_bgcollor" width="120px">
                 <strong>Prijs</strong>
             </td>
-            <td class="custom_bgcollor" width="20%">
+            <td class="custom_bgcollor" width="140px">
                 <strong>Bestel</strong>
             </td>
         </tr>
@@ -137,7 +142,14 @@
 ?>
         <tr>
             <td>
-                <?PHP echo $row_prod['naam']?>
+                <?PHP echo '<img src="img/prd/'.$row_prod['product_id'].'.png" width="120" height="120">' ?>
+            </td>
+			
+			
+			<td>
+                <?PHP echo '<b>'.$row_prod['naam'].'</b><br>'.$row_prod['omschrijving'] 
+				
+				?>
             </td>
             <td>
                 <?PHP echo ShowCash($row_prod['prijs'])?>
