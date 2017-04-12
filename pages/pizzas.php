@@ -25,38 +25,36 @@
 			$_SESSION['prod_grootte']=array();	
 			$_SESSION['prod_aantal']=array();
 		}
-		else
+		
+		$al_in_winkelmand = '0';
+		foreach ($_SESSION['product_id'] as $key => $value)
+		{	
+			if($value == $product_id AND $_SESSION['prod_grootte'][$key] == $_POST['prod_grootte'] )
+			{
+				$al_in_winkelmand ++;
+			}
+		}
+			
+		if($al_in_winkelmand > '0')
 		{
-			$al_in_winkelmand = '0';
 			foreach ($_SESSION['product_id'] as $key => $value)
 			{	
-				if($value == $product_id AND $_SESSION['prod_grootte'][$key] == $_POST['prod_grootte'] )
+				if($value == $product_id AND $_SESSION['prod_grootte'][$key] )
 				{
-					$al_in_winkelmand ++;
+					$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
+					$_SESSION['prod_aantal'][$key] = $waarde;
 				}
 			}
+				
+			echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+		}
+		else
+		{
+			array_push($_SESSION['product_id'], $product_id);
+			array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
+			array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
 			
-			if($al_in_winkelmand > '0')
-			{
-				foreach ($_SESSION['product_id'] as $key => $value)
-				{	
-					if($value == $product_id AND $_SESSION['prod_grootte'][$key] )
-					{
-						$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
-						$_SESSION['prod_aantal'][$key] = $waarde;
-					}
-				}
-				
-				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
-			}
-			else
-			{
-				array_push($_SESSION['product_id'], $product_id);
-				array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
-				array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
-				
-				echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
-			}
+			echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
 		}
 		
 		echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
