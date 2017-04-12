@@ -83,6 +83,7 @@
 			<br>
 			<hr width="125">
 			<br>
+			<li><a href='?p=admin_bestel'>Bestellingen</a></li>
 			<li><a href='?p=admin_cats'>Categorie</a></li>
 			<li><a href='?p=admin_pizzas'>Pizzas</a></li>
 			<br>
@@ -102,6 +103,10 @@
 				elseif($p == "admin_users")
 				{
 					include 'pages/admin_users.php';
+				}
+				elseif($p == "admin_bestel")
+				{
+					include 'pages/admin_bestellingen.php';
 				}
 				elseif($p == "admin_cats")
 				{
