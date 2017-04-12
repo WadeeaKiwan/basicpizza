@@ -51,53 +51,44 @@
 </head>
 <body background="img\bg.png">
 <div align="center">
-	<table width="900" border="0" cellspacing="0">
+	<table width="850" border="0" cellspacing="0">
 		<tr>
-			<td colspan="5" height="70" valign="middle" align="center">
+			<td height="70" valign="middle" align="center">
 				<img src="img/basicpizzalogo.png" width="800" height="80" alt="Pizzeria Basic Pizza">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="5" >
+			<td>
 				<hr width="100%">
 			</td>
 		</tr>
 		<tr>
-			<td width="160" align="center"  >
-						<a href='?p=pizzas'><img src="img/b_pizza.png" width="160" height="40" alt="Kies uw pizza's"></a>
-			</td>
-			
-			<td width="160" align="center"  >
-					<a href='?p=winkelmand'><img src="img/b_winkelmand.png" width="160" height="40" alt="Kies uw pizza's"></a>
-			</td>
-			
-			<td width="160" align="center"  >	
+			<td align="center"  >
+				<a href='?p=pizzas'><img src="img/b_pizza.png" alt="Kies uw pizza's"></a>&nbsp;&nbsp;
+				<a href='?p=winkelmand'><img src="img/b_winkelmand.png" alt="Kies uw pizza's"></a>&nbsp;&nbsp;	
 <?PHP
-						if (isset($_SESSION['loggedin']))
-						{
-							echo "<a href='?p=profile'><img src='img/b_profiel.png' width='160' height='40' alt='Profiel'></a>";
-							echo '</td><td width="160" align="center"  >';
-							echo "<a href='?p=logout'><img src='img/b_uitloggen.png' width='160' height='40' alt='Uitloggen'></a>";
-						}
-						else
-						{
-							echo "<a href='?p=register'><img src='img/b_registreren.png' width='160' height='40' alt='Registreren'></a>";
-							echo '</td><td width="160" align="center"  >';
-							echo "<a href='?p=login'><img src='img/b_inloggen.png' width='160' height='40' alt='Inloggen'></a>";
-						}
+					if (isset($_SESSION['loggedin']))
+					{
+						echo "<a href='?p=bestellingen'><img src='img/b_bestellingen.png' alt='Bestellingen'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=profile'><img src='img/b_profiel.png' alt='Profiel'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=logout'><img src='img/b_uitloggen.png' alt='Uitloggen'></a>&nbsp;&nbsp;";
+					}
+					else
+					{
+						echo "<a href='?p=register'><img src='img/b_registreren.png' alt='Registreren'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=login'><img src='img/b_inloggen.png' alt='Inloggen'></a>&nbsp;&nbsp;";
+					}
 ?>
-			</td>
-			<td width="160" align="center"  >
-				<a href='?p=contact'><img src="img/b_contact.png" width="160" height="40" alt="Contact"></a>
+				<a href='?p=contact'><img src="img/b_contact.png" alt="Contact"></a>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="5">
+			<td>
 				<hr width="100%">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="5" height="300" valign="top">
+			<td height="300" valign="top">
 				<div align="center">
 					<br>
 					<?PHP
@@ -129,15 +120,19 @@
 					{
 						include 'pages/contact.php';
 					}
+					elseif($p == "bestellingen")
+					{
+						include 'pages/bestellingen.php';
+					}
 					?>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td colspan="4" valign="middle">
+			<td valign="middle">
 				<div class="footer" >
 					<span class="makers"><b><center>Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan</center></b></span>
 				</div>

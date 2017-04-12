@@ -187,6 +187,9 @@
         	        <strong>Prijs</strong>
             	</td>
     	        <td class="custom_bgcollor" width="20%">
+        	        <strong>Toeslag</strong>
+            	</td>
+    	        <td class="custom_bgcollor" width="20%">
         	        <strong>TotaalPrijs</strong>
             	</td>
     	        <td class="custom_bgcollor" width="5%">
@@ -235,20 +238,23 @@
 		            </td>
     	    	    <td>
 <?PHP 
-						
+        	    	    echo ShowCash($row_cat['prijs']);   	    	    
+?>
+    	        	</td>
+    	        	<td>
+<?PHP 
 						$toeslag = null;
-        	    	    echo ShowCash($row_cat['prijs']);
         	    	    if($_SESSION['prod_grootte'][$key] == 'm')
         	    	    {
 							$toeslag = 2 * $_SESSION['prod_aantal'][$key];
-        	    	    	echo " (+ ".ShowCash($toeslag).")";
+        	    	    	echo ShowCash($toeslag);
         	    	    }
         	    	    elseif($_SESSION['prod_grootte'][$key] == 'l')
         	    	    {
 							$toeslag = 4 * $_SESSION['prod_aantal'][$key];
-        	    	    	echo " (+ ".ShowCash($toeslag).")";
+        	    	    	echo ShowCash($toeslag);
         	    	    }    	    	    
-?>
+?>    	        		
     	        	</td>
     	    	    <td>
 <?PHP 
@@ -285,7 +291,7 @@
 			}
 ?>
 			<tr>
-            	<td class="custom_bgcollor" width="75%" colspan="4" align="right">
+            	<td class="custom_bgcollor" width="75%" colspan="5" align="right">
                 	<strong>TotaalPrijs</strong>
 	            </td>
     	        <td class="custom_bgcollor" width="20%">
