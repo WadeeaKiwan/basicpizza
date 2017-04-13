@@ -1,6 +1,6 @@
 welkom!
 
-te volgen stappen:
+# te volgen stappen:
 
 1. ga in de terminal in de root map van lokale server staan (windows gebruikers right click 'git bash here')
 
@@ -17,5 +17,11 @@ te volgen stappen:
 7. nieuwe bestanden downloaden gaat via    git pull  . Doe altijd een pull voordat je begint, zodat je de meeset recente bestanden hebt
 
 uitgebreide git cheat sheet met commands staat bij Downloads
+
 git status  (kun je altijd status mee checken)
+
+# TODO's:
+
+* homepage invullen met pizza-aanbod (janita)
+
 
