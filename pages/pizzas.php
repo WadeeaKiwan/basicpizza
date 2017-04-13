@@ -1,7 +1,5 @@
-<table width="450" border="0" cellpadding="2">
-	<tr>
-		<td colspan="2" align="center" ><u><h3>Pizzas</h3></u></td>
-	</tr>
+<h3>Pizzas</h3>
+
 </table>
 
 <?PHP
@@ -159,7 +157,7 @@
 <?PHP
 		}
 ?>
-	</table>
+
 </div>
 <?PHP
 	} 
