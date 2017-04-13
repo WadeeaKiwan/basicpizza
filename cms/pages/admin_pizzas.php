@@ -21,7 +21,7 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 		if ($ii=="create")
 		{
 			mysql_query("INSERT INTO producten (`naam`, `omschrijving`, `prijs`, `categorie_categorie_id` ) 
-			VALUES ('".$_POST['prod_name']."', '".$_POST['prod_text']."', '".$_POST['prod_price']."', '".$_POST['cat_id']."')");
+			VALUES ('".Escape($_POST['prod_name'])."', '".Escape($_POST['prod_text'])."', '".$_POST['prod_price']."', '".$_POST['cat_id']."')");
 
 			echo "<span class='true_warning' ><strong>Pizza toegevoegd.</strong></span>";
 			
@@ -76,7 +76,7 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	{
 		if ($ii=="edit")
 		{		
-			mysql_query("UPDATE producten SET naam='".$_POST['prod_name']."', omschrijving='".$_POST['prod_text']."', prijs='".$_POST['prod_price']."', categorie_categorie_id='".$_POST['cat_id']."' WHERE product_id=".$product_id);
+			mysql_query("UPDATE producten SET naam='".Escape($_POST['prod_name'])."', omschrijving='".Escape($_POST['prod_text'])."', prijs='".$_POST['prod_price']."', categorie_categorie_id='".$_POST['cat_id']."' WHERE product_id=".$product_id);
 			
 			echo "<span class='true_warning' ><strong>Pizza gewijzigd.</strong></span>";
 			

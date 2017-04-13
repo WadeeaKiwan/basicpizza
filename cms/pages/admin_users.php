@@ -127,13 +127,13 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 
 				if (mysql_num_rows($rs_select_profile))
 				{
-					mysql_query("UPDATE user_profiles SET aanhef='".$_POST['aanhef']."', voornaam='".$_POST['voornaam']."', achternaam='".$_POST['achternaam']."', straat='".$_POST['straat']."', huisnummer='".$_POST['huisnummer']."', postcode='".$_POST['postcode']."', woonplaats='".$_POST['woonplaats']."', telefoonnummer='".$_POST['telefoonnummer']."' WHERE user_id=".$user_id);
+					mysql_query("UPDATE user_profiles SET aanhef='".Escape($_POST['aanhef'])."', voornaam='".Escape($_POST['voornaam'])."', achternaam='".Escape($_POST['achternaam'])."', straat='".Escape($_POST['straat'])."', huisnummer='".Escape($_POST['huisnummer'])."', postcode='".Escape($_POST['postcode'])."', woonplaats='".Escape($_POST['woonplaats'])."', telefoonnummer='".Escape($_POST['telefoonnummer'])."' WHERE user_id=".$user_id);
 
 					echo "<span class='true_warning' ><strong>Profiel gewijzigd.</strong></span>";
 				}
 				else
 				{
-					mysql_query("INSERT INTO `user_profiles` (`user_id`, `voornaam`, `achternaam`, `straat`, `huisnummer`, `postcode`, `woonplaats`, `telefoonnummer`, `aanhef`) VALUES ('".$user_id."', '".$_POST['voornaam']."', '".$_POST['achternaam']."', '".$_POST['straat']."', '".$_POST['huisnummer']."', '".$_POST['postcode']."', '".$_POST['woonplaats']."', '".$_POST['telefoonnummer']."', '".$_POST['aanhef']."')");
+					mysql_query("INSERT INTO `user_profiles` (`user_id`, `voornaam`, `achternaam`, `straat`, `huisnummer`, `postcode`, `woonplaats`, `telefoonnummer`, `aanhef`) VALUES ('".$user_id."', '".Escape($_POST['voornaam'])."', '".Escape($_POST['achternaam'])."', '".Escape($_POST['straat'])."', '".Escape($_POST['huisnummer'])."', '".Escape($_POST['postcode'])."', '".Escape($_POST['woonplaats'])."', '".Escape($_POST['telefoonnummer'])."', '".Escape($_POST['aanhef'])."')");
 
 					echo "<span class='true_warning' ><strong>Profiel toegevoegd.</strong></span>";
 				}
