@@ -1,7 +1,5 @@
 <?PHP
 
-
-
 	session_start();
 	if (!isset($_SESSION['level']))
 	{
@@ -48,55 +46,49 @@
 	<META NAME="description" CONTENT="Pizzeria">
 	<META NAME="robot" CONTENT="index,follow">
 
-	<title>Pizzeria</title>
+	<title>Pizzeria Basic Pizza</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css" madia="screen" />
 </head>
-<body>
+<body background="img\bg.png">
 <div align="center">
-	<table width="900" border="0" cellspacing="0">
+	<table width="850" border="0" cellspacing="0">
 		<tr>
-			<td colspan="4" height="70" valign="middle" align="center">
-				<img src="img/logo-pizzeria.png" width="250"  alt="Pizzeria">
+			<td height="70" valign="middle" align="center">
+				<img src="img/basicpizzalogo.png" width="800" height="80" alt="Pizzeria Basic Pizza">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4" >
+			<td>
 				<hr width="100%">
 			</td>
 		</tr>
 		<tr>
-			<td width="250" >
-				&nbsp;
-			</td>
-					<td align="left" width="200" >
-						<a href='?p=pizzas'>Pizzas</a>
-						<a href='?p=winkelmand'>Winkelmand</a>
-					</td>
-					<td align="right" width="200" >	
+			<td align="center"  >
+				<a href='?p=pizzas'><img src="img/b_pizza.png" alt="Kies uw pizza's"></a>&nbsp;&nbsp;
+				<a href='?p=winkelmand'><img src="img/b_winkelmand.png" alt="Kies uw pizza's"></a>&nbsp;&nbsp;	
 <?PHP
-						if (isset($_SESSION['loggedin']))
-						{
-							echo "&nbsp;&nbsp;<a href='?p=profile'>Pofiel</a>";
-							echo "&nbsp;&nbsp;<a href='?p=logout'>Uitloggen</a>";
-						}
-						else
-						{
-							echo "&nbsp;&nbsp;<a href='?p=register'>Registreren</a>";
-							echo "&nbsp;&nbsp;<a href='?p=login'>Inloggen</a>";
-						}
+					if (isset($_SESSION['loggedin']))
+					{
+						echo "<a href='?p=bestellingen'><img src='img/b_bestellingen.jpg' alt='Bestellingen'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=profile'><img src='img/b_profiel.png' alt='Profiel'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=logout'><img src='img/b_uitloggen.png' alt='Uitloggen'></a>&nbsp;&nbsp;";
+					}
+					else
+					{
+						echo "<a href='?p=register'><img src='img/b_registreren.png' alt='Registreren'></a>&nbsp;&nbsp;";
+						echo "<a href='?p=login'><img src='img/b_inloggen.png' alt='Inloggen'></a>&nbsp;&nbsp;";
+					}
 ?>
-					</td>
-			<td width="250" >
-				&nbsp;
+				<a href='?p=contact'><img src="img/b_contact.png" alt="Contact"></a>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">
+			<td>
 				<hr width="100%">
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4" height="300" valign="top">
+			<td height="300" valign="top">
 				<div align="center">
 					<br>
 					<?PHP
@@ -124,17 +116,25 @@
 					{
 						include 'pages/winkelmand.php';
 					}
+					elseif($p == "contact")
+					{
+						include 'pages/contact.php';
+					}
+					elseif($p == "bestellingen")
+					{
+						include 'pages/bestellingen.php';
+					}
 					?>
 				</div>
 			</td>
 		</tr>
 		<tr>
-			<td colspan="4">&nbsp;</td>
+			<td>&nbsp;</td>
 		</tr>
 		<tr>
-			<td colspan="4" valign="middle">
-				<div align="center">
-					<br><br><span class="makers">Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan </span>
+			<td valign="middle">
+				<div class="footer" >
+					<span class="makers"><b><center>Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan</center></b></span>
 				</div>
 			</td>
 		</tr>
