@@ -75,7 +75,7 @@
 						'".$row_order['order_id']."',
 						'".$_SESSION['product_id'][$key]."',
 						'".$_SESSION['user_id']."',
-						'".$_SESSION['prod_aantal'][$key]."',
+						'".Escape($_SESSION['prod_aantal'][$key])."',
 						'".$_SESSION['prod_grootte'][$key]."'
 					)");
 				}

@@ -75,6 +75,14 @@
 		return $nwe_datum;
 	}
 	
+	function Escape($waarde)
+	{
+		$waarde= str_replace("'", "\'", $waarde);
+		$waarde= str_replace('"' , '\"', $waarde);
+
+		return $waarde;
+	}
+	
 	
 
 ?>

@@ -77,49 +77,51 @@
 				<li><a href='?p=contact'><img src="img/b_contact.png" alt="Contact"></a></li>
 			</ul>
 		</nav>
+
+	</header>
 		
-		<main>
-			<table>
-				<tr>
-					<td>
-						<?PHP
-						if($p == "login")
-						{
-							include 'login/login.php';
-						}
-						elseif($p == "logout")
-						{
-							include 'login/logout.php';
-						}
-						elseif($p == "register")
-						{
-							include 'login/register.php';
-						}
-						elseif($p == "profile")
-						{
-							include 'login/profile.php';
-						}
-						elseif($p == "pizzas" or $p == "")
-						{
-							include 'pages/pizzas.php';
-						}
-						elseif($p == "winkelmand")
-						{
-							include 'pages/winkelmand.php';
-						}
-						elseif($p == "contact")
-						{
-							include 'pages/contact.php';
-						}
-						elseif($p == "bestellingen")
-						{
-							include 'pages/bestellingen.php';
-						}
-						?>
-					</td>
-				</tr>
-			</table>
-		</main>
+	<main>
+		<table>
+			<tr>
+				<td>
+					<?PHP
+					if($p == "login")
+					{
+						include 'login/login.php';
+					}
+					elseif($p == "logout")
+					{
+						include 'login/logout.php';
+					}
+					elseif($p == "register")
+					{
+						include 'login/register.php';
+					}
+					elseif($p == "profile")
+					{
+						include 'login/profile.php';
+					}
+					elseif($p == "pizzas" or $p == "")
+					{
+						include 'pages/pizzas.php';
+					}
+					elseif($p == "winkelmand")
+					{
+						include 'pages/winkelmand.php';
+					}
+					elseif($p == "contact")
+					{
+						include 'pages/contact.php';
+					}
+					elseif($p == "bestellingen")
+					{
+						include 'pages/bestellingen.php';
+					}
+					?>
+				</td>
+			</tr>
+		</table>
+	</main>
 
 	<footer>
 		<span class="makers">Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan</span>
