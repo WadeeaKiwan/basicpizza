@@ -1,4 +1,3 @@
 .DS_Store
-db/connect.php
-/db/
+db/
 errorcode.php
