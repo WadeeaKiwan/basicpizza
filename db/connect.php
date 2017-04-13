@@ -2,8 +2,8 @@
 
 	$mysql_host="localhost";
 	$mysql_user="root";
-	$mysql_pwd="";
-	$mysql_db="basicpizza";
+	$mysql_pwd="qwerty";
+	$mysql_db="seniorenappartement_apeldoorn_nl_pizzeria";
 	$mysql_port="3306";
 	
 #	$mysql_host="seniorenappartement-apeldoorn.nl.mysql";

@@ -1,5 +1,5 @@
 <?PHP
-	if (isset($_SESSION['loggedin']) AND $_SESSION['loggedin']==1)
+	if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	{
 ?>
 <table width="450" border="0" cellpadding="2">
@@ -24,15 +24,15 @@
 #####################################################################################################################################		
 		if ($i=="view_bestelling")
 		{
-			
-			$sql_select_user= mysql_query("SELECT * FROM `users` WHERE user_id='".$user_id."'");
-			$row_user= mysql_fetch_array($sql_select_user);
-
-			$sql_select_profile= mysql_query("SELECT * FROM `user_profiles` WHERE user_id='".$user_id."'");
-			$row_profile= mysql_fetch_array($sql_select_profile);
-			
 			$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_id= '".$order_id."' ");
 			$row_order= mysql_fetch_array($sql_select_order);
+			
+			$sql_select_user= mysql_query("SELECT * FROM `users` WHERE user_id='".$row_order['users_user_id']."'");
+			$row_user= mysql_fetch_array($sql_select_user);
+
+			$sql_select_profile= mysql_query("SELECT * FROM `user_profiles` WHERE user_id='".$row_order['users_user_id']."'");
+			$row_profile= mysql_fetch_array($sql_select_profile);
+			
 ?>				
 	<table width="350" border="1" cellspacing="0" align="center">
 		<tr>
