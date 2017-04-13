@@ -20,7 +20,7 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	{
 		if ($ii=="create")
 		{
-			mysql_query("INSERT INTO categorie (`categorie`) VALUES ('".$_POST['cat_name']."')");
+			mysql_query("INSERT INTO categorie (`categorie`) VALUES ('".Escape($_POST['cat_name'])."')");
 
 			echo "<span class='true_warning' ><strong>Categorie toegevoegd.</strong></span>";
 			
@@ -53,7 +53,7 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	{
 		if ($ii=="edit")
 		{
-			mysql_query("UPDATE categorie SET categorie='".$_POST['cat_name']."' WHERE categorie_id=".$categorie_id);
+			mysql_query("UPDATE categorie SET categorie='".Escape($_POST['cat_name'])."' WHERE categorie_id=".$categorie_id);
 			
 			echo "<span class='true_warning' ><strong>Categorie gewijzigd.</strong></span>";
 			
