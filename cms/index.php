@@ -56,10 +56,9 @@
 <?PHP
 	if ($_SESSION['level']>=5)
 	{
-		#Uitloggen na 10 min.
 		$nu= date('U');
 		$verschil= $nu - $_SESSION['last_act'];
-		if ($verschil > 6000)
+		if ($verschil > 3600)
 		{
 			$_SESSION['loggedin']=0;
 			session_destroy();	
