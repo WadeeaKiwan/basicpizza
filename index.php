@@ -125,7 +125,5 @@
 		<span class="makers">Design &amp; Coding by Janita Top, Frank Pons, Geert Kruit, Peter Verschuur, Wadeea Kiwan</span>
 	</footer>
 
-
-
 </body>
 </html>

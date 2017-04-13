@@ -75,6 +75,35 @@ a:visited { color: #fb0f4e; text-decoration: underline; font-family: Verdana; fo
 
 
 
+
+/*div.footer {
+    position: fixed;
+    bottom: 0;
+    right: 25%;
+    width: 50%;
+    border: 1px solid #000044;
+	background-color: #eeeeee;
+}
+
+
+div.header {
+    position: fixed;
+    top: 0;
+    right: 25%;
+    width: 50%;
+	height: 140px;
+	background-color: #eeeeee;
+    /*border: 1px solid #000044;*/
+}
+
+/*div.spacer {
+    position: static;
+    top:0;
+	width: 100%;
+	height: 130px;
+}*/
+
+
 /* bgcolor="#ffeb9c" table */ 
 /* bgcolor="#ffc7ce" red */
 /* bgcolor="#c6efce" green */
