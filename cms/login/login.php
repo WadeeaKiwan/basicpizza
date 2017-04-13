@@ -1,4 +1,6 @@
 <?PHP
+/*error_reporting(E_ALL);
+ini_set("display_errors", On);*/
 
 	include 'jscripts/checkform/admin_login_checkform.js';
 	

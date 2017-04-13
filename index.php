@@ -50,7 +50,7 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css" madia="screen" />
 </head>
 <body background="img\bg.png">
-<div align="center">
+<div class="header" align="center">
 	<table width="850" border="0" cellspacing="0">
 		<tr>
 			<td height="70" valign="middle" align="center">
@@ -87,6 +87,16 @@
 				<hr width="100%">
 			</td>
 		</tr>
+	</table>
+</div>	
+
+
+		
+<div align="center">
+	<table width="850" border="0" cellspacing="0">			
+		
+		
+		
 		<tr>
 			<td height="300" valign="top">
 				<div align="center">

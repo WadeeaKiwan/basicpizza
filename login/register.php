@@ -34,37 +34,38 @@ include 'jscripts/checkform/users_checkform.js';
 					'".md5($_POST['pass'])."',
 					'1')
 				");
-			}
 			
-			$sql_select_user= mysql_query("SELECT user_id FROM `users` WHERE user_login='".$_POST['email']."'");
-			$row_user= mysql_fetch_array($sql_select_user);
+				$sql_select_user= mysql_query("SELECT user_id FROM `users` WHERE user_login='".$_POST['email']."'");
+				$row_user= mysql_fetch_array($sql_select_user);
 			
 		
-			mysql_query("INSERT INTO `user_profiles` (
-				`user_id`, 
-				`voornaam`, 
-				`achternaam`, 
-				`straat`, 
-				`huisnummer`, 
-				`postcode`, 
-				`woonplaats`, 
-				`telefoonnummer`, 
-				`aanhef`
-			)
-			VALUES (
-				'".$row_user['user_id']."', 
-				'".$_POST['voornaam']."', 
-				'".$_POST['achternaam']."', 
-				'".$_POST['straat']."', 
-				'".$_POST['huisnummer']."', 
-				'".$_POST['postcode']."', 
-				'".$_POST['woonplaats']."', 
-				'".$_POST['telefoonnummer']."', 
-				'".$_POST['aanhef']."')
-			");
+				mysql_query("INSERT INTO `user_profiles` (
+					`user_id`, 
+					`voornaam`, 
+					`achternaam`, 
+					`straat`, 
+					`huisnummer`, 
+					`postcode`, 
+					`woonplaats`, 
+					`telefoonnummer`, 
+					`aanhef`
+				)
+				VALUES (
+					'".$row_user['user_id']."', 
+					'".$_POST['voornaam']."', 
+					'".$_POST['achternaam']."', 
+					'".$_POST['straat']."', 
+					'".$_POST['huisnummer']."', 
+					'".$_POST['postcode']."', 
+					'".$_POST['woonplaats']."', 
+					'".$_POST['telefoonnummer']."', 
+					'".$_POST['aanhef']."')
+				");
 
-			echo "<span class='true_warning' ><strong>Profiel toegevoegd.</strong></span>";
-			echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
+				echo "<span class='true_warning' ><strong>Profiel toegevoegd.</strong></span>";
+				echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
+			
+			}
 		}
 #####################################################################################################################################
 		else
