@@ -1,11 +1,10 @@
 /* BASE */
 body { 
-	background-color: #ffffff; 
 	background: #fff url('../img/bg.png') 0 0 repeat;
 	color: #000000; 
 	text-decoration: none; 
 	font-family: Verdana; 
-	font-size: 11px; 
+	font-size: 100%; 
 }
 header{
 	background: #fff url('../img/basicpizzalogo.png') top center no-repeat;
@@ -20,15 +19,40 @@ header,main{
 
 main{
 	min-height: 5em;
+	background: #fff;
+	margin-top: -1em;
 }
 
 nav{
-	width:800px;
+	width:100%;
+	min-height: 2em;
+	margin-top: 2.5em;
+	background: olivedrab;
+	position: relative;
+}
+nav ul{
+	width:100%;
 	margin:0 auto;
+	padding-left: 0;
+
 }
 nav ul li{
 	display: inline-block;
 	list-style: none;
+	margin-right: 1em;
+	min-height: 2.1em;
+	width: 100%;
+	position: relative;
+}
+
+nav a{
+	text-decoration: none;
+	color:white;	
+	padding: .4em .6em;
+	display: inline-block;
+}
+nav a:hover{
+	text-decoration: underline;
 }
 
 table{
@@ -37,19 +61,101 @@ table{
 	border: none;
 	margin:0 auto;
 }
-
-footer {
-	width:800px;
-	height: 50px;
-	margin: 0 auto;
-	text-align: center;
+.pizzas{
+	clear: both;
 }
 
-a:link { color: #fb0f4e; text-decoration: underline; font-family: Verdana; font-size: 11px; }
-a:visited { color: #fb0f4e; text-decoration: underline; font-family: Verdana; font-size: 11px; }
+.pizzas section{
+	width:90%;
+	max-width: 275px;
+	min-height: 18em;
+	padding: 1em;
+	margin-right: 1em;
+	margin-bottom: 1em;
+	border: 1px solid lightgray;
+	float: left;
+	position: relative;
+}
+
+.pizzas section img{
+	width:120px;
+	padding-left: 25%;
+}
+.pizzas section p{
+	display: inline-block;
+	float: left;
+	width: 75%;
+	margin-top: 0;
+}
+
+.pizzas section span.prijs{ 
+	display: inline-block;
+	float: right;
+	width: 20%;
+}
+
+.pizzas section a.bestel{
+	display: block;
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	width: 5em;
+	padding: .3em .6em .4em .6em;
+	border-radius: 6px;
+	background: olivedrab;
+	color: white;
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+}
+.pizzas section a.bestel:hover{
+	background: tomato;
+}
+
+/* mediaqueries */
+
+@media (min-width: 600px) {
+	nav ul{
+		width: 80%;
+		text-align: center;
+	}
+	nav ul li{
+		width:auto;
+	}
+	.pizzas section{
+		width:48%;
+	}
+	.pizzas section:nth-child(2n+2){
+		margin-right: 0;
+	}
+}
+@media (min-width: 1000px){
+	.pizzas section{
+		width:28.15%;
+	}
+	.pizzas section:nth-child(2n+2){
+		margin-right: 1em;
+	}
+	.pizzas section:nth-child(3n+3){
+		margin-right: 0;
+	}
+}
+
+footer {
+	background: #fff;
+	max-width: 1000px;
+	height: 50px;
+	padding-top: 2em;
+	margin: 0 auto;
+	text-align: center;
+	font-size: .8em;
+}
+
+/*a:link { color: #fb0f4e; text-decoration: underline; font-family: Verdana; font-size: 11px; }
+a:visited { color: #fb0f4e; text-decoration: underline; font-family: Verdana; font-size: 11px; }*/
 
 /* BORDERS */
-.top { border-top:thin solid; border-color:red; border-width: 1px; }
+/*.top { border-top:thin solid; border-color:red; border-width: 1px; }
 .bottom { border-bottom:thin solid; border-color:red; border-width: 1px; }
 .right { border-right:thin solid; border-color:red; border-width: 1px; }
 .left { border-left:thin solid; border-color:red; border-width: 1px; }
@@ -61,17 +167,17 @@ a:visited { color: #fb0f4e; text-decoration: underline; font-family: Verdana; fo
 	border-color: red; 
 	border-width: 1px; 
 	border-radius: 15px;
-}
+}*/
 
 
 /* TEXT */
-.makers{ background-color: #ffffff; color: #000000; text-decoration: none; font-family: Verdana; font-size: 8.5px}
+/*.makers{ background-color: #ffffff; color: #000000; text-decoration: none; font-family: Verdana; font-size: 8.5px}
 .false_warning { color: red; font-family: Verdana, Arial, Helvetica; text-decoration: none; font-size: 8pt; }
 .true_warning { color: green; font-family: Verdana, Arial, Helvetica; text-decoration: none; font-size: 8pt; }
 
 .custom_bgcollor { background-color: yellow;}
 .custom_bgcollor_green { background-color: green;}
-.custom_bgcollor_red { background-color: red;}
+.custom_bgcollor_red { background-color: red;}*/
 
 
 
@@ -93,8 +199,8 @@ div.header {
     width: 50%;
 	height: 140px;
 	background-color: #eeeeee;
-    /*border: 1px solid #000044;*/
-}
+    /*border: 1px solid #000044;
+}*/
 
 /*div.spacer {
     position: static;

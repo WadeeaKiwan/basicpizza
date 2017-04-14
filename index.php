@@ -58,23 +58,23 @@
 	<header>
 		<nav>
 			<ul>
-				<li><a href='?p=pizzas'><img src="img/b_pizza.png" alt="Kies uw pizza's"></a></li>
-				<li><a href='?p=winkelmand'><img src="img/b_winkelmand.png" alt="Kies uw pizza's"></a></li>
+				<li><a href='?p=pizzas'>Pizza's</a></li>
+				<li><a href='?p=winkelmand'>Winkelmand</a></li>
 				<?PHP
 					if (isset($_SESSION['loggedin']))
 					{
-						echo "<li><a href='?p=bestellingen'><img src='img/b_bestellingen.jpg' alt='Bestellingen'></a></li>";
-						echo "<li><a href='?p=profile'><img src='img/b_profiel.png' alt='Profiel'></a></li>";
-						echo "<li><a href='?p=logout'><img src='img/b_uitloggen.png' alt='Uitloggen'></a></li>";
+						echo "<li><a href='?p=bestellingen'>Bestellingen</a></li>";
+						echo "<li><a href='?p=profile'>Profiel</a></li>";
+						echo "<li><a href='?p=logout'>Uitloggen</a></li>";
 					}
 					else
 					{
-						echo "<li><a href='?p=register'><img src='img/b_registreren.png' alt='Registreren'></a></li>";
-						echo "<li><a href='?p=login'><img src='img/b_inloggen.png' alt='Inloggen'></a></li>";
+						echo "<li><a href='?p=register'>Registreren</a></li>";
+						echo "<li><a href='?p=login'>Inloggen</a></li>";
 					}
 				?>
 
-				<li><a href='?p=contact'><img src="img/b_contact.png" alt="Contact"></a></li>
+				<li><a href='?p=contact'>Contact</a></li>
 			</ul>
 		</nav>
 

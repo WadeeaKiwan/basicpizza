@@ -1,7 +1,5 @@
 <h3>Pizzas</h3>
 
-</table>
-
 <?PHP
 
 	if (!isset($_GET['product_id']))
@@ -115,50 +113,36 @@
 	else
 	{
 ?>
-<div align="center">
-    <table border="1" cellspacing="0" width="700">
-        <tr>
-            <td class="custom_bgcollor" width="150px">
-                <strong>Afbeelding</strong>
-            </td>
-			<td class="custom_bgcollor" width="300px">
-                <strong>Naam</strong>
-            </td>
-            <td class="custom_bgcollor" width="120px">
-                <strong>Prijs</strong>
-            </td>
-            <td class="custom_bgcollor" width="140px">
-                <strong>Bestel</strong>
-            </td>
-        </tr>
-<?PHP
+
+<div class="pizzas">
+    
+    
+	<?PHP
 		$sql_select_prod= mysql_query("SELECT * FROM `producten` ORDER BY naam ASC");
 		WHILE ($row_prod= mysql_fetch_array($sql_select_prod))
 		{
-?>
-        <tr>
-            <td>
-                <?PHP echo '<img src="img/prd/'.$row_prod['product_id'].'.png" width="120" height="120">' ?>
-            </td>
-			
-			
-			<td>
-                <?PHP echo '<b>'.$row_prod['naam'].'</b><br>'.$row_prod['omschrijving'] 
-				
-				?>
-            </td>
-            <td>
-                <?PHP echo ShowCash($row_prod['prijs'])?>
-            </td>
-            <td align="center">
-                <a href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
-            </td>
-        </tr>
+	?>
+       <section>
+
+            <?PHP echo '<img src="img/prd/'.$row_prod['product_id'].'.png">'; ?>
+		
+            <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
+			?>
+        	<span class="prijs">
+            	<?PHP echo ShowCash($row_prod['prijs']);?>
+            </span>
+        
+            <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
+            
+        </section>
+        
 <?PHP
 		}
 ?>
+	
 
 </div>
+
 <?PHP
 	} 
 ?>	
