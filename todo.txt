@@ -1,0 +1,15 @@
+TO DO
+
+bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+
+je kunt de winkelmand vullen zonder dat je bent ingelogd. als je dan gaat registreren is je winkelmand weer leeg
+
+als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
+
+redirect ipv refresh ivm browser meldingen?
+
+styling front-end pagina's (!== CMS) (janita)
+
+checken of het overeenkomt met wireframes
+
+documentatie?
