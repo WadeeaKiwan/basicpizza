@@ -1,24 +1,38 @@
 TO DO
 
-bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
-
-je kunt de winkelmand vullen zonder dat je bent ingelogd. als je dan gaat registreren is je winkelmand weer leeg
-
-als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
-
-redirect ipv refresh ivm browser meldingen?
-
-styling front-end pagina's (!== CMS) (janita)
-
-checken of het overeenkomt met wireframes
-
-documentatie?
-
-meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
-
-Het is ook mogelijk om 0 pizza's te bestellen. Er opent zich dan de pagina met de melding "uw bestelling is toegevoegd aan de winkelmand". Lijkt met niet goed.
-
-Bij de pagina "inloggen" staat geen knop om naar de pagina toe te gaan om je te registeren als je nog geen inlognaam hebt. Is deze knop nog wenselijk?
 
 
-De klant heeft verder de mogelijkheid om een aantal te selecteren. Een bestelling van meer dan 99 pizza’s van hetzelfde type wordt echter niet geaccepteerd door het bedrijf.  
+
+
+
+
+[1] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+
+[2] je kunt de winkelmand vullen zonder dat je bent ingelogd. als je dan gaat registreren is je winkelmand weer leeg
+
+[3] als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
+
+[4] redirect ipv refresh ivm browser meldingen?
+
+[5] styling front-end pagina's (!== CMS) [Janita]
+
+[6] checken of het overeenkomt met wireframes
+
+[7] documentatie?
+
+[8] De klant heeft verder de mogelijkheid om een aantal te selecteren. Een bestelling van meer dan 99 pizza’s van hetzelfde type wordt echter niet geaccepteerd door het bedrijf.  
+
+[9] meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
+
+[10] Het is ook mogelijk om 0 pizza's te bestellen. Er opent zich dan de pagina met de melding "uw bestelling is toegevoegd aan de winkelmand". Lijkt met niet goed.
+
+[11] Bij de pagina "inloggen" staat geen knop om naar de pagina toe te gaan om je te registeren als je nog geen inlognaam hebt. Is deze knop nog wenselijk?
+
+[12] Datum tijd van bestelling limiteren tot vandaag
+
+[13] validatie op profiel pagina en registratie pagina's [Geert]
+
+#[14][done] Na bestelling aantal standaard vullen met een 1
+
+#[15][done] Registratieformulier telefoonnummer niet opgeslagen 
+	-> database aanpassing varchar(15 ipv) int(10)

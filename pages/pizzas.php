@@ -79,7 +79,7 @@
 	    <td><?PHP echo $row_prod['naam']?></td>
         <td><?PHP echo ShowCash($row_prod['prijs'])?></td>
         <td>
-        	<input name="prod_aantal" type="text" id="prod_aantal" size="3" maxlength="2" />
+        	<input name="prod_aantal" type="text" id="prod_aantal" size="3" maxlength="2" value="1"/>
 	    </td>
 		<td>
 			<select name="prod_grootte" id="prod_grootte">
