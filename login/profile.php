@@ -49,21 +49,8 @@
 				$rs_select_profile= mysql_query("SELECT * FROM user_profiles WHERE user_id=".$user_id);
 				$row_profile= mysql_fetch_array($rs_select_profile);
 ?>
-	<table width="35%" border="0" align="center">
-		<tr>
-			<td align="center"><u><h3>Persoonlijk profiel bewerken van: <?PHP echo $naam?>.</h3></u></td>
-		</tr>
-		<tr>
-			<td align="center" valign="top">
-				<a href="?p=<?PHP echo $p?>">Terug.</a>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2"><hr width="100%"></hr></td>
-		</tr>
-	</table>
-
-	</br>
+	<h1>Persoonlijk profiel bewerken van: <?PHP echo $naam?>.</h1>
+	<a href="?p=<?PHP echo $p?>">Terug.</a>
 
 	<table>
 		<tr>
@@ -219,9 +206,8 @@
 		}
 		else
 		{
-			echo "&nbsp;&nbsp;<a href='?p=".$p."&i=change_profile'>Pofiel wijzigen</a>";
-			echo "<br><br>";
-			echo "&nbsp;&nbsp;<a href='?p=".$p."&i=change_pass'>Wachtwoord wijzigen</a>";
+			echo "<a class='wijzigen' href='?p=".$p."&i=change_profile'>Pofiel wijzigen</a>";
+			echo "<a class='wijzigen' href='?p=".$p."&i=change_pass'>Wachtwoord wijzigen</a>";
 		}
 	}
 	else

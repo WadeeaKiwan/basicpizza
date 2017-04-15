@@ -1,8 +1,4 @@
-<table width="450" border="0" cellpadding="2">
-	<tr>
-		<td colspan="2" align="center" ><u><h3>Bestelling</h3></u></td>
-	</tr>
-</table>
+<h1>Bestellingen</h1>
 
 <?PHP
 	if (isset($_SESSION['loggedin']) AND $_SESSION['loggedin']==1)
@@ -33,34 +29,30 @@
 			$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_id= '".$order_id."' ");
 			$row_order= mysql_fetch_array($sql_select_order);
 ?>				
-	<table width="350" border="1" cellspacing="0" align="center">
+	<table>
 		<tr>
-           	<td class="custom_bgcollor">
-               	<strong>Klant gegevens</strong>
-	        </td>
+           	<th>Klant gegevens</th>
 	    <tr>
 		<tr>
 			<td>
-<?PHP
+			<?PHP
 				echo $row_profile['voornaam']."".$row_profile['achternaam']."<br>";
 				echo $row_profile['straat']."".$row_profile['huisnummer']."<br>";
 				echo $row_profile['postcode']."".$row_profile['woonplaats']."<br>";
 				echo $row_profile['telefoonnummer']."<br>";
-?>
+			?>
 			</td>
 		</tr>
 	</table>
-	<br><br>
-	<table width="350" border="1" cellspacing="0" align="center">
+
+	<table>
 		<tr>
-           	<td class="custom_bgcollor" colspan='2'>
-               	<strong>Betaal gegevens</strong>
-	        </td>
+           	<th>Betaal gegevens</th>
 	    <tr>
 		<tr>
-			<td align="left">Betaling</td>
-			<td align="left">
-<?PHP 
+			<td>Betaling</td>
+			<td>
+			<?PHP 
 				if($row_order['betaling'] == 'c' ) 
 				{
 				echo "Contant";
@@ -69,12 +61,12 @@
 				{
 				echo "Pin";
 				}
-?>
+			?>
 			</td>
 		</tr>
 		<tr>
-			<td align="left">Type bezorging</td>
-			<td align="left">
+			<td>Type bezorging</td>
+			<td>
 <?PHP 
 				if($row_order['type_bezorging'] == 'a' ) 
 				{
@@ -88,31 +80,19 @@
 			</td>
 		</tr>
 		<tr>
-			<td align="left">Levermoment</td>
-			<td align="left"><?PHP echo $row_order['levermoment'] ?></td>
+			<td>Levermoment</td>
+			<td><?PHP echo $row_order['levermoment'] ?></td>
 		</tr>
 	</table>
-	<br><br>
-    <table border="1" cellspacing="0" width="650">
+
+    <table>
        	<tr>
-           	<td class="custom_bgcollor" width="40%">
-               	<strong>Naam</strong>
-	        </td>
-	        <td class="custom_bgcollor" width="5%">
-				<strong>Aantal</strong>
-        	</td>
-            <td class="custom_bgcollor" width="10%">
-               	<strong>Grootte</strong>
- 	       	</td>
-    	    <td class="custom_bgcollor" width="20%">
-        	    <strong>Prijs</strong>
-            </td>
-    	    <td class="custom_bgcollor" width="20%">
-            	<strong>Toeslag</strong>
-    		</td>
-    		<td class="custom_bgcollor" width="20%">
-    			<strong>TotaalPrijs</strong>
-            </td>
+           	<th>Naam</th>
+	        <th>Aantal</th>
+            <th>Grootte</th>
+    	    <th>Prijs</th>
+    	    <th>Toeslag</th>
+    		<th>TotaalPrijs</th>
 		</tr>
 <?PHP
 			$totaal_prijs = '0';
@@ -180,12 +160,8 @@
 			}
 ?>
 		<tr>
-            <td class="custom_bgcollor" width="75%" colspan="5" align="right">
-                <strong>TotaalPrijs</strong>
-	        </td>
-    	    <td class="custom_bgcollor" width="20%">
-        	    <strong><?PHP echo ShowCash($totaal_prijs);  ?></strong>
-            </td>
+            <th>TotaalPrijs</th>
+    	    <td><?PHP echo ShowCash($totaal_prijs);  ?></td>
 		</tr>
 	</table>					
 <?PHP
@@ -194,15 +170,10 @@
 		else
 		{
 ?>
-<div align="center">
-    <table border="1" cellspacing="0" width="450">
+    <table>
         <tr>
-            <td class="custom_bgcollor">
-                <strong>Bestelling</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>Status</strong>
-            </td>
+            <th>Bestelling</th>
+            <th>Status</th>
         </tr>
 <?PHP
 		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE users_user_id= ".$user_id." ORDER BY bestelmoment ASC");
@@ -210,10 +181,10 @@
 		{
 ?>
 		<tr onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
-            <td align="center">
+            <td>
                 <?PHP echo $row_order['bestelmoment'] ?>
             </td>
-            <td align="center">
+            <td>
                 <?PHP echo $row_order['order_status'] ?>
             </td>
         </tr>
@@ -221,7 +192,7 @@
 		}
 ?>
 	</table>
-</div>
+
 <?PHP
 
 		}
@@ -229,6 +200,6 @@
 #####################################################################################################################################		
 	else
 	{
-		echo "<span class='false_warning' ><strong>U bent niet ingelogd.</strong></span>";
+		echo "<span class='false_warning' >U bent niet ingelogd.</span>";
 	}
 ?>

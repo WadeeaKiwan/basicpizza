@@ -1,8 +1,4 @@
-<table width="450" border="0" cellpadding="2">
-	<tr>
-		<td colspan="2" align="center" ><u><h3>Winkelmand</h3></u></td>
-	</tr>
-</table>
+<h1>Winkelmand</h1>
 
 <?PHP
 	if (!isset($_GET['array_row']))
@@ -84,12 +80,12 @@
   				unset($_SESSION['prod_aantal']);
   				unset($_SESSION['prod_grootte']); 
 				
-				echo "<span class='true_warning' ><strong>U heeft betaald.</strong></span>";
-				echo '<META http-equiv="refresh" content="2;URL=?p=">';
+				echo "<span class='true_warning' >U heeft betaald.</span>";
+				//echo '<META http-equiv="refresh" content="2;URL=?p=">';
 			}
 			else
 			{
-				echo "BESTEL GEGEVENS<br>";
+				echo "<h2>Bestelgegevens</h2>";
 				
 				$sql_select_user= mysql_query("SELECT * FROM `users` WHERE user_id='".$user_id."'");
 				$row_user= mysql_fetch_array($sql_select_user);
@@ -98,68 +94,54 @@
 				$row_profile= mysql_fetch_array($sql_select_profile);
 ?>				
 				<form name="betalen" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=betalen">
-					<table width="350" border="0" align="center">
-						<tr>
-							<td>
-<?PHP
-								echo $row_profile['voornaam']."".$row_profile['achternaam']."<br>";
-								echo $row_profile['straat']."".$row_profile['huisnummer']."<br>";
-								echo $row_profile['postcode']."".$row_profile['woonplaats']."<br>";
-								echo $row_profile['telefoonnummer']."<br>";
-?>
-							</td>
-							<td>
-								<a href='?p=profile&i=change_profile'>Adres wijzigen</a>
-							</td>
-						</tr>
-						<tr>
-							<td align="left">Betaling</td>
-							<td align="left">
-								<select name="betaling" id="betaling">
-									<option value='c'>Contant</option>
-									<option value='p'>Pin</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td align="left">Type bezorging</td>
-							<td align="left">
-								<select name="type_bezorging" id="type_bezorging">
-									<option value='a'>Afhalen</option>
-									<option value='b'>Bezorging</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td align="left">Levermoment</td>
-							<td align="left">
-								<select name="levermoment" id="levermoment">
-									<option value='16.30'>16:30</option>
-									<option value='17.00'>17:00</option>
-									<option value='17.30'>17:30</option>
-									<option value='18.00'>18:00</option>
-									<option value='18.30'>18:30</option>
-									<option value='19.00'>19:00</option>
-									<option value='19.30'>19:30</option>
-									<option value='20.00'>20:00</option>
-									<option value='20.30'>20:30</option>
-									<option value='21.00'>21:00</option>
-									<option value='21.30'>21:30</option>
-									<option value='22.00'>22:00</option>
-								</select>
-							</td>
-						</tr>
-						<tr>
-							<td colspan="3">&nbsp;</td>
-						</tr>
-						<tr>
-							<td colspan="3">
-								<div align="center">
-								<input type="submit" name="Submit" value="Betaal" />
-								</div>
-							</td>
-						</tr>
-					</table>
+
+					<div class="adres"><div class="gegevens">
+					<?PHP
+						echo $row_profile['voornaam']."".$row_profile['achternaam']."<br>";
+						echo $row_profile['straat']."".$row_profile['huisnummer']."<br>";
+						echo $row_profile['postcode']."".$row_profile['woonplaats']."<br>";
+						echo $row_profile['telefoonnummer']."<br>";
+					?>
+					</div>
+					<a class="wijzigen" href='?p=profile&i=change_profile'>Adres wijzigen</a>
+					</div>
+					
+					<div>
+						<label for="betaling">Betaling</label>
+						<select name="betaling" id="betaling">
+							<option value='c'>Contant</option>
+							<option value='p'>Pin</option>
+						</select>
+					</div>
+					
+					<div>
+						<label for="type_bezorging">Type bezorging</label>	
+						<select name="type_bezorging" id="type_bezorging">
+							<option value='a'>Afhalen</option>
+							<option value='b'>Bezorging</option>
+						</select>
+					</div>
+					
+					<div>
+						<label for="levermoment">Levermoment</label>
+						<select name="levermoment" id="levermoment">
+							<option value='16.30'>16:30</option>
+							<option value='17.00'>17:00</option>
+							<option value='17.30'>17:30</option>
+							<option value='18.00'>18:00</option>
+							<option value='18.30'>18:30</option>
+							<option value='19.00'>19:00</option>
+							<option value='19.30'>19:30</option>
+							<option value='20.00'>20:00</option>
+							<option value='20.30'>20:30</option>
+							<option value='21.00'>21:00</option>
+							<option value='21.30'>21:30</option>
+							<option value='22.00'>22:00</option>
+						</select>
+					</div>
+	
+					<input type="submit" name="Submit" value="Betaal" />
+								
 				</form>
 <?PHP			
 			}
@@ -311,14 +293,9 @@
 		else
 		{
 ?>
-<div align="center">
-	<table border="0" cellspacing="0" width="450">
-		<tr>
-			<td align="center">
-				<span class='true_warning' ><strong>Winkelmand is leeg.</strong></span>
-			</td>
-		</tr>
-	</table>
+
+	<span class='true_warning' >De winkelmand is leeg.</span>
+
 </div>
 <?PHP
 		}

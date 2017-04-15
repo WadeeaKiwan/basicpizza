@@ -56,8 +56,8 @@
 <body>
 <div class="wrapper">
 	<header>
-		<h1>Basic Pizza</h1>
-		<div>Telefoon: 050-1234567</div>
+		<a href='?p=pizzas' title="Ga naar home"><h1>Basic Pizza</h1></a>
+		<div>Grote markt 66 Groningen<br/>Telefoon: 050-1234567</div>
 		<nav>
 			<ul>
 				<li><a href='?p=pizzas'>Pizza's</a></li>

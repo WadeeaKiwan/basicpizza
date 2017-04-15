@@ -20,3 +20,5 @@ Het is ook mogelijk om 0 pizza's te bestellen. Er opent zich dan de pagina met d
 
 Bij de pagina "inloggen" staat geen knop om naar de pagina toe te gaan om je te registeren als je nog geen inlognaam hebt. Is deze knop nog wenselijk?
 
+
+De klant heeft verder de mogelijkheid om een aantal te selecteren. Een bestelling van meer dan 99 pizza’s van hetzelfde type wordt echter niet geaccepteerd door het bedrijf.  

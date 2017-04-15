@@ -40,7 +40,9 @@
 				}
 			}
 				
-			echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+			echo "<span class='true_warning'>Pizza toegevoegd aan winkelmand.</span>";
+			echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
+			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
 		else
 		{
@@ -48,10 +50,12 @@
 			array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
 			array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
 				
-			echo "<span class='true_warning' ><strong>Pizza toegevoegd aan winkelmand.</strong></span>";
+			echo "<p class='true_warning' >Pizza toegevoegd aan winkelmand.</p>";
+			echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
+			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
 		
-		echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
+		//echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 
 	}
 #####################################################################################################################################
