@@ -1,5 +1,3 @@
-<h3>Pizzas</h3>
-
 <?PHP
 
 	if (!isset($_GET['product_id']))
@@ -63,49 +61,34 @@
 		$row_prod= mysql_fetch_array($sql_select_prod);
 ?>
 
+<h1>Mijn bestellingen</h1>
 <form name="bestel_prod" id="bestel_prod" method="post" action="?p=<?PHP echo $p?>&i=add_to_cart&product_id=<?PHP echo $row_prod['product_id']?>">
-	<div align="center">
-    	<table border="1" cellspacing="0" width="450">
-        	<tr>
-            	<td class="custom_bgcollor" width="50%">
-                	<strong>Naam</strong>
-	            </td>
-    	        <td class="custom_bgcollor" width="20%">
-        	        <strong>Prijs</strong>
-            	</td>
-	            <td class="custom_bgcollor" width="15%">
-    	            <strong>Aantal</strong>
-        	    </td>
-            	<td class="custom_bgcollor" width="10%">
-                	<strong>Grootte</strong>
- 	           </td>
-    	        <td class="custom_bgcollor" width="10%">
-        	        <strong>Bestel</strong>
-            	</td>
-  	      </tr>
-    	    <tr>
-        	    <td>
-            	    <?PHP echo $row_prod['naam']?>
-	            </td>
-    	        <td>
-        	        <?PHP echo ShowCash($row_prod['prijs'])?>
-            	</td>
-  	          <td>
-    	        	<input name="prod_aantal" type="text" id="prod_aantal" size="3" maxlength="2" />
-        	    </td>
-					<td>
-						<select name="prod_grootte" id="prod_grootte">
-							<option value='s'>Small</option>
-							<option value='m'>Medium</option>
-							<option value='l'>Large</option>
-						</select>
-					</td>
-            	<td align="center">
-            		<input type="submit" name="Submit" value="Bestel pizza" />
-  	          </td>
-    	    </tr>
-		</table>
-	</div>
+	
+	<table>
+      <tr>
+    	<th>Naam pizza</th>
+        <th>Prijs</th>
+        <th>Aantal</th>
+    	<th>Grootte</th>
+      </tr>
+	  <tr>
+	    <td><?PHP echo $row_prod['naam']?></td>
+        <td><?PHP echo ShowCash($row_prod['prijs'])?></td>
+        <td>
+        	<input name="prod_aantal" type="text" id="prod_aantal" size="3" maxlength="2" />
+	    </td>
+		<td>
+			<select name="prod_grootte" id="prod_grootte">
+				<option value='s'>Small</option>
+				<option value='m'>Medium</option>
+				<option value='l'>Large</option>
+			</select>
+		</td>
+       </tr>
+	</table>
+
+	<input type="submit" name="Submit" value="Bestel pizza" />
+        
 </form>
 <?PHP
 	}
@@ -114,8 +97,8 @@
 	{
 ?>
 
+<h1>Onze pizza's</h1>
 <div class="pizzas">
-    
     
 	<?PHP
 		$sql_select_prod= mysql_query("SELECT * FROM `producten` ORDER BY naam ASC");
@@ -123,7 +106,7 @@
 		{
 	?>
        <section>
-
+       		
             <?PHP echo '<img src="img/prd/'.$row_prod['product_id'].'.png">'; ?>
 		
             <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
@@ -133,7 +116,7 @@
             </span>
         
             <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
-            
+           
         </section>
         
 <?PHP

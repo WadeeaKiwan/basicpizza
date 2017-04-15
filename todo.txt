@@ -13,3 +13,10 @@ styling front-end pagina's (!== CMS) (janita)
 checken of het overeenkomt met wireframes
 
 documentatie?
+
+meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
+
+Het is ook mogelijk om 0 pizza's te bestellen. Er opent zich dan de pagina met de melding "uw bestelling is toegevoegd aan de winkelmand". Lijkt met niet goed.
+
+Bij de pagina "inloggen" staat geen knop om naar de pagina toe te gaan om je te registeren als je nog geen inlognaam hebt. Is deze knop nog wenselijk?
+
