@@ -10,16 +10,20 @@
 	}
 
 #####################################################################################################################################
-	if ($i=="add_to_cart")
+if ($i=="add_to_cart" )
 	{
-		
+// controle op 0 pizzas toevoegen
+	if ($_POST['prod_aantal']!=0)
+		{
+			echo $_POST['prod_aantal'];
 		if(!isset($_SESSION['product_id']) OR !isset($_SESSION['prod_grootte']) OR !isset($_SESSION['prod_aantal']))
 		{
 			$_SESSION['product_id']=array();
 			$_SESSION['prod_grootte']=array();	
 			$_SESSION['prod_aantal']=array();
 		}
-		
+
+		{	
 		$al_in_winkelmand = '0';
 		foreach ($_SESSION['product_id'] as $key => $value)
 		{	
@@ -31,32 +35,39 @@
 			
 		if($al_in_winkelmand > '0')
 		{
-			foreach ($_SESSION['product_id'] as $key => $value)
-			{	
-				if($value == $product_id AND $_SESSION['prod_grootte'][$key] )
-				{
-					$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
-					$_SESSION['prod_aantal'][$key] = $waarde;
-				}
+			
+		foreach ($_SESSION['product_id'] as $key => $value)
+		{	
+			if($value == $product_id AND $_SESSION['prod_grootte'][$key])
+			{
+				$waarde = $_SESSION['prod_aantal'][$key] + $_POST['prod_aantal'];
+				$_SESSION['prod_aantal'][$key] = $waarde;
 			}
+		}
 				
-			echo "<span class='true_warning'>Pizza toegevoegd aan winkelmand.</span>";
+			echo "<span class='true_warning'>Pizza toegevoegd aan winkelmand.debug1</span>";
 			echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
 			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
 		else
 		{
+		
 			array_push($_SESSION['product_id'], $product_id);
 			array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
 			array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
-				
 			echo "<p class='true_warning' >Pizza toegevoegd aan winkelmand.</p>";
 			echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
 			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
-		
+		}
 		//echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
-
+		} 
+	else 
+	{
+	echo "<p class='true_warning' >GEEN Pizza toegevoegd aan winkelmand.</p>";
+	echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
+	echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
+	}
 	}
 #####################################################################################################################################
 	elseif ($i=="bestel_prod")
