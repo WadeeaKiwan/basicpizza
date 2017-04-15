@@ -15,7 +15,6 @@ if ($i=="add_to_cart" )
 // controle op 0 pizzas toevoegen
 	if ($_POST['prod_aantal']!=0)
 		{
-			echo $_POST['prod_aantal'];
 		if(!isset($_SESSION['product_id']) OR !isset($_SESSION['prod_grootte']) OR !isset($_SESSION['prod_aantal']))
 		{
 			$_SESSION['product_id']=array();
@@ -127,7 +126,9 @@ if ($i=="add_to_cart" )
             <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
 			?>
         	<span class="prijs">
-            	<?PHP echo ShowCash($row_prod['prijs']);?>
+            	<?PHP echo "S ".ShowCash($row_prod['prijs'])."<br>";?>
+				<?PHP echo "M ".ShowCash($row_prod['prijs']+2)."<br>";?>
+				<?PHP echo "L ".ShowCash($row_prod['prijs']+4)."<br>";?>
             </span>
         
             <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>

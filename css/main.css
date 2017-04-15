@@ -204,6 +204,9 @@ a.wijzigen{
 	display: inline-block;
 	float: right;
 	width: 20%;
+	font-family: Verdana; 
+	font-size: 70%; 
+	align: right;
 }
 
 .pizzas section a.bestel{

@@ -51,7 +51,7 @@
 <form name="login" action="?p=login&i=login" method="POST" onsubmit="return checkform_login('login')">
 	<table width="200" border="0" align="center">
 		<tr>
-			<td align="right">Gebruikersnaam </td>
+			<td align="right">E-Mail </td>
 			<td align="left"><input type="text" name="login"></td>
 		</tr>
 		<tr>
