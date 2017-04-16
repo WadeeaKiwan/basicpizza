@@ -26,7 +26,7 @@
     echo '	<td><a href="https://www.linkedin.com/in/peter-verschuur-611a755/"><img src="img/b_li.png" width="40" height="40"></a></td>';
 	echo '</tr>';
 	echo '<tr>';
-	echo '	<td>Wadeaa Kiwan</td>';
+	echo '	<td>Wadeea Kiwan</td>';
     echo '	<td>353819</td>';
     echo '	<td><a href="mailto:w.kiwan@st.hanze.nl">w.kiwan@st.hanze.nl</a></td>';
     echo '	<td><a href="https://www.linkedin.com/in/wadeeakiwan/"><img src="img/b_li.png" width="40" height="40"></a></td>';
