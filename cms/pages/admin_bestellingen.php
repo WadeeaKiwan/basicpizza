@@ -43,9 +43,9 @@
 		<tr>
 			<td>
 <?PHP
-				echo $row_profile['voornaam']."".$row_profile['achternaam']."<br>";
-				echo $row_profile['straat']."".$row_profile['huisnummer']."<br>";
-				echo $row_profile['postcode']."".$row_profile['woonplaats']."<br>";
+				echo $row_profile['voornaam']." ".$row_profile['achternaam']."<br>";
+				echo $row_profile['straat']."  ".$row_profile['huisnummer']."<br>";
+				echo $row_profile['postcode']." ".$row_profile['woonplaats']."<br>";
 				echo $row_profile['telefoonnummer']."<br>";
 ?>
 			</td>
