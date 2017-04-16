@@ -1,22 +1,28 @@
 TO DO
 
-#[1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+Alle dones staan onderaan
 
 [2] je kunt de winkelmand vullen zonder dat je bent ingelogd. als je dan gaat registreren is je winkelmand weer leeg
 
-[3] als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
-
 [4] redirect ipv refresh ivm browser meldingen?
 
-[5] styling front-end pagina's (!== CMS) [Janita]
+[5] styling front-end pagina's [Janita]
 
 [6] checken of het overeenkomt met wireframes
 
 [7] documentatie?
 
-[8][how to fix?] De klant heeft verder de mogelijkheid om een aantal te selecteren. 
-    Een bestelling van meer dan 99 pizza’s van hetzelfde type wordt echter niet geaccepteerd door het bedrijf. 
-    als het nummer niet meer dan 2 cijfers kan zijn dan heb je dat toch al? 
+[12] Datum tijd van bestelling limiteren tot vandaag
+
+[13] validatie op profiel pagina en registratie pagina's [Geert]
+
+[18] als ik de standaard 1 small bestel, krijg ik deze melding: "Pizza toegevoegd aan winkelmand.debug1"
+
+----
+
+#[1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+
+[3] [done] als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
 
 #[9][done] meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
 
@@ -26,13 +32,16 @@ TO DO
 
 [11] [done] Bij de pagina "inloggen" staat geen knop om naar de pagina toe te gaan om je te registeren als je nog geen inlognaam hebt. Is deze knop nog wenselijk?
 
-[12] Datum tijd van bestelling limiteren tot vandaag
-
-[13] validatie op profiel pagina en registratie pagina's [Geert]
-
 #[14][done] Na bestelling aantal standaard vullen met een 1
 
 #[15][done] Registratieformulier telefoonnummer niet opgeslagen 
 
 #[16][done] ) producten toe te voegen
 	-> database aanpassing varchar(15 ipv) int(10)
+
+[17] [done] als je bij het registreren 1 veld fout doet (wachtwoord in dit geval) wordt de pagina gerefresht en worden alle velden gewist ipv alleen die je fout deed
+ww check toegevoegd in javascript
+
+[8][done] De klant heeft verder de mogelijkheid om een aantal te selecteren. 
+    Een bestelling van meer dan 99 pizza’s van hetzelfde type wordt echter niet geaccepteerd door het bedrijf. 
+    als het nummer niet meer dan 2 cijfers kan zijn dan heb je dat toch al? 

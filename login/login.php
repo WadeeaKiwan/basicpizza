@@ -76,8 +76,8 @@
 	{
 ?>
 
-	<span class='true_warning' >U bent ingelogd als: <?PHP echo $_SESSION['user']?>.</span><
-	<meta http-equiv="Refresh" content="2;URL=?p=" />
+	<span class='true_warning' >U bent ingelogd als: <?PHP echo $_SESSION['user']?>.</span>
+	<!--<meta http-equiv="Refresh" content="2;URL=?p=" />-->
 			
 <?PHP
 	}

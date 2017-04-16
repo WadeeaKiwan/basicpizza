@@ -9,17 +9,17 @@ include 'jscripts/checkform/users_checkform.js';
 			$rs_select_user= mysql_query("SELECT user_id FROM users WHERE user_login='".$_POST['email']."'");
 			if (mysql_num_rows($rs_select_user)>0)
 			{
-				echo "<span class='false_warning' ><strong>Het E-Mail adres is al in gebruik.</strong></span>";
+				echo "<span class='false_warning' >Het E-Mail adres is al in gebruik.</span>";
 				echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 			}
 			elseif( ($_POST['email']=="") || ($_POST['pass']=="") || ($_POST['passcheck']=="") )
 			{
-				echo "<span class='false_warning' ><strong>Een van de velden is niet ingevuld.</strong></span>";
+				echo "<span class='false_warning' >Een van de velden is niet ingevuld.</span>";
 				echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 			}
 			elseif (md5($_POST['pass'])!=md5($_POST['passcheck']))
 			{
-				echo "<span class='false_warning' ><strong>De wachtwoorden komen niet overeen.</strong></span>";
+				echo "<span class='false_warning' >De wachtwoorden komen niet overeen.</span>";
 				echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 			}
 			else
@@ -62,8 +62,8 @@ include 'jscripts/checkform/users_checkform.js';
 					'".$_POST['aanhef']."')
 				");
 
-				echo "<span class='true_warning' ><strong>Profiel toegevoegd.</strong></span>";
-				echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
+				echo "<span class='true_warning' >Profiel toegevoegd.</span>";
+				//echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 			
 			}
 		}

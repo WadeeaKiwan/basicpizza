@@ -69,6 +69,12 @@ function checkform_register ( form ){
 		return false ;
 		exit;
 	}
+	if (register.pass.value !== register.passcheck.value) {
+		alert( "Het controlewachtwoord en het wachtwoord zijn niet gelijk." );
+		register.passcheck.focus();
+		return false ;
+		exit;
+	}
 	return true ;
 }
 

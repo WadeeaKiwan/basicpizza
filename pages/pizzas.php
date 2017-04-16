@@ -45,7 +45,7 @@ if ($i=="add_to_cart" )
 		}
 				
 			echo "<span class='true_warning'>Pizza toegevoegd aan winkelmand.debug1</span>";
-			echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
+			echo "<a class='button' href='?p=winkelmand'>Ga naar winkelmand</a>";
 			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
 		else
@@ -55,7 +55,7 @@ if ($i=="add_to_cart" )
 			array_push($_SESSION['prod_aantal'], $_POST['prod_aantal']);
 			array_push($_SESSION['prod_grootte'], $_POST['prod_grootte']);
 			echo "<p class='true_warning' >Pizza toegevoegd aan winkelmand.</p>";
-			echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
+			echo "<a class='button' href='?p=winkelmand'>Ga naar winkelmand</a>";
 			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
 		}
@@ -126,9 +126,9 @@ if ($i=="add_to_cart" )
             <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
 			?>
         	<span class="prijs">
-            	<?PHP echo "S ".ShowCash($row_prod['prijs'])."<br>";?>
-				<?PHP echo "M ".ShowCash($row_prod['prijs']+2)."<br>";?>
-				<?PHP echo "L ".ShowCash($row_prod['prijs']+4)."<br>";?>
+            	<?PHP echo "<span>S</span> ".ShowCash($row_prod['prijs'])."<br>";?>
+				<?PHP echo "<span>M</span> ".ShowCash($row_prod['prijs']+2)."<br>";?>
+				<?PHP echo "<span>L</span> ".ShowCash($row_prod['prijs']+4)."<br>";?>
             </span>
         
             <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
