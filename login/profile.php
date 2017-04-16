@@ -50,86 +50,70 @@
 				$row_profile= mysql_fetch_array($rs_select_profile);
 ?>
 	<h1>Persoonlijk profiel bewerken van: <?PHP echo $naam?>.</h1>
-	<a href="?p=<?PHP echo $p?>">Terug.</a>
+	<a href="?p=<?PHP echo $p?>">Terug</a>
 
-	<table>
-		<tr>
-			<td>
-				<form name="update_profile" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=update_profile&user_id=<?PHP echo $user_id?>" onsubmit="return checkform_update_profile('update_profile')">
-					<table width="100%" border="0" align="center">
-						<tr>
-							<td align="right" width="5%">*</td>
-							<td align="left" width="35%">Aanhef</td>
-							<td align="left" width="60%">
-								<p>
-								<?PHP
-								if ($row_profile['aanhef']=="Mevr.")
-								{?>
-								<label><input type="radio" name="aanhef" value="Dhr." />Dhr.</label>
-								<label><input type="radio" name="aanhef" checked="checked" value="Mevr." />Mevr.</label>
-								<?PHP
-								}
-								else
-								{
-								?>
-								<label><input type="radio" name="aanhef" checked="checked" value="Dhr." />Dhr.</label>
-								<label><input type="radio" name="aanhef" value="Mevr." />Mevr.</label>
-								<?PHP
-								}
-								?>
-								</p>
-							</td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Voornaam</td>
-							<td align="left"><input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" value="<?PHP echo $row_profile['voornaam']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Achternaam</td>
-							<td align="left"><input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" value="<?PHP echo $row_profile['achternaam']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Straatnaam</td>
-							<td align="left"><input name="straat" type="text" id="straat" size="25" maxlength="25" value="<?PHP echo $row_profile['straat']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Huisnummer</td>
-							<td align="left"><input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" value="<?PHP echo $row_profile['huisnummer']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Postcode</td>
-							<td align="left"><input name="postcode" type="text" id="postcode" size="10" maxlength="10" value="<?PHP echo $row_profile['postcode']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Woonplaats</td>
-							<td align="left"><input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" value="<?PHP echo $row_profile['woonplaats']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Telefoon</td>
-							<td align="left"><input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" value="<?PHP echo $row_profile['telefoonnummer']?>" /></td>
-						</tr>
-						<tr>
-							<td colspan="3">&nbsp;</td>
-						</tr>
-						<tr>
-							<td colspan="3">
-								<div align="center">
-								<input type="submit" name="Submit" value="Opslaan" />
-								</div>
-							</td>
-						</tr>
-					</table>
-				</form>
-			</td>
-		</tr>
-	</table>
+		<form name="update_profile" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=update_profile&user_id=<?PHP echo $user_id?>" onsubmit="return checkform_update_profile('update_profile')">
+
+			<div class="aanhef">
+				<p>Aanhef</p>
+				<div>
+				<?PHP
+				if ($row_profile['aanhef']=="Mevr.")
+				{?>
+				<label><input type="radio" name="aanhef" value="Dhr." />Dhr.</label>
+				<label><input type="radio" name="aanhef" checked="checked" value="Mevr." />Mevr.</label>
+				<?PHP
+				}
+				else
+				{
+				?>
+				<label><input type="radio" name="aanhef" checked="checked" value="Dhr." />Dhr.</label>
+				<label><input type="radio" name="aanhef" value="Mevr." />Mevr.</label>
+				<?PHP
+				}
+				?>
+				</div>
+			</div>
+			
+			<div>
+				<label for="voornaam">Voornaam</label>
+				<input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" value="<?PHP echo $row_profile['voornaam']?>" />
+			</div>
+		
+			<div>
+				<label for="achternaam">Achternaam</label>
+				<input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" value="<?PHP echo $row_profile['achternaam']?>" />
+			</div>
+
+			<div>
+				<label for="straat">Straatnaam</label>
+				<input name="straat" type="text" id="straat" size="25" maxlength="25" value="<?PHP echo $row_profile['straat']?>" />
+			</div>
+
+			<div>
+				<label for="huisnummer">Huisnummer</label>
+				<input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" value="<?PHP echo $row_profile['huisnummer']?>" />
+			</div>
+
+			<div>
+				<label for="postcode">Postcode</label>
+				<input name="postcode" type="text" id="postcode" size="10" maxlength="10" value="<?PHP echo $row_profile['postcode']?>" />
+			</div>
+
+			<div>
+				<label for="woonplaats">Woonplaats</label>
+				<input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" value="<?PHP echo $row_profile['woonplaats']?>" />
+			</div>
+
+			<div>
+				<label for="telefoonnummer">Telefoon</label>
+				<input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" value="<?PHP echo $row_profile['telefoonnummer']?>" />
+			</div>
+
+			<input type="submit" name="Submit" value="Opslaan" />
+						
+		</form>
+
 <?PHP
 			}
 		}
@@ -174,40 +158,33 @@
 			else
 			{
 ?>
+	<h1>Wachtwoord wijzigen</h1>
 	<form name="change_pass" action="?p=<?PHP echo $p?>&i=change_pass&ii=update_pass" method="post" onsubmit="return checkform_change_pass('change_pass')">
-		<div align="center">
-			<table width="45%">
-				<tr>
-					<td align="left">Oude Wachtwoord</td>
-					<td><input type="password" name="old_pass"></td>
-				</tr>
-				<tr>
-					<td colspan="2">&nbsp;</td>
-				</tr>
-				<tr>
-					<td align="left">Nieuwe Wachtwoord</td>
-					<td><input type="password" name="pass"></td>
-				</tr>
-				<tr>
-					<td align="left">Nieuwe Wachtwoord<br>Controle</td>
-					<td><input type="password" name="passcheck"></td>
-				</tr>
-				<tr>
-					<td colspan="2">&nbsp;</td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="submit" value="Wijzigen"></td>
-				</tr>
-			</table>
+		
+		<div>
+			<label for="old_pass">Oud wachtwoord</label>
+			<input type="password" name="old_pass" id="old_pass">
 		</div>
+		<div>
+			<label for="pass">Nieuw wachtwoord</label>
+			<input type="password" name="pass" id="pass">
+		</div>
+		<div>
+			<label for="passcheck">Nieuw wachtwoord<br>Controle</label>
+			<input type="password" name="passcheck" id="passcheck">
+		</div>
+
+		<input type="submit" value="Wijzigen">
+		
 	</form>
 <?PHP
 			}
 		}
 		else
 		{
-			echo "<a class='wijzigen' href='?p=".$p."&i=change_profile'>Pofiel wijzigen</a>";
-			echo "<a class='wijzigen' href='?p=".$p."&i=change_pass'>Wachtwoord wijzigen</a>";
+			echo "<h1>Profiel</h1>";
+			echo "<div><a class='wijzigen' href='?p=".$p."&i=change_profile'>Profiel wijzigen</a>";
+			echo "<a class='wijzigen' href='?p=".$p."&i=change_pass'>Wachtwoord wijzigen</a></div>";
 		}
 	}
 	else

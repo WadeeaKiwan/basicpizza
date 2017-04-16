@@ -4,7 +4,7 @@ function checkform_login ( form ){
 	
 	var login=document.forms[form];
 	if (login.login.value == "") {
-		alert( "Uw gebruikersnaam dient ingevuld te worden." );
+		alert( "Uw e-mail dient ingevuld te worden." );
 		login.login.focus();
 		return false ;
 		exit;

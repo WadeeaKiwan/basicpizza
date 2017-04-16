@@ -71,86 +71,61 @@ include 'jscripts/checkform/users_checkform.js';
 		else
 		{
 ?>
-	<table>
-		<tr>
-			<td>
-				<form name="register" method="post" action="?p=<?PHP echo $p?>&i=register" onsubmit="return checkform_register('register')">
-					<table width="100%" border="0" align="center">
-						<tr>
-							<td align="right" width="5%">*</td>
-							<td align="left" width="35%">Aanhef</td>
-							<td align="left" width="60%">
-								<p>
-								<label><input type="radio" name="aanhef" checked="checked" value="Dhr." />Dhr.</label>
-								<label><input type="radio" name="aanhef" value="Mevr." />Mevr.</label>
-								</p>
-							</td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Voornaam</td>
-							<td align="left"><input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Achternaam</td>
-							<td align="left"><input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Straatnaam</td>
-							<td align="left"><input name="straat" type="text" id="straat" size="25" maxlength="25" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Huisnummer</td>
-							<td align="left"><input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Postcode</td>
-							<td align="left"><input name="postcode" type="text" id="postcode" size="10" maxlength="10" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Woonplaats</td>
-							<td align="left"><input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">E-Mail</td>
-							<td align="left"><input name="email" type="text" id="email" size="15" maxlength="50" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Telefoon</td>
-							<td align="left"><input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Wachtwoord</td>
-							<td><input type="password" name="pass"></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Wachtwoord controle</td>		
-							<td><input type="password" name="passcheck"></td>
-						</tr>
-						<tr>
-							<td colspan="3">&nbsp;</td>
-						</tr>
-						<tr>
-							<td colspan="3">
-								<div align="center">
-								<input type="submit" name="Submit" value="Opslaan" />
-								</div>
-							</td>
-						</tr>
-					</table>
-				</form>
-			</td>
-		</tr>
-	</table>
+	<h1>Registreren</h1>
+	
+		<form name="register" method="post" action="?p=<?PHP echo $p?>&i=register" onsubmit="return checkform_register('register')">
+				<div class="aanhef">
+					<p>Aanhef</p>
+					<div>
+						<label><input type="radio" name="aanhef" checked="checked" value="Dhr." />Dhr.</label>
+						<label><input type="radio" name="aanhef" value="Mevr." />Mevr.</label>
+					</div>
+				</div>
+				<div>
+					<label for="voornaam">Voornaam *</label>
+					<input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" required />
+				</div>
+				<div>
+					<label for="achternaam">Achternaam *</label>
+					<input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" />
+				</div>
+				<div>
+					<label for="straat">Straatnaam *</label>
+					<input name="straat" type="text" id="straat" size="25" maxlength="25" required />
+				</div>
+				<div>
+					<label for="huisnummer">Huisnummer *</label>
+					<input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" required/>
+				</div>
+				<div>
+					<label for="postcode">Postcode *</label>
+					<input name="postcode" type="text" id="postcode" size="10" maxlength="10" required />
+				</div>
+				<div>
+					<label for="woonplaats">Woonplaats *</label>
+					<input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" required />
+				</div>
+				<div>
+					<label for="email">E-Mail *</label>
+					<input name="email" type="text" id="email" size="15" maxlength="50" required/>
+				</div>
+				<div>
+					<label for="telefoonnummer">Telefoon *</label>
+					<input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" required />
+				</div>
+				<div>
+					<label for="pass">Wachtwoord *</label>
+					<input type="password" name="pass" required />
+				</div>
+				<div>
+					<label for="passcheck">Wachtwoord controle *</label>		
+					<input type="password" name="passcheck" required />
+				</div>
+
+				<input type="submit" name="Submit" value="Opslaan" />
+
+		</form>
+
 <?PHP
 #####################################################################################################################################
 }

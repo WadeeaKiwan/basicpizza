@@ -39,7 +39,7 @@
 				}
 				else
 				{
-					echo "<span class='false_warning' ><strong>Ongeldige gebruikersnaam en/of wachtwoord.</strong></span><br />";
+					echo "<span class='false_warning' >Ongeldig emailadres en/of wachtwoord.</strong></span><br />";
 					echo '<meta http-equiv="Refresh" content="2;URL=?p=login" />';
 				}
 			}
@@ -49,19 +49,22 @@
 ?>
 
 <form name="login" action="?p=login&i=login" method="POST" onsubmit="return checkform_login('login')">
-	<table width="200" border="0" align="center">
-		<tr>
-			<td align="right">Gebruikersnaam </td>
-			<td align="left"><input type="text" name="login"></td>
-		</tr>
-		<tr>
-			<td align="right">Wachtwoord </td>
-			<td align="left"><input type="password" name="pass"></td>
-		</tr>
-		<tr>
-			<td colspan="2" align="center"><input type="submit" name="submit" value="Inloggen"></td>
-		</tr>
-	</table>
+	
+	<div>
+		<label for="login">E-mail</label>
+		<input type="text" name="login" id="login">
+	</div>
+<!-- 	<div>
+		<label for="login">Gebruikersnaam </label>
+		<input type="text" name="login" id="login">
+	</div> -->
+	<div>
+		<label for="pass">Wachtwoord </label>
+		<input type="password" name="pass">
+	</div>
+	
+	<input type="submit" name="submit" value="Inloggen">
+
 </form>
 
 <?PHP
@@ -70,14 +73,10 @@
 	else
 	{
 ?>
-	<div align="center">
-		<table width="100%">
-			<tr>
-				<td align="center" ><span class='true_warning' ><strong>U bent ingelogd als: <?PHP echo $_SESSION['user']?>.</strong></span></td>
-				<meta http-equiv="Refresh" content="2;URL=?p=" />
-			</tr>
-		</table>
-	</div>
+
+	<span class='true_warning' >U bent ingelogd als: <?PHP echo $_SESSION['user']?>.</span><
+	<meta http-equiv="Refresh" content="2;URL=?p=" />
+			
 <?PHP
 	}
 ?>

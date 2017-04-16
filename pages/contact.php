@@ -1,7 +1,6 @@
 <?PHP
  	echo "<h1>Contact</h1>";
-	echo '<center>';
-	echo '<table style="width:700px">';
+	echo '<table>';
 	echo '<tr>';
 	echo '	<td>Frank Pons</td>';
     echo '	<td>359626</td>';
@@ -33,7 +32,6 @@
     echo '	<td><a href="https://www.linkedin.com/in/wadeeakiwan/"><img src="img/b_li.png" width="40" height="40"></a></td>';
 	echo '</tr>';
 	echo '</table>'; 
-	echo '</center>';
 ?>
 
 

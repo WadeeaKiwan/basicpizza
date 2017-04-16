@@ -37,16 +37,33 @@ header a{
 }
 
 header h1{
-	padding:35px 165px;
+	padding:5px 0 35px 165px;
 	margin: 0;
 	font-size: 3.6em;
 	text-transform:uppercase;
+	max-width: 4em;
+}
+@media (min-width: 750px) {
+	header h1{
+		max-width: 100%;
+		padding-top:35px;
+	}
 }
 
 header > div{
-	position: absolute;
-	top:35px;
-	right:5%;
+	position: relative;
+}
+
+header span{
+	display: block;
+}
+
+@media (min-width: 600px) {
+	header > div{
+		position: absolute;
+		top:35px;
+		right:5%;
+	}
 }
 
 main{
@@ -154,8 +171,22 @@ label, select{
 label{
 	width:12em;
 }
+form{
+	margin-top:1em;
+}
 form div{
 	margin-bottom: 1em;
+}
+.aanhef{
+	margin:0;
+}
+.aanhef p{
+	display: inline-block;
+	width:12em;
+	margin:0;
+}
+.aanhef div{
+	display: inline-block;
 }
 .adres .gegevens{
 	display: inline-block;
