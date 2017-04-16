@@ -10,7 +10,8 @@
 <?PHP
 #####################################################################################################################################
 		
-		$user_id = $_SESSION['user_id'];
+		$t= time();
+        $user_id = $_SESSION['user_id'];
 		
 		if (!isset($_GET['order_id']))
 		{
@@ -195,8 +196,13 @@
 		elseif ($i=="betaald")
 		{
 			mysql_query("UPDATE `order` SET order_status='Afgeleverd' WHERE order_id=".$order_id);
-			
+            
+            mysql_query("UPDATE `order` SET levering= current_timestamp WHERE order_id=".$order_id);
+            
+            
 			echo '<META http-equiv="refresh" content="0;URL=?p='.$p.'">';
+          	
+				
 		}
 #####################################################################################################################################
 		else
