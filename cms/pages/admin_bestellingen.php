@@ -261,24 +261,37 @@
     	</tr>
         <tr>
             <td class="custom_bgcollor">
-                <strong>Bestelling</strong>
+                <strong>Order ID</strong>
+            </td>
+            <td class="custom_bgcollor">
+                <strong>Gewenste levertijd</strong>
+            </td>
+            <td class="custom_bgcollor">
+                <strong>werkelijke levertijd</strong>
             </td>
             <td class="custom_bgcollor">
                 <strong>Status</strong>
             </td>
         </tr>
 <?PHP
-		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Afgeleverd' ORDER BY bestelmoment ASC");
+		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Afgeleverd' ORDER BY order_id desc");
 		WHILE ($row_order= mysql_fetch_array($sql_select_order))
 		{
 ?>
 		<tr onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
             <td align="center">
-                <?PHP echo $row_order['bestelmoment'] ?>
+                <?PHP echo $row_order['order_id'] ?>
+            </td>
+            <td align="center">
+                <?PHP echo $row_order['levermoment'] ?>
+            </td>
+            <td align="center">
+                <?PHP echo $row_order['levering'] ?>
             </td>
             <td align="center">
                 <?PHP echo $row_order['order_status'] ?>
             </td>
+          
         </tr>
 <?PHP
 		}
