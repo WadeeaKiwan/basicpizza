@@ -238,7 +238,6 @@ a.wijzigen{
 
 .pizzas section span.prijs{ 
 	display: inline-block;
-	float: right;
 	width: 24%;
 	font-family: Verdana; 
 	font-size: 75%; 
