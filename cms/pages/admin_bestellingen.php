@@ -211,13 +211,16 @@
     	</tr>
         <tr>
             <td class="custom_bgcollor">
-                <strong>Bestelling</strong>
+                <strong>Gewenste Levering</strong>
             </td>
             <td class="custom_bgcollor">
-                <strong>Status</strong>
+                <strong>Order_ID</strong>
             </td>
             <td class="custom_bgcollor">
-                <strong>Bezorgen</strong>
+                <strong>Betaald?</strong>
+            </td>
+            <td class="custom_bgcollor">
+                <strong>Status Bestelling</strong>
             </td>
         </tr>
 <?PHP
@@ -227,7 +230,10 @@
 ?>
 		<tr>
             <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
-                <?PHP echo $row_order['bestelmoment'] ?>
+                <?PHP echo $row_order['levermoment'] ?>
+            </td>
+             <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
+                <?PHP echo $row_order['order_id'] ?>
             </td>
             <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
                 <?PHP echo $row_order['order_status'] ?>
