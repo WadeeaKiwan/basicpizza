@@ -217,6 +217,9 @@
                 <strong>Order_ID</strong>
             </td>
             <td class="custom_bgcollor">
+                <strong>type_aflevering</strong>
+            </td>
+            <td class="custom_bgcollor">
                 <strong>Betaald?</strong>
             </td>
             <td class="custom_bgcollor">
@@ -224,7 +227,7 @@
             </td>
         </tr>
 <?PHP
-		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Betaald' ORDER BY bestelmoment ASC");
+		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Betaald' ORDER BY bestelmoment desc");
 		WHILE ($row_order= mysql_fetch_array($sql_select_order))
 		{
 ?>
@@ -234,6 +237,9 @@
             </td>
              <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
                 <?PHP echo $row_order['order_id'] ?>
+            </td>
+            <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
+                <?PHP echo $row_order['type_bezorging'] ?>
             </td>
             <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
                 <?PHP echo $row_order['order_status'] ?>
