@@ -176,7 +176,7 @@
             <th>Status</th>
         </tr>
 <?PHP
-		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE users_user_id= ".$user_id." ORDER BY bestelmoment ASC");
+		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE users_user_id= ".$user_id." ORDER BY bestelmoment DESC");
 		WHILE ($row_order= mysql_fetch_array($sql_select_order))
 		{
 ?>
