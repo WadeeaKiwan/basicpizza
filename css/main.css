@@ -52,6 +52,7 @@ header h1{
 
 header > div{
 	position: relative;
+	padding-left: 1em;
 }
 
 header span{
@@ -167,7 +168,6 @@ input[type=submit]:hover, input[type=submit]:focus,
 a.button:hover, a.button:focus{
 	background: goldenrod;
 	cursor: pointer;
-	color: black;
 }
 
 label, select{
@@ -211,7 +211,7 @@ a.wijzigen{
 .pizzas{
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: left;
 }
 
 .pizzas section{
@@ -232,6 +232,7 @@ a.wijzigen{
 	float: left;
 	width: 75%;
 	margin-top: 0;
+	font-size: 90%;
 }
 
 .pizzas section span.categorie{
@@ -277,7 +278,6 @@ a.wijzigen{
 .pizzas section a.bestel:hover{
 	background: goldenrod;
 	cursor: pointer;
-	color: black;
 }
 
 footer {
