@@ -10,7 +10,7 @@ Alle dones staan onderaan
 
 [7] documentatie?
 
-[12] Datum tijd van bestelling limiteren tot vandaag
+
 
 [13] validatie op profiel pagina en registratie pagina's [Geert]
 
@@ -19,11 +19,15 @@ Alle dones staan onderaan
 
 ----
 
+<<<<<<< HEAD
+[1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+=======
 [18] [done] als ik de standaard 1 small bestel, krijg ik deze melding: "Pizza toegevoegd aan winkelmand.debug1"
 
 [1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
 
 [5] [done] styling front-end pagina's [Janita]
+>>>>>>> e36e0051634cd3ad14ed7a9c4f4083f36648eb9d
 
 [3] [done] als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
 
@@ -48,3 +52,8 @@ ww check toegevoegd in javascript
 [8][done] De klant heeft verder de mogelijkheid om een aantal te selecteren. 
     Een bestelling van meer dan 99 pizza’s van hetzelfde type wordt echter niet geaccepteerd door het bedrijf. 
     als het nummer niet meer dan 2 cijfers kan zijn dan heb je dat toch al? 
+
+[21][done] postcode letters worden niet opgeslagen.
+	->D database aanpassing (table user_profile) postcode wijzigen in char(6) 
+	
+[12][done] Datum tijd van bestelling limiteren tot vandaag

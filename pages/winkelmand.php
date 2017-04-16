@@ -50,7 +50,7 @@
 					`order_status`
 				) VALUES (
 					'".$_POST['type_bezorging']."',
-					'".$_POST['levermoment']."',
+					'".date("Y/m/d")." ".$_POST['levermoment']."',
 					'".$_POST['betaling']."',
 					'".$_SESSION['user_id']."',
 					'Betaald'
