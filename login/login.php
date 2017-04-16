@@ -48,24 +48,26 @@
 		{
 ?>
 
+<h1>Inloggen</h1>
+
 <form name="login" action="?p=login&i=login" method="POST" onsubmit="return checkform_login('login')">
 	
+	<div class="register">Nog geen inloggegevens? Ga eerst naar <a class="wijzigen" href='?p=register'>registreren</a></div>
+
 	<div>
-		<label for="login">E-mail</label>
+		<label for="login">E-Mail </label>
 		<input type="text" name="login" id="login">
 	</div>
-<!-- 	<div>
-		<label for="login">Gebruikersnaam </label>
-		<input type="text" name="login" id="login">
-	</div> -->
 	<div>
 		<label for="pass">Wachtwoord </label>
-		<input type="password" name="pass">
+		<input type="password" name="pass" id="pass">
 	</div>
 	
 	<input type="submit" name="submit" value="Inloggen">
 
 </form>
+
+
 
 <?PHP
 		}
