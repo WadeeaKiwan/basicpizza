@@ -278,6 +278,9 @@
             <td class="custom_bgcollor">
                 <strong>Status</strong>
             </td>
+             <td class="custom_bgcollor">
+                <strong>On-Time (difference in minutes)</strong>
+            </td>
         </tr>
 <?PHP
 		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Afgeleverd' ORDER BY order_id desc");
@@ -297,7 +300,19 @@
             <td align="center">
                 <?PHP echo $row_order['order_status'] ?>
             </td>
-          
+            
+          <td align="center">
+            #############
+              <?PHP            
+            $timelevering = substr($row_order['levering'],-8,5);
+            $timegewenst =substr($row_order['levermoment'],-8,5);
+            $timeleveringA=strtotime($timelevering);
+            $timegewenstA=strtotime($timegewenst);
+            $diff= ($timeleveringA-$timegewenstA)/60;
+         echo $diff;
+              ?>
+            #############  
+            </td>
         </tr>
 <?PHP
 		}
