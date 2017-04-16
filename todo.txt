@@ -6,9 +6,7 @@ Alle dones staan onderaan
 
 [4] redirect ipv refresh ivm browser meldingen?
 
-[5] styling front-end pagina's [Janita]
-
-[6] checken of het overeenkomt met wireframes
+[6] checken of het overeenkomt met wireframes -> wireframes aanpassen aan de site
 
 [7] documentatie?
 
@@ -16,31 +14,32 @@ Alle dones staan onderaan
 
 [13] validatie op profiel pagina en registratie pagina's [Geert]
 
-[18] als ik de standaard 1 small bestel, krijg ik deze melding: "Pizza toegevoegd aan winkelmand.debug1"
-
 [19] datum bestelling en aflevering toevoegen in cms, + naam (order_id)
 
-[20] categorie filter op pizza overzicht?
 
 ----
 
-#[1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+[18] [done] als ik de standaard 1 small bestel, krijg ik deze melding: "Pizza toegevoegd aan winkelmand.debug1"
+
+[1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
+
+[5] [done] styling front-end pagina's [Janita]
 
 [3] [done] als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
 
-#[9][done] meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
+[9][done] meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
 
-#[10][done] Het is ook mogelijk om 0 pizza's te bestellen. 
+[10][done] Het is ook mogelijk om 0 pizza's te bestellen. 
 	Er opent zich dan de pagina met de melding "uw bestelling is toegevoegd aan de winkelmand". 
 	Lijkt met niet goed.
 
 [11] [done] Bij de pagina "inloggen" staat geen knop om naar de pagina toe te gaan om je te registeren als je nog geen inlognaam hebt. Is deze knop nog wenselijk?
 
-#[14][done] Na bestelling aantal standaard vullen met een 1
+[14][done] Na bestelling aantal standaard vullen met een 1
 
-#[15][done] Registratieformulier telefoonnummer niet opgeslagen 
+[15][done] Registratieformulier telefoonnummer niet opgeslagen 
 
-#[16][done] ) producten toe te voegen
+[16][done] ) producten toe te voegen
 	-> database aanpassing varchar(15 ipv) int(10)
 
 [17] [done] als je bij het registreren 1 veld fout doet (wachtwoord in dit geval) wordt de pagina gerefresht en worden alle velden gewist ipv alleen die je fout deed
