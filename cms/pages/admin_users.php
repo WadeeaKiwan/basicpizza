@@ -303,7 +303,7 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 			<td class="custom_bgcollor"><strong>&nbsp;</strong></td>
 		</tr>
 <?PHP
-			$rs_select_users= mysql_query("SELECT * FROM `users` WHERE user_level<=".$_SESSION['level']." ORDER BY user_level DESC");
+			$rs_select_users= mysql_query("SELECT * FROM `users` WHERE user_level<=".$_SESSION['level']." ORDER BY user_level DESC, user_lastlogin DESC");
 			while ($row_users=mysql_fetch_array($rs_select_users))
 			{
 				$date_time= split(" ", $row_users['user_lastlogin']);
