@@ -209,7 +209,6 @@ a.wijzigen{
 }
 
 .pizzas{
-	min-height: 45em;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -217,17 +216,16 @@ a.wijzigen{
 
 .pizzas section{
 	flex: 0 1 250px;
-	min-height: 18em;
+	min-height: 20em;
 	padding: 1em;
-	margin: 0 .5em;
-	margin-bottom: 1em;
+	margin: 0 .5em 1em .5em;
 	border: 1px solid lightgray;
 	position: relative;
 }
 
 .pizzas section img{
 	width:120px;
-	padding-left: 25%;
+	padding: 15% 0 0 25%;
 }
 .pizzas section p{
 	display: inline-block;
@@ -236,6 +234,21 @@ a.wijzigen{
 	margin-top: 0;
 }
 
+.pizzas section span.categorie{
+	display: block;
+	position: absolute;
+	top:1em;
+	left:1em;
+	width: auto;
+	padding: .3em .6em .4em .6em;
+	border-radius: 6px;
+	background: goldenrod;
+	color: white;
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+	border:none;
+}
 .pizzas section span.prijs{ 
 	display: inline-block;
 	width: 24%;
@@ -278,4 +291,13 @@ footer {
 	text-align: center;
 	font-size: .8em;
 	border-top: 1px solid olivedrab;
+}
+
+/* CMS */
+.cms li{
+	list-style: none;
+}
+
+.cms table{
+	background: #fff;
 }

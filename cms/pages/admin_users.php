@@ -79,7 +79,7 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 
 					mysql_query("UPDATE users SET user_level='".$_POST['level']."', user_pass='".$pass."' WHERE user_id=".$user_id);
 
-					echo "<span class='true_warning' ><strong>Account geweizigd.</strong></span>";
+					echo "<span class='true_warning' ><strong>Account gewijzigd.</strong></span>";
 
 					echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 				}

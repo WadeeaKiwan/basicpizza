@@ -1,3 +1,8 @@
+<?php 
+error_reporting(E_ALL);
+ini_set("display_errors", On);
+?>
+
 <?PHP
 
 	if (!isset($_GET['product_id']))
@@ -115,13 +120,24 @@ if ($i=="add_to_cart" )
 <div class="pizzas">
     
 	<?PHP
-		$sql_select_prod= mysql_query("SELECT * FROM `producten` ORDER BY naam ASC");
+		$sql_select_prod= mysql_query("
+			SELECT product_id, naam, omschrijving, prijs, categorie.categorie
+			FROM producten
+			JOIN categorie ON (producten.categorie_categorie_id=categorie.categorie_id)
+			GROUP BY categorie.categorie
+			ORDER BY categorie.categorie, producten.naam ASC
+			");
 		WHILE ($row_prod= mysql_fetch_array($sql_select_prod))
 		{
 	?>
        <section>
+
        		
             <?PHP echo '<img src="img/prd/'.$row_prod['product_id'].'.png">'; ?>
+
+            <span class="categorie">
+            	<?PHP echo $row_prod['categorie']; ?> 
+            </span>
 		
             <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
 			?>

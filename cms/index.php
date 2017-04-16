@@ -50,7 +50,7 @@
 	<title>Pizzeria - CMS</title>
 	<link rel="stylesheet" type="text/css" href="../css/main.css" madia="screen" />
 </head>
-<body>
+<body class="cms">
 <div align="center">
 
 <?PHP
@@ -68,7 +68,7 @@
 <table width="100%" height="100%" border="0" cellspacing="0">
 	<tr>
 		<td colspan="3" bgcolor="DCDCDC">
-			<img src="../img/logo-pizzeria.png" width="250"  alt="Pizzeria">
+			<img src="../img/logo2.svg" width="100" alt="Basic Pizza">Basic Pizza Beheer
 		</td>
 	</tr>
 	<tr>
