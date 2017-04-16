@@ -18,6 +18,10 @@ Alle dones staan onderaan
 
 [18] als ik de standaard 1 small bestel, krijg ik deze melding: "Pizza toegevoegd aan winkelmand.debug1"
 
+[19] datum bestelling en aflevering toevoegen in cms, + naam (order_id)
+
+[20] categorie filter op pizza overzicht?
+
 ----
 
 #[1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet

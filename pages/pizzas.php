@@ -130,37 +130,36 @@ if ($i=="add_to_cart" )
 				WHERE categorie.categorie_id = ".$row_cat['categorie_id']."
 				ORDER BY naam ASC
 				");
-			
-?>
-       <section>
-<?PHP				
+							
 			WHILE ($row_prod= mysql_fetch_array($sql_select_prod))
 			{
-	?>
-            <?PHP echo '<img src="img/prd/'.substr($row_prod['product_id'], -1).'.png">'; ?>
 
-            <span class="categorie">
-            	<?PHP echo $row_prod['categorie']; ?> 
-            </span>
-		
-            <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
 			?>
-        	<span class="prijs">
-            	<?PHP echo "<span>S</span> ".ShowCash($row_prod['prijs'])."<br>";?>
-				<?PHP echo "<span>M</span> ".ShowCash($row_prod['prijs']+2)."<br>";?>
-				<?PHP echo "<span>L</span> ".ShowCash($row_prod['prijs']+4)."<br>";?>
-            </span>
-        
-            <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
+
+            <section>
+
+	            <?PHP echo '<img src="img/prd/'.substr($row_prod['product_id'], -1).'.png">'; ?>
+
+	            <span class="categorie">
+	            	<?PHP echo $row_prod['categorie']; ?> 
+	            </span>
+			
+	            <?PHP echo '<h3>'.$row_prod['naam'].'</h3><p>'.$row_prod['omschrijving']."</p>"; 
+				?>
+	        	<span class="prijs">
+	            	<?PHP echo "<span>S</span> ".ShowCash($row_prod['prijs'])."<br>";?>
+					<?PHP echo "<span>M</span> ".ShowCash($row_prod['prijs']+2)."<br>";?>
+					<?PHP echo "<span>L</span> ".ShowCash($row_prod['prijs']+4)."<br>";?>
+	            </span>
+	        
+	            <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
+
+            </section>
         
 <?PHP
 			}
-?>
-	   </section>
-<?PHP
 		}
 ?>
-	
 
 </div>
 
