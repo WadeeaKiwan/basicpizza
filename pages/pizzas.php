@@ -120,20 +120,24 @@ if ($i=="add_to_cart" )
 <div class="pizzas">
     
 	<?PHP
-		$sql_select_prod= mysql_query("
-			SELECT product_id, naam, omschrijving, prijs, categorie.categorie
-			FROM producten
-			JOIN categorie ON (producten.categorie_categorie_id=categorie.categorie_id)
-			GROUP BY categorie.categorie
-			ORDER BY categorie.categorie, producten.naam ASC
-			");
-		WHILE ($row_prod= mysql_fetch_array($sql_select_prod))
-		{
-	?>
+		$sql_select_cat= mysql_query(" select categorie_id from categorie");
+		WHILE ($row_cat= mysql_fetch_array($sql_select_cat))
+		{	
+			$sql_select_prod= mysql_query("
+				SELECT product_id, naam, omschrijving, prijs, categorie.categorie
+				FROM producten	
+				JOIN categorie ON (producten.categorie_categorie_id=categorie.categorie_id)
+				WHERE categorie.categorie_id = ".$row_cat['categorie_id']."
+				ORDER BY naam ASC
+				");
+			
+?>
        <section>
-
-       		
-            <?PHP echo '<img src="img/prd/'.$row_prod['product_id'].'.png">'; ?>
+<?PHP				
+			WHILE ($row_prod= mysql_fetch_array($sql_select_prod))
+			{
+	?>
+            <?PHP echo '<img src="img/prd/'.substr($row_prod['product_id'], -1).'.png">'; ?>
 
             <span class="categorie">
             	<?PHP echo $row_prod['categorie']; ?> 
@@ -148,9 +152,11 @@ if ($i=="add_to_cart" )
             </span>
         
             <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>
-           
-        </section>
         
+<?PHP
+			}
+?>
+	   </section>
 <?PHP
 		}
 ?>
