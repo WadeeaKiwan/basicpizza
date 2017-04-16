@@ -302,16 +302,18 @@
             </td>
             
           <td align="center">
-            #############
-              <?PHP            
+            
+              <?PHP
+###################################################################################################################################			  
             $timelevering = substr($row_order['levering'],-8,5);
             $timegewenst =substr($row_order['levermoment'],-8,5);
             $timeleveringA=strtotime($timelevering);
             $timegewenstA=strtotime($timegewenst);
             $diff= ($timeleveringA-$timegewenstA)/60;
-         echo $diff;
+			echo $diff;
+###################################################################################################################################		 
               ?>
-            #############  
+              
             </td>
         </tr>
 <?PHP
