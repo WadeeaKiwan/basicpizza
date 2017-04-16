@@ -44,7 +44,7 @@ if ($i=="add_to_cart" )
 			}
 		}
 				
-			echo "<span class='true_warning'>Pizza toegevoegd aan winkelmand.debug1</span>";
+			echo "<span class='true_warning'>Pizza toegevoegd aan winkelmand</span>";
 			echo "<a class='button' href='?p=winkelmand'>Ga naar winkelmand</a>";
 			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
