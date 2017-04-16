@@ -49,8 +49,9 @@
 				$rs_select_profile= mysql_query("SELECT * FROM user_profiles WHERE user_id=".$user_id);
 				$row_profile= mysql_fetch_array($rs_select_profile);
 ?>
-	<h1>Persoonlijk profiel bewerken van: <?PHP echo $naam?>.</h1>
-	<a href="?p=<?PHP echo $p?>">Terug</a>
+	<h1>Persoonlijk profiel bewerken van: <?PHP echo $naam?></h1>
+	
+	<a class="wijzigen" href="?p=<?PHP echo $p?>">Ga terug</a>
 
 		<form name="update_profile" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=update_profile&user_id=<?PHP echo $user_id?>" onsubmit="return checkform_update_profile('update_profile')">
 

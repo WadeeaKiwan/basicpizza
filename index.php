@@ -55,9 +55,10 @@
 
 <body>
 <div class="wrapper">
+
 	<header>
 		<a href='?p=pizzas' title="Ga naar home"><h1>Basic Pizza</h1></a>
-		<div><span>Grote markt 66 Groningen</span><span>Telefoon: 050-1234567</span></div>
+		<div><span>Grote Markt 66 Groningen</span><span>Telefoon: 050-1234567</span></div>
 		<nav>
 			<ul>
 				<li><a href='?p=pizzas'>Pizza's</a></li>
@@ -75,11 +76,9 @@
 						echo "<li><a href='?p=login'>Inloggen</a></li>";
 					}
 				?>
-
 				<li><a href='?p=contact'>Contact</a></li>
 			</ul>
 		</nav>
-
 	</header>
 		
 	<main>

@@ -153,30 +153,15 @@
 		if(isset($_SESSION['product_id']) AND isset($_SESSION['prod_grootte']) AND isset($_SESSION['prod_aantal']))
 		{ 			
 ?>
-	<div align="center">
-    	<table border="1" cellspacing="0" width="650">
+    	<table>
         	<tr>
-            	<td class="custom_bgcollor" width="40%">
-                	<strong>Naam</strong>
-	            </td>
-	            <td class="custom_bgcollor" width="5%">
-    	            <strong>Aantal</strong>
-        	    </td>
-            	<td class="custom_bgcollor" width="10%">
-                	<strong>Grootte</strong>
- 	           </td>
-    	        <td class="custom_bgcollor" width="20%">
-        	        <strong>Prijs</strong>
-            	</td>
-    	        <td class="custom_bgcollor" width="20%">
-        	        <strong>Toeslag</strong>
-            	</td>
-    	        <td class="custom_bgcollor" width="20%">
-        	        <strong>TotaalPrijs</strong>
-            	</td>
-    	        <td class="custom_bgcollor" width="5%">
-        	        <strong>Bijwerken</strong>
-            	</td>
+            	<th>Naam</th>
+	            <th>Aantal</th>
+            	<th>Grootte</th>
+    	        <th>Prijs</th>
+    	        <th>Toeslag</th>
+    	        <th>TotaalPrijs</th>
+    	        <th>Bijwerken</th>
 			</tr>
 <?PHP
 			$totaal_prijs = '0';
@@ -263,7 +248,7 @@
         	    	    }    	    	    
 ?>
     	        	</td>
-	    	        <td align="center">
+	    	        <td>
 	    	        	<input type="submit" name="Submit" value="Werk Bij" />
             		</td>
 				</tr>
@@ -273,20 +258,20 @@
 			}
 ?>
 			<tr>
-            	<td class="custom_bgcollor" width="75%" colspan="5" align="right">
+            	<td width="75%" colspan="5" align="right">
                 	<strong>TotaalPrijs</strong>
 	            </td>
-    	        <td class="custom_bgcollor" width="20%">
+    	        <td width="20%">
         	        <strong><?PHP echo ShowCash($totaal_prijs);  ?></strong>
             	</td>
-    	        <td class="custom_bgcollor" width="5%">
+    	        <td width="5%">
         	        <form name="bestel_prod" id="bestel_prod" method="post" action="?p=<?PHP echo $p?>&i=bestellen">
-        	        	<input type="submit" name="Submit" value="BESTEL" />
+        	        	<input type="submit" name="Submit" value="Bestel" />
         	        </form>
             	</td>
 			</tr>
 		</table>
-	</div>
+	
 <?PHP
 		}
 #####################################################################################################################################

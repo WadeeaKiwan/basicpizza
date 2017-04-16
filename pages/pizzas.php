@@ -1,8 +1,3 @@
-<?php 
-error_reporting(E_ALL);
-ini_set("display_errors", On);
-?>
-
 <?PHP
 
 	if (!isset($_GET['product_id']))
@@ -69,7 +64,7 @@ if ($i=="add_to_cart" )
 	else 
 	{
 	echo "<p class='true_warning' >GEEN Pizza toegevoegd aan winkelmand.</p>";
-	echo "<a class='button' href='?p=winkelmand&i=bestellen'>Betalen</a>";
+	echo "<a class='button' href='?p=winkelmand'>Ga naar winkelmand</a>";
 	echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 	}
 	}
