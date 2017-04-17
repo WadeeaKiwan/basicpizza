@@ -10,8 +10,6 @@ Alle dones staan onderaan
 
 [7] documentatie?
 
-
-
 [13] validatie op profiel pagina en registratie pagina's [Geert]
 
 [19] datum bestelling en aflevering toevoegen in cms, + naam (order_id)
