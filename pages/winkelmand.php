@@ -1,6 +1,17 @@
 <h1>Winkelmand</h1>
 
 <?PHP
+//======================================================================
+// winkelmand.php
+// Deze pagina geeft alle producten weer die aan de winkelmand zijn toegevoegd
+// aantal en size zijn te wijzigen
+// 
+// 		update_best 	= wijzigingen doorvoeren, aantal en size bij aantal 0 zal item verdwijnen 
+// 		bestellen	 	= pagina 1e stap toevoegen aan winkelmand (aanvulling size een aantal)
+// 
+//======================================================================
+// 
+// Laatste bijwerking : 17-04-2017
 	if (!isset($_GET['array_row']))
 	{
 		$array_row = NULL;
@@ -27,6 +38,7 @@
 		echo '<META http-equiv="refresh" content="0;URL=?p='.$p.'">';
 	}
 #####################################################################################################################################
+# bestelling plaatsen
 	elseif ($i=="bestellen")
 	{
 		if (!isset($_SESSION['loggedin']) OR $_SESSION['loggedin']!=1)
@@ -121,7 +133,7 @@
 							<option value='b'>Bezorging</option>
 						</select>
 					</div>
-					
+# [todo] levermoment nog variabel maken als tijd verstreken is					
 					<div>
 						<label for="levermoment">Levermoment</label>
 						<select name="levermoment" id="levermoment">
@@ -277,6 +289,7 @@
 #####################################################################################################################################
 		else
 		{
+# Melding geen items in winkelmand
 ?>
 
 	<span class='true_warning' >De winkelmand is leeg.</span>
