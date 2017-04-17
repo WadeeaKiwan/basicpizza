@@ -12,8 +12,6 @@ Alle dones staan onderaan
 
 [7] documentatie?
 
-[13] validatie op profiel pagina en registratie pagina's [Geert]
-
 [19] datum bestelling en aflevering toevoegen in cms, + naam (order_id)
 
 [20] categorie filter op pizza overzicht?
@@ -49,4 +47,8 @@ ww check toegevoegd in javascript
 [12][done] Datum tijd van bestelling limiteren tot vandaag
 
 [18][done] als ik de standaard 1 small bestel, krijg ik deze melding: "Pizza toegevoegd aan winkelmand.debug1"
+
+[13][done] validatie op profiel pagina en registratie pagina's [Geert]
+
+[21][done] levertijd in het verleden te kiezen, is nu beperkt op huidige tijd en na 22:00 gesloten.
 

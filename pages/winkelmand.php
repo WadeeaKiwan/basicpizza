@@ -133,26 +133,33 @@
 							<option value='b'>Bezorging</option>
 						</select>
 					</div>
-# [todo] levermoment nog variabel maken als tijd verstreken is					
+					
 					<div>
-						<label for="levermoment">Levermoment</label>
-						<select name="levermoment" id="levermoment">
-							<option value='16.30'>16:30</option>
-							<option value='17.00'>17:00</option>
-							<option value='17.30'>17:30</option>
-							<option value='18.00'>18:00</option>
-							<option value='18.30'>18:30</option>
-							<option value='19.00'>19:00</option>
-							<option value='19.30'>19:30</option>
-							<option value='20.00'>20:00</option>
-							<option value='20.30'>20:30</option>
-							<option value='21.00'>21:00</option>
-							<option value='21.30'>21:30</option>
-							<option value='22.00'>22:00</option>
+<?PHP
+echo '<label for="levermoment">Levermoment</label>';
+echo '<select name="levermoment" id="levermoment">';
+if (time() < strtotime('16:30:00')) { echo "<option value='16.30'>16:30</option>";}
+if (time() < strtotime('17:00:00')) { echo "<option value='17.00'>17:00</option>";}
+if (time() < strtotime('17:30:00')) { echo "<option value='17.30'>17:30</option>";}
+if (time() < strtotime('18:00:00')) { echo "<option value='18.00'>18:00</option>";}
+if (time() < strtotime('18:30:00')) { echo "<option value='18.30'>18:30</option>";}
+if (time() < strtotime('19:00:00')) { echo "<option value='19.00'>19:00</option>";}
+if (time() < strtotime('19:30:00')) { echo "<option value='19.30'>19:30</option>";}
+if (time() < strtotime('20:00:00')) { echo "<option value='20.00'>20:00</option>";}
+if (time() < strtotime('20:30:00')) { echo "<option value='20.30'>20:30</option>";}
+if (time() < strtotime('21:00:00')) { echo "<option value='21.00'>21:00</option>";}
+if (time() < strtotime('21:30:00')) { echo "<option value='21.30'>21:30</option>";}
+if (time() < strtotime('22:00:00')) { echo "<option value='22.00'>22:00</option>";} else { echo "<option value='00:00'>Helaas zijn we gesloten</option>";}
+?>
+
+						
+						
+
 						</select>
 					</div>
-	
-					<input type="submit" name="Submit" value="Betaal" />
+<?PHP
+if (time() < strtotime('22:00:00')) { echo '<input type="submit" name="Submit" value="Betaal" />';}	
+?>					
 								
 				</form>
 <?PHP			
