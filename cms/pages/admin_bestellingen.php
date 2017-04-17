@@ -221,7 +221,14 @@
                 ?>
             </td>
             <td>
-                <?PHP echo $row_order['betaling'] ?>
+                <?PHP 
+         $type_betaling = $row_order['betaling'];
+         if($type_betaling=="c")
+         {
+             echo "contant";
+         } else {
+             echo "pin";
+         } ?>
             </td>
             <td>
 				<a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Afgeleverd</a>
