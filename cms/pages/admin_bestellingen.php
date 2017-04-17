@@ -221,7 +221,7 @@
                 ?>
             </td>
             <td>
-                <?PHP echo $row_order['order_status'] ?>
+                <?PHP echo $row_order['betaling'] ?>
             </td>
             <td>
 				<a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Afgeleverd</a>
