@@ -76,8 +76,10 @@
 	{
 ?>
 
-	<span class='true_warning' >U bent ingelogd als: <?PHP echo $_SESSION['user']?>.</span>
-	<!--<meta http-equiv="Refresh" content="2;URL=?p=" />-->
+	<span class='true_warning' >U bent ingelogd.</span>
+	<?php echo "<a class='button' href='?p=winkelmand'>Ga naar winkelmand</a>";
+	echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
+	?>
 			
 <?PHP
 	}

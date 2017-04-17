@@ -59,8 +59,7 @@ if ($i=="add_to_cart" )
 			echo "<a class='button' href='?p=pizzas'>Winkel verder</a>";
 		}
 		}
-		//echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
-		} 
+	} 
 	else 
 	{
 	echo "<p class='true_warning' >GEEN Pizza toegevoegd aan winkelmand.</p>";
