@@ -301,3 +301,8 @@ footer {
 .cms table{
 	background: #fff;
 }
+
+.cms h1, .cms h2{
+	font-family: Verdana, sans-serif;
+	color: black;
+}

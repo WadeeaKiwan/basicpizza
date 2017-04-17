@@ -2,11 +2,7 @@
 	if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	{
 ?>
-<table width="450" border="0" cellpadding="2">
-	<tr>
-		<td colspan="2" align="center" ><u><h3>Bestelling</h3></u></td>
-	</tr>
-</table>
+<h1>Bestellingen</h1>
 <?PHP
 #####################################################################################################################################
 		
@@ -208,50 +204,47 @@
 		else
 		{
 ?>
+<h3>Nog niet afgeleverde Pizzas</h3>
 <div align="center">
-    <table border="1" cellspacing="0" width="450">
-    	<tr>
-    		<td class="custom_bgcollor" align="center" colspan='3'>
-                <strong>Nog niet afgeleverde Pizzas</strong>
-    		</td>
-    	</tr>
+    <table>
         <tr>
-            <td class="custom_bgcollor">
-                <strong>Gewenste Levering</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>Order_ID</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>type_aflevering</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>Betaald?</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>Status Bestelling</strong>
-            </td>
+            <th>Bestelling</th>
+            <th>Gewenste Levering</th>
+            <th>Ordernummer</th>
+            <th>Type aflevering</th>
+            <th>Betaald?</th>
+            <th>Status Bestelling</th>
         </tr>
 <?PHP
 		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Betaald' ORDER BY bestelmoment desc");
 		WHILE ($row_order= mysql_fetch_array($sql_select_order))
 		{
 ?>
-		<tr>
-            <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
+		<tr onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';">
+            <td>
+            	<a href='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>'>Bekijk bestelling</a>
+            </td>
+            <td>
                 <?PHP echo $row_order['levermoment'] ?>
             </td>
-             <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
+             <td>
                 <?PHP echo $row_order['order_id'] ?>
             </td>
-            <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
-                <?PHP echo $row_order['type_bezorging'] ?>
+            <td>
+                <?PHP 
+                	$type_bezorging = $row_order['type_bezorging'];
+                	if($type_bezorging=="a"){
+                		echo "Afhalen";
+                	} else {
+                		echo "Bezorging";
+                	}
+                ?>
             </td>
-            <td align="center" onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
+            <td>
                 <?PHP echo $row_order['order_status'] ?>
             </td>
-            <td align="center">
-				 <a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Afgeleverd</a>
+            <td>
+				<a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Afgeleverd</a>
 			</td>
         </tr>
 <?PHP
@@ -259,28 +252,15 @@
 ?>
 	</table>
 	<br><br>
-    <table border="1" cellspacing="0" width="450">
-    	<tr>
-    		<td class="custom_bgcollor" align="center" colspan='3'>
-                <strong>Afgeleverde Pizzas</strong>
-    		</td>
-    	</tr>
+	<h3>Afgeleverde Pizzas</h3>
+    <table>
         <tr>
-            <td class="custom_bgcollor">
-                <strong>Order ID</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>Gewenste levertijd</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>werkelijke levertijd</strong>
-            </td>
-            <td class="custom_bgcollor">
-                <strong>Status</strong>
-            </td>
-             <td class="custom_bgcollor">
-                <strong>On-Time (difference in minutes)</strong>
-            </td>
+        	<th>Bestelling</th>
+            <th>Ordernummer</th>
+            <th>Gewenste levertijd</th>
+            <th>Werkelijke levertijd</th>
+            <th>Status</th>
+            <th>On-Time (difference in minutes)</th>
         </tr>
 <?PHP
 		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE order_status='Afgeleverd' ORDER BY order_id desc");
@@ -288,20 +268,23 @@
 		{
 ?>
 		<tr onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
-            <td align="center">
+            <td>
+            	<a href='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>'>Bekijk bestelling</a>
+            </td>
+            <td>
                 <?PHP echo $row_order['order_id'] ?>
             </td>
-            <td align="center">
+            <td>
                 <?PHP echo $row_order['levermoment'] ?>
             </td>
-            <td align="center">
+            <td>
                 <?PHP echo $row_order['levering'] ?>
             </td>
-            <td align="center">
+            <td>
                 <?PHP echo $row_order['order_status'] ?>
             </td>
             
-          <td align="center">
+          	<td>
             
               <?PHP
 ###################################################################################################################################			  
@@ -320,7 +303,7 @@
 		}
 ?>
 	</table>
-</div>
+
 <?PHP
 
 		}
