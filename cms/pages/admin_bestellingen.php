@@ -78,8 +78,12 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Levermoment</td>
+			<td>gewenste levering</td>
 			<td><?PHP echo $row_order['levermoment'] ?></td>
+		</tr>
+        <tr>
+			<td>werkelijke levering</td>
+			<td><?PHP echo $row_order['levering'] ?></td>
 		</tr>
 	</table>
 	<br><br>
