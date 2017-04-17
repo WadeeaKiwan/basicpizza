@@ -1,5 +1,17 @@
 <?PHP
-
+//======================================================================
+// profile.php
+// Weergave van profiel van gebruiker en gebruiker kan wijzigingen doen
+// bestaat uit meerdere pagina's
+// $i = paginanaam in URL $ii = subpagina 
+// 
+// 		change_profile 	= laat profiel pagina zien 
+// 		update_profile  = wijzigingen pagina
+// 		change_pass 	= mogelijkheid om wachtwoord te wijzigen
+// 
+//======================================================================
+// 
+// Laatste bijwerking : 17-04-2017
 	include 'jscripts/checkform/users_checkform.js';
 
 	if (isset($_SESSION['loggedin']) AND $_SESSION['loggedin']==1)
@@ -15,13 +27,14 @@
 
 				if (mysql_num_rows($rs_select_profile))
 				{
-					mysql_query("UPDATE user_profiles SET aanhef='".$_POST['aanhef']."', voornaam='".$_POST['voornaam']."', achternaam='".$_POST['achternaam']."', straat='".$_POST['straat']."', huisnummer='".$_POST['huisnummer']."', postcode='".$_POST['postcode']."', woonplaats='".$_POST['woonplaats']."', telefoonnummer='".$_POST['telefoonnummer']."' WHERE user_id=".$user_id);
+					mysql_query("UPDATE user_profiles SET aanhef='".$_POST['aanhef']."', voornaam='".test_input($_POST['voornaam'])."', achternaam='".test_input($_POST['achternaam'])."', straat='".test_input($_POST['straat'])."', huisnummer='".test_input($_POST['huisnummer'])."', postcode='".test_input($_POST['postcode'])."', woonplaats='".test_input($_POST['woonplaats'])."', telefoonnummer='".test_input($_POST['telefoonnummer'])."' WHERE user_id=".$user_id);
 
 					echo "<span class='true_warning' >Profiel gewijzigd.</span>";
 				}
 				else
 				{
-					mysql_query("INSERT INTO `user_profiles` (`user_id`, `voornaam`, `achternaam`, `straat`, `huisnummer`, `postcode`, `woonplaats`, `telefoonnummer`, `aanhef`) VALUES ('".$user_id."', '".$_POST['voornaam']."', '".$_POST['achternaam']."', '".$_POST['straat']."', '".$_POST['huisnummer']."', '".$_POST['postcode']."', '".$_POST['woonplaats']."', '".$_POST['telefoonnummer']."', '".$_POST['aanhef']."')");
+					mysql_query("INSERT INTO `user_profiles` (`user_id`, `voornaam`, `achternaam`, `straat`, `huisnummer`, `postcode`, `woonplaats`, `telefoonnummer`, `aanhef`) 
+						VALUES ('".$user_id."', '".test_input($_POST['voornaam'])."', '".test_input($_POST['achternaam'])."', '".test_input($_POST['straat'])."', '".test_input($_POST['huisnummer'])."', '".test_input($_POST['postcode'])."', '".test_input($_POST['woonplaats'])."', '".test_input($_POST['telefoonnummer'])."', '".test_input($_POST['aanhef'])."')");
 
 					echo "<span class='true_warning' >Profiel toegevoegd.</span>";
 				}

@@ -1,5 +1,14 @@
 <?PHP
+//======================================================================
+// index.php
+// Hoofdpagina, hierin worden alle pagina's van de frontend weergegeven
+// Doormiddel van voorwaardelijke includes
+//======================================================================
+// 
+// Laatste bijwerking : 17-04-2017
 
+
+# Controle of er al een sessie is geopend
 	session_start();
 	if (!isset($_SESSION['level']))
 	{
@@ -9,14 +18,17 @@
 	#remove all errors.
 	#error_reporting(0);
 	
+# Include van de databaseconnectie die contact met een mysql database mogelijk maakt
 	include 'db/connect.php';
+
+# Include van functies, hierin staan alle functies die op de pagina beschikbaar moeten zijn
 	include 'functions/functies.php';
 
-	/*defining variables:
-	$p = pagina
-	$i = subpagina
-	$ii = subsubpagina
-	*/
+#	Definiering variabelen:
+#	$p = pagina
+#	$i = subpagina
+#	$ii = subsubpagina
+
 	
 	if (!isset($_GET['p']))
 	{
@@ -42,6 +54,8 @@
 	{
 		$ii = $_GET['ii'];
 	}
+
+# Hieronder de HTML basis van de pagina
 ?>
 
 <!DOCTYPE html>

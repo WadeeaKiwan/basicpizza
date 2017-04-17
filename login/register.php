@@ -1,8 +1,15 @@
 <?PHP
+//======================================================================
+// register.php
+// Registratie pagina aanmaken van gebruikersaccount
+// 
+//======================================================================
+// 
+// Laatste bijwerking : 17-04-2017
 
 include 'jscripts/checkform/users_checkform.js';
 
-#####################################################################################################################################
+#############################################################################################################################
 		if ($i=="register")
 		{
 		
@@ -51,23 +58,23 @@ include 'jscripts/checkform/users_checkform.js';
 					`aanhef`
 				)
 				VALUES (
-					'".$row_user['user_id']."', 
-					'".$_POST['voornaam']."', 
-					'".$_POST['achternaam']."', 
-					'".$_POST['straat']."', 
-					'".$_POST['huisnummer']."', 
-					'".$_POST['postcode']."', 
-					'".$_POST['woonplaats']."', 
-					'".$_POST['telefoonnummer']."', 
-					'".$_POST['aanhef']."')
+					'".test_input($row_user['user_id'])."', 
+					'".test_input($_POST['voornaam'])."', 
+					'".test_input($_POST['achternaam'])."', 
+					'".test_input($_POST['straat'])."', 
+					'".test_input($_POST['huisnummer'])."', 
+					'".test_input($_POST['postcode'])."', 
+					'".test_input($_POST['woonplaats'])."', 
+					'".test_input($_POST['telefoonnummer'])."', 
+					'".test_input($_POST['aanhef'])."')
 				");
-
+# test_input zorgt voor een extra validatie op geldige invoer.
 				echo "<span class='true_warning' >Profiel toegevoegd.</span>";
 				//echo '<META http-equiv="refresh" content="2;URL=?p='.$p.'">';
 			
 			}
 		}
-#####################################################################################################################################
+#############################################################################################################################
 		else
 		{
 ?>
@@ -127,6 +134,6 @@ include 'jscripts/checkform/users_checkform.js';
 		</form>
 
 <?PHP
-#####################################################################################################################################
+#############################################################################################################################
 }
 ?>

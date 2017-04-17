@@ -1,4 +1,11 @@
 <?PHP
+//======================================================================
+// contact.php
+// Contactpagina, hier staan de namen en e-mailadressen van de groepsleden
+// 
+//======================================================================
+// 
+// Laatste bijwerking : 17-04-2017
  	echo "<h1>Contact</h1>";
 	echo '<table>';
 	echo '<tr>';

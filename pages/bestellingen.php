@@ -1,6 +1,20 @@
 <h1>Bestellingen</h1>
 
 <?PHP
+//======================================================================
+// bestellingen.php
+// Deze pagina geeft alle gedane bestellingen weer, met statusinformatie
+// Gebruikt CSS
+// bestaat uit meerdere pagina's
+// $i = paginanaam in URL
+// 		vieuw_bestelling	is pagina met detailregels van gedane bestelling
+// 		bestelling  		is pagina met overzicht van gedane bestellingen, met datum tijd plaatsing etc.
+// 
+//======================================================================
+// 
+// Laatste bijwerking : 17-04-2017
+
+# controle op ingelogd zijn
 	if (isset($_SESSION['loggedin']) AND $_SESSION['loggedin']==1)
 	{
 #####################################################################################################################################
@@ -17,6 +31,8 @@
 		}
 		
 #####################################################################################################################################		
+# Pagina bestelling details
+
 		if ($i=="view_bestelling")
 		{
 			
@@ -36,6 +52,7 @@
 		<tr>
 			<td>
 			<?PHP
+# klantgegevens presenteren
 				echo $row_profile['voornaam']." ".$row_profile['achternaam']."<br>";
 				echo $row_profile['straat']." ".$row_profile['huisnummer']."<br>";
 				echo $row_profile['postcode']." ".$row_profile['woonplaats']."<br>";
@@ -52,7 +69,8 @@
 		<tr>
 			<td>Betaling</td>
 			<td>
-			<?PHP 
+			<?PHP
+# betaalgegevens 
 				if($row_order['betaling'] == 'c' ) 
 				{
 				echo "Contant";
@@ -67,7 +85,8 @@
 		<tr>
 			<td>Type bezorging</td>
 			<td>
-<?PHP 
+<?PHP
+# order gegevens (doorklikken voor detailinfo ) 
 				if($row_order['type_bezorging'] == 'a' ) 
 				{
 				echo "Afhalen";
@@ -169,6 +188,7 @@
 #####################################################################################################################################
 		else
 		{
+# Detailinfo, overzicht van orderregels, welke pizza, welke maar en prijs is er bestald en wat kost het ....
 ?>
     <table>
         <tr>

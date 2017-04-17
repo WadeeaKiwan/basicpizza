@@ -78,8 +78,12 @@
 			</td>
 		</tr>
 		<tr>
-			<td>Levermoment</td>
+			<td>gewenste levering</td>
 			<td><?PHP echo $row_order['levermoment'] ?></td>
+		</tr>
+        <tr>
+			<td>werkelijke levering</td>
+			<td><?PHP echo $row_order['levering'] ?></td>
 		</tr>
 	</table>
 	<br><br>
@@ -221,7 +225,14 @@
                 ?>
             </td>
             <td>
-                <?PHP echo $row_order['order_status'] ?>
+                <?PHP 
+         $type_betaling = $row_order['betaling'];
+         if($type_betaling=="c")
+         {
+             echo "contant";
+         } else {
+             echo "pin";
+         } ?>
             </td>
             <td>
 				<a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Afgeleverd</a>
