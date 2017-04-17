@@ -305,4 +305,10 @@ footer {
 .cms h1, .cms h2{
 	font-family: Verdana, sans-serif;
 	color: black;
+	margin-top: 0;
+}
+
+.cms h3{
+	text-align: left;
+	padding-top: 1em;
 }

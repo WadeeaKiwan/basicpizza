@@ -89,16 +89,13 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 				$rs_select_user= mysql_query("SELECT * FROM users WHERE user_id=".$user_id);
 				$row_user= mysql_fetch_array($rs_select_user);
 ?>
+	<h3>Account wijzigen van: <?PHP echo $row_user['user_login']?></h3>
 	<table>
 		<tr>
-			<td colspan="5" align="center"><h3>Account wijzigen van: <?PHP echo $row_user['user_login']?>.</h3></td>
-		</tr>
-		<tr>
-			<td><strong>Gebruikersnaam</strong></td>
-			<td><strong>Wachtwoord</strong></td>
-			<td><strong>Wachtwoord controle</strong></td>
-			<td><strong>Level</strong></td>
-			<td>&nbsp;</td>
+			<th>Gebruikersnaam</th>
+			<th>Wachtwoord</th>
+			<th>Wachtwoord controle</th>
+			<th>Level</th>
 		</tr>
 		<tr>
 			<form name="change_pass" method="post" action="?p=<?PHP echo $p?>&i=edit_user&ii=change&user_id=<?PHP echo $row_user['user_id']?>" onsubmit="return checkform_change_pass('change_pass')">
@@ -161,100 +158,67 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 				$rs_select_profile= mysql_query("SELECT * FROM user_profiles WHERE user_id=".$user_id);
 				$row_profile= mysql_fetch_array($rs_select_profile);
 ?>
-	<table width="35%" border="0" align="center">
-		<tr>
-			<td align="center"><u><h3>Persoonlijk profiel bewerken van: <?PHP echo $naam?>.</h3></u></td>
-		</tr>
-		<tr>
-			<td align="center" valign="top">
-				<a href="?p=<?PHP echo $p?>">Terug.</a>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2"><hr width="100%"></hr></td>
-		</tr>
-	</table>
+	
+	<h3>Persoonlijk profiel bewerken van: <?PHP echo $naam?>.</h3>
 
-	</br>
+	<a class="wijzigen" href="?p=<?PHP echo $p?>">Ga terug</a>
+		
+	<form name="update_profile" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=update_profile&user_id=<?PHP echo $user_id?>" onsubmit="return checkform_update_profile('update_profile')">
+		<table>
+			<tr>
+				<td>Aanhef *</td>
+				<td>
+					<p>
+					<?PHP
+					if ($row_profile['aanhef']=="Mevr.")
+					{?>
+					<label><input type="radio" name="aanhef" value="Dhr." />Dhr.</label>
+					<label><input type="radio" name="aanhef" checked="checked" value="Mevr." />Mevr.</label>
+					<?PHP
+					}
+					else
+					{
+					?>
+					<label><input type="radio" name="aanhef" checked="checked" value="Dhr." />Dhr.</label>
+					<label><input type="radio" name="aanhef" value="Mevr." />Mevr.</label>
+					<?PHP
+					}
+					?>
+					</p>
+				</td>
+			</tr>
+			<tr>
+				<td>Voornaam *</td>
+				<td><input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" value="<?PHP echo $row_profile['voornaam']?>" /></td>
+			</tr>
+			<tr>
+				<td>Achternaam *</td>
+				<td><input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" value="<?PHP echo $row_profile['achternaam']?>" /></td>
+			</tr>
+			<tr>
+				<td>Straatnaam *</td>
+				<td><input name="straat" type="text" id="straat" size="25" maxlength="25" value="<?PHP echo $row_profile['straat']?>" /></td>
+			</tr>
+			<tr>
+				<td>Huisnummer *</td>
+				<td><input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" value="<?PHP echo $row_profile['huisnummer']?>" /></td>
+			</tr>
+			<tr>
+				<td>Postcode *</td>
+				<td><input name="postcode" type="text" id="postcode" size="10" maxlength="10" value="<?PHP echo $row_profile['postcode']?>" /></td>
+			</tr>
+			<tr>
+				<td>Woonplaats *</td>
+				<td><input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" value="<?PHP echo $row_profile['woonplaats']?>" /></td>
+			</tr>
+			<tr>
+				<td>Telefoon *</td>
+				<td><input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" value="<?PHP echo $row_profile['telefoonnummer']?>" /></td>
+			</tr>
+		</table>
+		<input type="submit" name="Submit" value="Opslaan" />
+	</form>
 
-	<table>
-		<tr>
-			<td>
-				<form name="update_profile" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=update_profile&user_id=<?PHP echo $user_id?>" onsubmit="return checkform_update_profile('update_profile')">
-					<table width="100%" border="0" align="center">
-						<tr>
-							<td align="right" width="5%">*</td>
-							<td align="left" width="35%">Aanhef</td>
-							<td align="left" width="60%">
-								<p>
-								<?PHP
-								if ($row_profile['aanhef']=="Mevr.")
-								{?>
-								<label><input type="radio" name="aanhef" value="Dhr." />Dhr.</label>
-								<label><input type="radio" name="aanhef" checked="checked" value="Mevr." />Mevr.</label>
-								<?PHP
-								}
-								else
-								{
-								?>
-								<label><input type="radio" name="aanhef" checked="checked" value="Dhr." />Dhr.</label>
-								<label><input type="radio" name="aanhef" value="Mevr." />Mevr.</label>
-								<?PHP
-								}
-								?>
-								</p>
-							</td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Voornaam</td>
-							<td align="left"><input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" value="<?PHP echo $row_profile['voornaam']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Achternaam</td>
-							<td align="left"><input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" value="<?PHP echo $row_profile['achternaam']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Straatnaam</td>
-							<td align="left"><input name="straat" type="text" id="straat" size="25" maxlength="25" value="<?PHP echo $row_profile['straat']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Huisnummer</td>
-							<td align="left"><input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" value="<?PHP echo $row_profile['huisnummer']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Postcode</td>
-							<td align="left"><input name="postcode" type="text" id="postcode" size="10" maxlength="10" value="<?PHP echo $row_profile['postcode']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Woonplaats</td>
-							<td align="left"><input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" value="<?PHP echo $row_profile['woonplaats']?>" /></td>
-						</tr>
-						<tr>
-							<td align="right">*</td>
-							<td align="left">Telefoon</td>
-							<td align="left"><input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" value="<?PHP echo $row_profile['telefoonnummer']?>" /></td>
-						</tr>
-						<tr>
-							<td colspan="3">&nbsp;</td>
-						</tr>
-						<tr>
-							<td colspan="3">
-								<div align="center">
-								<input type="submit" name="Submit" value="Opslaan" />
-								</div>
-							</td>
-						</tr>
-					</table>
-				</form>
-			</td>
-		</tr>
-	</table>
 <?PHP
 			}
 		}
@@ -262,16 +226,14 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 		else
 		{
 ?>
+	<h3>Nieuw account</h3>
 	<table>
 		<tr>
-			<td colspan="5" align="center"><h3>Nieuw account</h3></td>
-		</tr>
-		<tr>
-			<td><strong>Gebruikersnaam</strong></td>
-			<td><strong>Wachtwoord</strong></td>
-			<td><strong>Wachtwoord controle</strong></td>
-			<td><strong>Level</strong></td>
-			<td>&nbsp;</td>
+			<th>Gebruikersnaam</th>
+			<th>Wachtwoord</th>
+			<th>Wachtwoord controle</th>
+			<th>Level</th>
+			<th>&nbsp;</th>
 		</tr>
 		<tr>
 			<form name="create_user" action="?p=<?PHP echo $p?>&i=add" method="post" onsubmit="return checkform_create_user('create_user')">
@@ -291,16 +253,16 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 	<br /><br />
 <?PHP
 ?>
-	<div align="center">
-		<h3>Accounts</h3>
-	</div>
-	<table width="75%" border="1" cellspacing="0">
+	
+	<h3>Accounts</h3>
+
+	<table>
 		<tr>
-			<td class="custom_bgcollor"><strong>Gebruikersnaam</strong></td>
-			<td class="custom_bgcollor"><strong>Level</strong></td>
-			<td class="custom_bgcollor"><strong>Laatste login</strong></td>
-			<td class="custom_bgcollor"><strong>Profiel</strong></td>
-			<td class="custom_bgcollor"><strong>&nbsp;</strong></td>
+			<th>Gebruikersnaam</th>
+			<th>Level</th>
+			<th>Laatste login</th>
+			<th>Profiel</th>
+			<th>Bewerken/verwijderen</th>
 		</tr>
 <?PHP
 			$rs_select_users= mysql_query("SELECT * FROM `users` WHERE user_level<=".$_SESSION['level']." ORDER BY user_level DESC, user_lastlogin DESC");

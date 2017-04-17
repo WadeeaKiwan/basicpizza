@@ -30,17 +30,14 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 		{
 ?>
 <form name="create_cat" id="create_cat" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=create" onsubmit="return checkform_create_cat('create_cat')">
-  
+  <h1>Voeg categorie toe</h1>
         <table>
             <tr>
                 <td>*&nbsp;Naam:</td>
                 <td><input name="cat_name" type="text" id="cat_name" size="40" maxlength="40" /></td>
             </tr>
-            <tr>
-                <td><input type="submit" name="Submit" value="Voeg categorie toe" /></td>
-            </tr>
         </table>
-
+        <input type="submit" name="Submit" value="Voeg categorie toe" />
 </form>
 <?PHP
 		}
@@ -62,17 +59,14 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 			$row_cat= mysql_fetch_array($rs_select_cat);
 ?>
 <form name="edit_cat" id="edit_cat" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=edit&categorie_id=<?PHP echo $categorie_id?>" onsubmit="return checkform_edit_cat('edit_cat')">
-    
+    <h1>Bewerk Categorie</h1>
         <table>
             <tr>
                 <td>*&nbsp;Naam:</td>
                 <td><input name="cat_name" type="text" id="cat_name" size="40" maxlength="40" value="<?PHP echo $row_cat['categorie']?>" /></td>
             </tr>
-            <tr>
-                <td><input type="submit" name="Submit" value="Wijzig categorie" /></td>
-            </tr>
         </table>
-
+        <input type="submit" name="Submit" value="Wijzig categorie" />
 </form>
 <?PHP
 		}
@@ -90,10 +84,10 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	else
 	{
 ?>
-<h3>Categorieen</h3>
+
+<h1>Categorieen</h1>
 
 <a href="?p=<?PHP echo $p?>&i=create_cat">Nieuwe Categorie</a>
-
 
     <table>
         <tr>

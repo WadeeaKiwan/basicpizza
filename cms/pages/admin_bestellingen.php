@@ -30,13 +30,9 @@
 			$sql_select_profile= mysql_query("SELECT * FROM `user_profiles` WHERE user_id='".$row_order['users_user_id']."'");
 			$row_profile= mysql_fetch_array($sql_select_profile);
 			
-?>				
-	<table width="350" border="1" cellspacing="0" align="center">
-		<tr>
-           	<td class="custom_bgcollor">
-               	<strong>Klant gegevens</strong>
-	        </td>
-	    <tr>
+?>	
+	<h3>Klant gegevens</h3>		
+	<table>
 		<tr>
 			<td>
 <?PHP
@@ -48,16 +44,12 @@
 			</td>
 		</tr>
 	</table>
-	<br><br>
-	<table width="350" border="1" cellspacing="0" align="center">
+
+	<h3>Betaal gegevens</h3>
+	<table>
 		<tr>
-           	<td class="custom_bgcollor" colspan='2'>
-               	<strong>Betaal gegevens</strong>
-	        </td>
-	    <tr>
-		<tr>
-			<td align="left">Betaling</td>
-			<td align="left">
+			<td>Betaling</td>
+			<td>
 <?PHP 
 				if($row_order['betaling'] == 'c' ) 
 				{
@@ -71,8 +63,8 @@
 			</td>
 		</tr>
 		<tr>
-			<td align="left">Type bezorging</td>
-			<td align="left">
+			<td>Type bezorging</td>
+			<td>
 <?PHP 
 				if($row_order['type_bezorging'] == 'a' ) 
 				{
@@ -86,31 +78,19 @@
 			</td>
 		</tr>
 		<tr>
-			<td align="left">Levermoment</td>
-			<td align="left"><?PHP echo $row_order['levermoment'] ?></td>
+			<td>Levermoment</td>
+			<td><?PHP echo $row_order['levermoment'] ?></td>
 		</tr>
 	</table>
 	<br><br>
-    <table border="1" cellspacing="0" width="650">
+    <table>
        	<tr>
-           	<td class="custom_bgcollor" width="40%">
-               	<strong>Naam</strong>
-	        </td>
-	        <td class="custom_bgcollor" width="5%">
-				<strong>Aantal</strong>
-        	</td>
-            <td class="custom_bgcollor" width="10%">
-               	<strong>Grootte</strong>
- 	       	</td>
-    	    <td class="custom_bgcollor" width="20%">
-        	    <strong>Prijs</strong>
-            </td>
-    	    <td class="custom_bgcollor" width="20%">
-            	<strong>Toeslag</strong>
-    		</td>
-    		<td class="custom_bgcollor" width="20%">
-    			<strong>TotaalPrijs</strong>
-            </td>
+           	<th>Naam</th>
+	        <th>Aantal</th>
+            <th>Grootte</th>
+    	    <td>Prijs</th>
+    	    <th>Toeslag</th>
+    		<th>TotaalPrijs</th>
 		</tr>
 <?PHP
 			$totaal_prijs = '0';
@@ -178,10 +158,10 @@
 			}
 ?>
 		<tr>
-            <td class="custom_bgcollor" width="75%" colspan="5" align="right">
+            <td width="75%" colspan="5" align="right">
                 <strong>TotaalPrijs</strong>
 	        </td>
-    	    <td class="custom_bgcollor" width="20%">
+    	    <td width="20%">
         	    <strong><?PHP echo ShowCash($totaal_prijs);  ?></strong>
             </td>
 		</tr>
@@ -205,7 +185,7 @@
 		{
 ?>
 <h3>Nog niet afgeleverde Pizzas</h3>
-<div align="center">
+
     <table>
         <tr>
             <th>Bestelling</th>
@@ -251,7 +231,7 @@
 		}
 ?>
 	</table>
-	<br><br>
+
 	<h3>Afgeleverde Pizzas</h3>
     <table>
         <tr>

@@ -30,8 +30,10 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 		else
 		{
 ?>
+
 <form name="create_prod" id="create_prod" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=create" onsubmit="return checkform_create_prod('create_prod')">
 
+<h1>Voeg pizza toe</h1>
         <table>
             <tr>
                 <td>*&nbsp;Naam:</td>
@@ -59,11 +61,8 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
                 <td>*&nbsp;Omschrijving:</td>
                 <td><textarea name="prod_text" ip="prod_text" rows="4" cols="50"></textarea></td>
             </tr>
-            <tr>
-                <td><input type="submit" name="Submit" value="Voeg pizza toe" /></td>
-            </tr>
         </table>
-
+        <input type="submit" name="Submit" value="Voeg pizza toe" />
 </form>
 <?PHP
 		}
@@ -86,6 +85,7 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 ?>
 <form name="edit_prod" id="edit_prod" method="post" action="?p=<?PHP echo $p?>&i=<?PHP echo $i?>&ii=edit&product_id=<?PHP echo $product_id?>" onsubmit="return checkform_edit_prod('edit_prod')">
 
+<h1>Bewerk Pizza</h1>
         <table>
             <tr>
                 <td>*&nbsp;Naam:</td>
@@ -120,10 +120,8 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
                 <td>*&nbsp;Omschrijving:</td>
                 <td><textarea name="prod_text" ip="prod_text" rows="4" cols="50"><?PHP echo $row_prod['omschrijving']?></textarea></td>
             </tr>
-            <tr>
-                <td><input type="submit" name="Submit" value="Wijzig pizza" value="<?PHP echo $row_prod['naam']?>" /></td>
-            </tr>
         </table>
+        <input type="submit" name="Submit" value="Wijzig pizza" value="<?PHP echo $row_prod['naam']?>" />
 </form>
 <?PHP
 		}
@@ -141,7 +139,8 @@ if (!isset($_SESSION['level']) OR  $_SESSION['level'] >=5)
 	else
 	{
 ?>
-<h3>Pizzas</h3>
+
+<h1>Pizzas</h1>
 
 <a href="?p=<?PHP echo $p?>&i=create_prod">Nieuwe Pizza</a>
 
