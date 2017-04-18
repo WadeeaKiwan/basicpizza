@@ -63,6 +63,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="robot" content="noindex,nofollow">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 	<title>Pizzeria Basic Pizza</title>
 	<link rel="stylesheet" type="text/css" href="css/main.css" media="screen" />
 </head>

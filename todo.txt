@@ -4,23 +4,21 @@ Alle dones staan onderaan
 
 [2] je kunt de winkelmand vullen zonder dat je bent ingelogd. als je dan gaat registreren is je winkelmand weer leeg
 
-[4] redirect ipv refresh ivm browser meldingen?
-
-[5] styling front-end pagina's [Janita]
-
 [6] checken of het overeenkomt met wireframes
 
-[7] documentatie?
+[7] documentatie
 
 [19] datum bestelling en aflevering toevoegen in cms, + naam (order_id)
-
-[20] categorie filter op pizza overzicht?
 
 ----
 
 [1][done] bij inloggen wordt gebruikersnaam gevraagd, maar bij registreren niet
 
 [3] [done] als ik ga bestellen moet ik inloggen, daarna wordt ik geredirect naar de homepage, moet redirect zijn terug naar de winkelmand
+
+[4] redirect ipv refresh ivm browser meldingen?
+
+[5] [done] styling front-end pagina's [Janita]
 
 [9][done] meerprijs voor medium en small worden niet zichtbaar als dit wordt aangevinkt bij de bestelling. In het proces bij de winkelmand staat dit wel. Ik denk dat we of een tekst moeten maken op de pizza pagina met daarbij de meerprijs voor medium en small pizza;s of we moeten het zichtbar maken bij de bestelling. Mee eens?
 
