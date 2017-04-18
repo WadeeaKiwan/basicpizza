@@ -111,6 +111,7 @@ include 'jscripts/checkform/users_checkform.js';
 				<div>
 					<label for="woonplaats">Woonplaats *</label>
 					<input name="woonplaats" type="text" id="woonplaats" size="25" maxlength="25" required />
+                    <td> <?php echo "let op: alleen in Groningen wordt bezorgd"?></td>
 				</div>
 				<div>
 					<label for="email">E-Mail *</label>
