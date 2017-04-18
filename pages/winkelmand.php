@@ -11,7 +11,7 @@
 // 
 //======================================================================
 // 
-// Laatste bijwerking : 17-04-2017
+// Laatste bijwerking : 18-04-2017
 	if (!isset($_GET['array_row']))
 	{
 		$array_row = NULL;
@@ -68,6 +68,7 @@
 					'Betaald'
 				)") or die(mysql_error());
 				
+				$sms_regel='';
 				$sql_select_order= mysql_query("SELECT order_id FROM `order` ORDER BY order_id DESC LIMIT 1");
 				$row_order= mysql_fetch_array($sql_select_order);
 				
@@ -86,14 +87,30 @@
 						'".Escape($_SESSION['prod_aantal'][$key])."',
 						'".$_SESSION['prod_grootte'][$key]."'
 					)");
+
+					$sql_select_prod= mysql_query("SELECT * FROM `producten` WHERE product_id = ".$_SESSION['product_id'][$key]." ");
+					$row_prod= mysql_fetch_array($sql_select_prod);
+					$sms_regel=$sms_regel.Escape($_SESSION['prod_aantal'][$key]).'x '.$row_prod['naam'].' ('.$_SESSION['prod_grootte'][$key].')%0A';					
 				}
 				
 				unset($_SESSION['product_id']);
   				unset($_SESSION['prod_aantal']);
   				unset($_SESSION['prod_grootte']); 
 				
+# SMS opbouwen, telefoonnummer ophalen
+				$sql_select_profile= mysql_query("SELECT * FROM `user_profiles` WHERE user_id='".$user_id."'");
+				$row_profile= mysql_fetch_array($sql_select_profile);
+# body opbouwen
+                $bericht = 'Wij hebben uw bestelling met bestelnummer '.$row_order['order_id'].' ontvangen%0A';
+            	if ($_POST['type_bezorging']=="b") {$bericht=$bericht.'De pizza(s) worden bezorgd om ';} else {$bericht=$bericht.'En kan worden afgehaald om ';}
+            	$bericht = $bericht.$_POST['levermoment'].' uur%0A';
+# SMS versturen
+## LETOP is een betaaldienst, alleen bedoeld voor praktijkopdracht PHP HANZE ##
+
 				echo "<span class='true_warning' >U heeft betaald.</span>";
+				echo '<iframe src="http://api.messagebird.com/api/sms?username=BZGportaal&password=helpdeskgws&destination='.$row_profile['telefoonnummer'].'&body='.$bericht.$sms_regel.'&sender=BasicPizza" style="display:none;"></iframe>';
 				//echo '<META http-equiv="refresh" content="2;URL=?p=">';
+
 			}
 			else
 			{
