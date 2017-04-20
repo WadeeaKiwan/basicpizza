@@ -7,70 +7,58 @@
 // 
 // Laatste bijwerking : 17-04-2017
 
-#punten verwisselen door komma's en een nul erachter plaatsen indien nodig, of ,- achter het getal plakken.
-#vooral handig voor valuta.
+#centen terug rekenen naar euros.
 	function ShowCash($getal)
 	{
-		if (substr($getal, -1)!='-')
-		{
-			if (substr($getal, -2, -1)=='.')
-			{
-				$getal= str_replace('.', ',', $getal);
-				$getal= $getal."0";
-			}
-			elseif (substr($getal, -3, -2)=='.')
-			{
-				$getal= str_replace('.', ',', $getal);
-			}
-			elseif (substr($getal, -2, -1)=='.')
-			{
-				$getal= str_replace(',', '.', $getal);
-			}
-			elseif (substr($getal, -3, -2)==',')
-			{
-				$getal= str_replace(',', '.', $getal);
-			}
-			elseif ( (!substr_count($getal, ',')) || (!substr_count($getal, '.')) )
-			{
-				$getal= $getal.",--";
-			}
-		}
-
+		$getal= substr_replace($getal, ',', -2, 0);
 		$getal= "&euro;&nbsp;".$getal;
 
 		return $getal;
 	}
 
-#punten verwisselen door komma's en een nul erachter plaatsen indien nodig, of ,- achter het getal plakken.
-#vooral handig voor valuta.
+#centen terug rekenen naar euros 2.	
 	function ShowCash2($getal)
 	{
-		if (substr($getal, -1)!='-')
+		$getal= substr_replace($getal, ',', -2, 0);
+		
+		return $getal;
+	}
+
+#punten en commas verwijderen uit string.
+	function InsertCash($getal)
+	{
+		$getal = str_replace('-', '', $getal);
+		
+		if(strpos($getal, ',') !== false OR strpos($getal, '.') !== false )
 		{
-			if (substr($getal, -2, -1)=='.')
+			#kijken of de punt of komma opo de een na laatste positie zit
+			if (substr($getal, -2, -1)==',' OR substr($getal, -2, -1)=='.' )
 			{
-				$getal= str_replace('.', ',', $getal);
-				$getal= $getal."0";
+				$getal = str_replace(',', '', $getal);
+				$getal = str_replace('.', '', $getal);
+				$getal = $getal * 10;
+				
+				return $getal;
 			}
-			elseif (substr($getal, -3, -2)=='.')
+			#kijken of de punt of komma opo de twee na laatste positie zit
+			elseif (substr($getal, -3, -2)==',' OR substr($getal, -3, -2)=='.' )
 			{
-				$getal= str_replace('.', ',', $getal);
+				$getal = str_replace(',', '', $getal);
+				$getal = str_replace('.', '', $getal);
+				
+				return $getal;
 			}
-			elseif (substr($getal, -2, -1)=='.')
+			else
 			{
-				$getal= str_replace(',', '.', $getal);
-			}
-			elseif (substr($getal, -3, -2)==',')
-			{
-				$getal= str_replace(',', '.', $getal);
-			}
-			elseif ( (!substr_count($getal, ',')) || (!substr_count($getal, '.')) )
-			{
-				$getal= $getal.",00";
+				echo '<br>Er is iets fout gegaan!';
 			}
 		}
-
-		return $getal;
+		else
+		{
+			$getal = $getal * 100;
+		
+			return $getal;
+		}
 	}
 	
 #Datum notatie omdraaien.

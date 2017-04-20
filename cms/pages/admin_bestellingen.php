@@ -122,12 +122,12 @@
 				$toeslag = null;
         	    if($row_order_rule['grootte'] == 'm')
           	    {
-					$toeslag = 2 * $row_order_rule['aantal'];
+					$toeslag = 200 * $row_order_rule['aantal'];
           	    	echo ShowCash($toeslag);
            	    }
            	    elseif($row_order_rule['grootte'] == 'l')
         	    {
-					$toeslag = 4 * $row_order_rule['aantal'];
+					$toeslag = 400 * $row_order_rule['aantal'];
   	    	    	echo ShowCash($toeslag);
   	    	    }              	
 ?>      	          	
@@ -235,7 +235,7 @@
          } ?>
             </td>
             <td>
-				<a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Afgeleverd</a>
+				<a href="?p=<?PHP echo $p?>&i=betaald&order_id=<?PHP echo $row_order['order_id']?>">Zet order op afgeleverd</a>
 			</td>
         </tr>
 <?PHP

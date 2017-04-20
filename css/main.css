@@ -231,9 +231,10 @@ a.wijzigen{
 .pizzas section p{
 	display: inline-block;
 	float: left;
-	width: 75%;
+	width: 66%;
 	margin-top: 0;
 	font-size: 90%;
+	padding-right: 1em;
 }
 
 .pizzas section span.categorie{
@@ -253,7 +254,7 @@ a.wijzigen{
 }
 .pizzas section span.prijs{ 
 	display: inline-block;
-	width: 24%;
+	width: 27%;
 	font-family: Verdana; 
 	font-size: 75%; 
 }

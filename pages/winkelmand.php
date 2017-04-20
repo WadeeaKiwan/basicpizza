@@ -28,6 +28,13 @@
   			unset($_SESSION['product_id'][$array_row]);
   			unset($_SESSION['prod_aantal'][$array_row]);
   			unset($_SESSION['prod_grootte'][$array_row]);  
+  			
+  			if (count ($_SESSION['product_id']) == '0')
+  			{
+  				unset($_SESSION['product_id']);
+  				unset($_SESSION['prod_aantal']);
+  				unset($_SESSION['prod_grootte']);
+  			}
 		}
 		else
 		{
@@ -152,9 +159,9 @@
 					</div>
 					
 					<div>
+						<label for="levermoment">Levermoment</label>
+						<select name="levermoment" id="levermoment">
 <?PHP
-echo '<label for="levermoment">Levermoment</label>';
-echo '<select name="levermoment" id="levermoment">';
 if (time() < strtotime('16:30:00')) { echo "<option value='16.30'>16:30</option>";}
 if (time() < strtotime('17:00:00')) { echo "<option value='17.00'>17:00</option>";}
 if (time() < strtotime('17:30:00')) { echo "<option value='17.30'>17:30</option>";}
@@ -166,12 +173,9 @@ if (time() < strtotime('20:00:00')) { echo "<option value='20.00'>20:00</option>
 if (time() < strtotime('20:30:00')) { echo "<option value='20.30'>20:30</option>";}
 if (time() < strtotime('21:00:00')) { echo "<option value='21.00'>21:00</option>";}
 if (time() < strtotime('21:30:00')) { echo "<option value='21.30'>21:30</option>";}
-if (time() < strtotime('22:00:00')) { echo "<option value='22.00'>22:00</option>";} else { echo "<option value='00:00'>Helaas zijn we gesloten</option>";}
+if (time() < strtotime('22:00:00')) { echo "<option value='22.00'>22:00</option>";} 
+else { echo "<option value='00:00'>Helaas zijn we gesloten</option>";}
 ?>
-
-						
-						
-
 						</select>
 					</div>
 <?PHP
@@ -187,7 +191,7 @@ if (time() < strtotime('22:00:00')) { echo '<input type="submit" name="Submit" v
 	else
 	{
 		if(isset($_SESSION['product_id']) AND isset($_SESSION['prod_grootte']) AND isset($_SESSION['prod_aantal']))
-		{ 			
+		{ 	
 ?>
     	<table>
         	<tr>
@@ -249,12 +253,12 @@ if (time() < strtotime('22:00:00')) { echo '<input type="submit" name="Submit" v
 						$toeslag = null;
         	    	    if($_SESSION['prod_grootte'][$key] == 'm')
         	    	    {
-							$toeslag = 2 * $_SESSION['prod_aantal'][$key];
+							$toeslag = 200 * $_SESSION['prod_aantal'][$key];
         	    	    	echo ShowCash($toeslag);
         	    	    }
         	    	    elseif($_SESSION['prod_grootte'][$key] == 'l')
         	    	    {
-							$toeslag = 4 * $_SESSION['prod_aantal'][$key];
+							$toeslag = 400 * $_SESSION['prod_aantal'][$key];
         	    	    	echo ShowCash($toeslag);
         	    	    }    	    	    
 ?>    	        		
@@ -307,7 +311,6 @@ if (time() < strtotime('22:00:00')) { echo '<input type="submit" name="Submit" v
             	</td>
 			</tr>
 		</table>
-	
 <?PHP
 		}
 #####################################################################################################################################

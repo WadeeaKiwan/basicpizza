@@ -139,12 +139,12 @@
 				$toeslag = null;
         	    if($row_order_rule['grootte'] == 'm')
           	    {
-					$toeslag = 2 * $row_order_rule['aantal'];
+					$toeslag = 200 * $row_order_rule['aantal'];
           	    	echo ShowCash($toeslag);
            	    }
            	    elseif($row_order_rule['grootte'] == 'l')
         	    {
-					$toeslag = 4 * $row_order_rule['aantal'];
+					$toeslag = 400 * $row_order_rule['aantal'];
   	    	    	echo ShowCash($toeslag);
   	    	    }              	
 ?>      	          	
@@ -191,14 +191,18 @@
 # Detailinfo, overzicht van orderregels, welke pizza, welke maar en prijs is er bestald en wat kost het ....
 ?>
     <table>
-        <tr>
+<?PHP
+		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE users_user_id= ".$user_id." ORDER BY bestelmoment DESC");
+		if (mysql_num_rows($sql_select_order) > 0)
+		{
+?>
+	    <tr>
             <th>Bestelling</th>
             <th>Status</th>
         </tr>
 <?PHP
-		$sql_select_order= mysql_query("SELECT * FROM `order` WHERE users_user_id= ".$user_id." ORDER BY bestelmoment DESC");
-		WHILE ($row_order= mysql_fetch_array($sql_select_order))
-		{
+			WHILE ($row_order= mysql_fetch_array($sql_select_order))
+			{
 ?>
 		<tr onclick="window.document.location='?p=<?PHP echo $p ?>&i=view_bestelling&order_id=<?PHP echo $row_order['order_id'] ?>';" onmouseover="this.style.cursor='pointer';" >
             <td>
@@ -208,6 +212,13 @@
                 <?PHP echo $row_order['order_status'] ?>
             </td>
         </tr>
+<?PHP
+			}
+		}
+		else
+		{
+?>
+			<span class='true_warning' >Er zijn geen bestellingen.</span>
 <?PHP
 		}
 ?>

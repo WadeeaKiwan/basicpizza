@@ -90,11 +90,11 @@ include 'jscripts/checkform/users_checkform.js';
 				</div>
 				<div>
 					<label for="voornaam">Voornaam *</label>
-					<input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" required />
+					<input name="voornaam" type="text" id="voornaam" size="25" maxlength="40" required />
 				</div>
 				<div>
 					<label for="achternaam">Achternaam *</label>
-					<input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" />
+					<input name="achternaam" type="text" id="achternaam" size="25" maxlength="40" />
 				</div>
 				<div>
 					<label for="straat">Straatnaam *</label>
@@ -102,11 +102,11 @@ include 'jscripts/checkform/users_checkform.js';
 				</div>
 				<div>
 					<label for="huisnummer">Huisnummer *</label>
-					<input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" required/>
+					<input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="5" required/>
 				</div>
 				<div>
 					<label for="postcode">Postcode *</label>
-					<input name="postcode" type="text" id="postcode" size="10" maxlength="10" required />
+					<input name="postcode" type="text" id="postcode" size="10" maxlength="6" required />
 				</div>
 				<div>
 					<label for="woonplaats">Woonplaats *</label>
@@ -115,19 +115,19 @@ include 'jscripts/checkform/users_checkform.js';
 				</div>
 				<div>
 					<label for="email">E-Mail *</label>
-					<input name="email" type="text" id="email" size="15" maxlength="50" required/>
+					<input name="email" type="text" id="email" size="25" maxlength="100" required/>
 				</div>
 				<div>
 					<label for="telefoonnummer">Telefoon *</label>
-					<input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" required />
+					<input name="telefoonnummer" type="text" id="telefoonnummer" size="10" maxlength="15" required />
 				</div>
 				<div>
 					<label for="pass">Wachtwoord *</label>
-					<input type="password" name="pass" required />
+					<input type="password" name="pass" maxlength="25" required />
 				</div>
 				<div>
 					<label for="passcheck">Wachtwoord controle *</label>		
-					<input type="password" name="passcheck" required />
+					<input type="password" name="passcheck" maxlength="25" required />
 				</div>
 
 				<input type="submit" name="Submit" value="Opslaan" />

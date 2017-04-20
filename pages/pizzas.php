@@ -157,8 +157,8 @@ if ($i=="add_to_cart" )
 				?>
 	        	<span class="prijs">
 	            	<?PHP echo "<span>S</span> ".ShowCash($row_prod['prijs'])."<br>";?>
-					<?PHP echo "<span>M</span> ".ShowCash($row_prod['prijs']+2)."<br>";?>
-					<?PHP echo "<span>L</span> ".ShowCash($row_prod['prijs']+4)."<br>";?>
+					<?PHP echo "<span>M</span> ".ShowCash($row_prod['prijs']+200)."<br>";?>
+					<?PHP echo "<span>L</span> ".ShowCash($row_prod['prijs']+400)."<br>";?>
 	            </span>
 	        
 	            <a class="bestel" href="?p=<?PHP echo $p?>&i=bestel_prod&product_id=<?PHP echo $row_prod['product_id']?>">Bestel</a>

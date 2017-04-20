@@ -91,12 +91,12 @@
 			
 			<div>
 				<label for="voornaam">Voornaam</label>
-				<input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" value="<?PHP echo $row_profile['voornaam']?>" />
+				<input name="voornaam" type="text" id="voornaam" size="25" maxlength="40" value="<?PHP echo $row_profile['voornaam']?>" />
 			</div>
 		
 			<div>
 				<label for="achternaam">Achternaam</label>
-				<input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" value="<?PHP echo $row_profile['achternaam']?>" />
+				<input name="achternaam" type="text" id="achternaam" size="25" maxlength="40" value="<?PHP echo $row_profile['achternaam']?>" />
 			</div>
 
 			<div>
@@ -106,12 +106,12 @@
 
 			<div>
 				<label for="huisnummer">Huisnummer</label>
-				<input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" value="<?PHP echo $row_profile['huisnummer']?>" />
+				<input name="huisnummer" type="text" id="huisnummer" size="8" maxlength="5" value="<?PHP echo $row_profile['huisnummer']?>" />
 			</div>
 
 			<div>
 				<label for="postcode">Postcode</label>
-				<input name="postcode" type="text" id="postcode" size="10" maxlength="10" value="<?PHP echo $row_profile['postcode']?>" />
+				<input name="postcode" type="text" id="postcode" size="10" maxlength="6" value="<?PHP echo $row_profile['postcode']?>" />
 			</div>
 
 			<div>
@@ -121,7 +121,7 @@
 
 			<div>
 				<label for="telefoonnummer">Telefoon</label>
-				<input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" value="<?PHP echo $row_profile['telefoonnummer']?>" />
+				<input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="10" value="<?PHP echo $row_profile['telefoonnummer']?>" />
 			</div>
 
 			<input type="submit" name="Submit" value="Opslaan" />
@@ -177,15 +177,15 @@
 		
 		<div>
 			<label for="old_pass">Oud wachtwoord</label>
-			<input type="password" name="old_pass" id="old_pass">
+			<input type="password" name="old_pass" id="old_pass" maxlength="25" >
 		</div>
 		<div>
 			<label for="pass">Nieuw wachtwoord</label>
-			<input type="password" name="pass" id="pass">
+			<input type="password" name="pass" id="pass" maxlength="25" >
 		</div>
 		<div>
 			<label for="passcheck">Nieuw wachtwoord<br>Controle</label>
-			<input type="password" name="passcheck" id="passcheck">
+			<input type="password" name="passcheck" id="passcheck" maxlength="25" >
 		</div>
 
 		<input type="submit" value="Wijzigen">

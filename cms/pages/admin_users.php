@@ -189,11 +189,11 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 			</tr>
 			<tr>
 				<td>Voornaam *</td>
-				<td><input name="voornaam" type="text" id="voornaam" size="25" maxlength="25" value="<?PHP echo $row_profile['voornaam']?>" /></td>
+				<td><input name="voornaam" type="text" id="voornaam" size="25" maxlength="40" value="<?PHP echo $row_profile['voornaam']?>" /></td>
 			</tr>
 			<tr>
 				<td>Achternaam *</td>
-				<td><input name="achternaam" type="text" id="achternaam" size="25" maxlength="25" value="<?PHP echo $row_profile['achternaam']?>" /></td>
+				<td><input name="achternaam" type="text" id="achternaam" size="25" maxlength="40" value="<?PHP echo $row_profile['achternaam']?>" /></td>
 			</tr>
 			<tr>
 				<td>Straatnaam *</td>
@@ -201,11 +201,11 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 			</tr>
 			<tr>
 				<td>Huisnummer *</td>
-				<td><input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="10" value="<?PHP echo $row_profile['huisnummer']?>" /></td>
+				<td><input name="huisnummer" type="text" id="huisnummer" size="10" maxlength="5" value="<?PHP echo $row_profile['huisnummer']?>" /></td>
 			</tr>
 			<tr>
 				<td>Postcode *</td>
-				<td><input name="postcode" type="text" id="postcode" size="10" maxlength="10" value="<?PHP echo $row_profile['postcode']?>" /></td>
+				<td><input name="postcode" type="text" id="postcode" size="10" maxlength="6" value="<?PHP echo $row_profile['postcode']?>" /></td>
 			</tr>
 			<tr>
 				<td>Woonplaats *</td>
@@ -213,7 +213,7 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 			</tr>
 			<tr>
 				<td>Telefoon *</td>
-				<td><input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="15" value="<?PHP echo $row_profile['telefoonnummer']?>" /></td>
+				<td><input name="telefoonnummer" type="text" id="telefoonnummer" size="15" maxlength="10" value="<?PHP echo $row_profile['telefoonnummer']?>" /></td>
 			</tr>
 		</table>
 		<input type="submit" name="Submit" value="Opslaan" />
@@ -238,8 +238,8 @@ if (isset($_SESSION['level']) AND $_SESSION['level']>=5)
 		<tr>
 			<form name="create_user" action="?p=<?PHP echo $p?>&i=add" method="post" onsubmit="return checkform_create_user('create_user')">
 				<td><input type="text" name="login"></td>
-				<td><input type="password" name="pass"></td>
-				<td><input type="password" name="passcheck"></td>
+				<td><input type="password" name="pass" maxlength="25" ></td>
+				<td><input type="password" name="passcheck" maxlength="25" ></td>
 				<td>
 					<select name="level" id="level">
 						<option value='1'>(1) Klant</option>
